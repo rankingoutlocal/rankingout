@@ -477,11 +477,12 @@ footer{padding:38px 0;font-size:.9rem;color:var(--muted)}
 
       <div class="formcard">
         <!-- POINT THIS AT YOUR ENDPOINT: GoHighLevel / Formspree / Netlify Forms -->
-        <form action="https://api.web3forms.com/submit" method="POST">
-           <input type="hidden" name="access_key" value="PASTE-YOUR-KEY-HERE">
-           <input type="hidden" name="subject" value="New audit request — rankingout.com">
-           <input type="hidden" name="from_name" value="Ranking Out website">
-           <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <form action="https://formsubmit.co/info@rankingout.com" method="POST">
+          <input type="hidden" name="_subject" value="New audit request - rankingout.com">
+          <input type="hidden" name="_next" value="https://rankingout.com/thanks/">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field"><label for="name">Your name</label>
             <input type="text" id="name" name="name" required autocomplete="name"></div>
           <div class="field"><label for="business">Business name</label>
