@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ranking Out &mdash; How many calls did your business miss last week?</title>
-<meta name="description" content="We reactivate the old leads you gave up on and book appointments into your calendar. 10 appointments in 30 days or you don't pay.">
+<title>Ranking Out &mdash; Reactivate the old leads you already paid for</title>
+<meta name="description" content="If you have more than 300 old leads and dead quotes, you're sitting on money you already paid for. We reactivate them and book appointments into your calendar. 10 appointments in 30 days or you don't pay.">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="How many calls did your business miss last week?">
-<meta property="og:description" content="10 appointments in 30 days, or you don't pay.">
+<meta property="og:title" content="If you have fewer than 300 old leads, please don't call us.">
+<meta property="og:description" content="If you have more, you're sitting on money you already paid for. 10 appointments in 30 days, or you don't pay.">
 <meta property="og:url" content="https://rankingout.com">
 <meta property="og:image" content="https://rankingout.com/og.jpg">
 <link rel="canonical" href="https://rankingout.com">
@@ -326,15 +326,16 @@ a:hover{color:var(--yellow-500)}
    are new, written to keep the same visual hierarchy down to phone width. */
 @media (max-width:900px){
   header nav{display:none!important}
-  #top h1{font-size:clamp(2.4rem,9vw,4.5rem);line-height:1.05}
+  #top h1{font-size:clamp(2rem,6.4vw,3.4rem);line-height:1.02;letter-spacing:-0.6px}
   #leaks h2,#tiers h2,#offer h2{font-size:clamp(2.2rem,7vw,3.4rem);line-height:1.08}
   #leaks > div > div,
   #tiers > div > div{grid-template-columns:1fr!important}
   #offer > div{grid-template-columns:1fr!important}
 }
 @media (max-width:640px){
-  header{padding:0 var(--gutter)}
+  header > div{padding:0 var(--space-4)!important}
   header a[href="tel:+17033895362"]{display:none}
+  .ro-btn--sm{padding:0 var(--space-5);font-size:var(--display-xs-size)}
   #top{padding:120px var(--gutter) 56px}
   #leaks,#tiers,#offer{padding:64px var(--gutter)}
   #offer > div > div:first-child{padding:var(--space-8)!important}
@@ -363,8 +364,8 @@ a:hover{color:var(--yellow-500)}
 </header>
 <section id="top" style="background-color:#132C54;background-image:linear-gradient(90deg,rgba(245,200,0,0.04) 1px,transparent 1px),linear-gradient(180deg,rgba(245,200,0,0.04) 1px,transparent 1px);background-size:40px 40px;padding:158px 24px 80px;display:flex;flex-direction:column;align-items:center;text-align:center">
 <span class="ro-badge ro-badge--inverse"><span class="ro-badge__dot"></span>For local businesses that live off the phone</span>
-<h1 style="margin:32px 0 0;max-width:1116px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:110px;line-height:104.5px;letter-spacing:-2.2px;color:#FFFFFF">How many calls did <span style="color:#2A6496;text-shadow:0 0 20px rgba(74,159,213,0.4)">your business</span> miss last week?</h1>
-<p style="margin:32px 0 0;max-width:640px;font-size:18px;line-height:30.6px;color:#FFFFFF"><strong>Most never call back. They call someone else.</strong> We reactivate the leads you already gave up on and book the appointments straight into your calendar.</p>
+<h1 style="margin:32px 0 0;max-width:1000px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6.2vw,86px);line-height:0.96;letter-spacing:-1.2px;color:#FFFFFF">If you have fewer than 300 old leads and dead quotes, <span style="color:#2A6496;text-shadow:0 0 20px rgba(74,159,213,0.4)">please don't call us.</span></h1>
+<p style="margin:32px 0 0;max-width:660px;font-size:18px;line-height:30.6px;color:#FFFFFF"><strong>If you have more, you're sitting on money you already paid for.</strong> We reactivate the leads you gave up on and book the appointments straight into your calendar.</p>
 <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;justify-content:center">
 <a href="#offer" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow">Reactivate my old leads<span class="ro-btn__arrow">&rarr;</span></a>
 <a href="#tiers" class="ro-btn ro-btn--ghost-inverse ro-btn--lg">See how it works</a>
