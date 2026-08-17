@@ -403,6 +403,15 @@ a:hover{color:var(--yellow-500)}
 #ro-ct .ct-btn-ghost:hover{background:var(--yellow-tint-10)}
 #ro-ct .ct-arrow{font-size:1.1em}
 
+/* ---------- BOOK ONLINE (Cal.com inline embed) ---------- */
+#ro-ct .ct-book-head{max-width:640px;margin:0 auto;text-align:center}
+#ro-ct .ct-book-head .ct-kicker{justify-content:center}
+#ro-ct .ct-book-head .ct-panel-copy{margin:12px auto 0;max-width:56ch;text-align:center}
+#ro-ct .ct-book-embed{
+  width:100%;height:680px;margin-top:40px;
+  border:1px solid var(--border-card);border-radius:var(--radius-5);
+  overflow-y:auto;overflow-x:hidden;background:var(--surface-card)}
+
 /* ---------- KICKER ---------- */
 #ro-ct .ct-kicker{
   display:flex;align-items:center;gap:12px;
@@ -478,6 +487,7 @@ a:hover{color:var(--yellow-500)}
   #ro-ct .ct-details li{flex-direction:column;gap:6px}
   #ro-ct .ct-label{flex:none}
   #ro-ct .ct-close{padding:44px 24px}
+  #ro-ct .ct-book-embed{height:620px;margin-top:28px}
 }
 
 </style>
@@ -512,6 +522,33 @@ a:hover{color:var(--yellow-500)}
       <a href="tel:+17033895362" class="ct-btn">Call (703) 389-5362<span class="ct-arrow">&rarr;</span></a>
       <a href="mailto:info@rankingout.com?subject=Booking%20a%20call%20with%20Ranking%20Out" class="ct-btn-ghost">Email us instead</a>
     </div>
+  </div>
+</section>
+
+<!-- ============================ BOOK ONLINE ============================ -->
+<section class="ct-section ct-soft" id="book">
+  <div class="ct-wrap">
+    <div class="ct-book-head">
+      <p class="ct-kicker">Prefer to pick your own time?</p>
+      <h2>Book straight into our calendar.</h2>
+      <p class="ct-panel-copy">Grab an open slot that works for you &mdash; no back-and-forth. You'll get an instant confirmation, and we're notified the moment you book.</p>
+    </div>
+
+    <!-- Cal inline embed code begins -->
+    <div id="my-cal-inline-meeting" class="ct-book-embed"></div>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "meeting", {origin:"https://app.cal.com"});
+      Cal.config = Cal.config || {};
+      Cal.config.forwardQueryParams = true;
+      Cal.ns.meeting("inline", {
+        elementOrSelector:"#my-cal-inline-meeting",
+        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+        calLink: "rankingout/meeting",
+      });
+      Cal.ns.meeting("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#0F224A"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal inline embed code ends -->
   </div>
 </section>
 
