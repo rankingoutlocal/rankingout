@@ -525,6 +525,54 @@ a:hover{color:var(--yellow-500)}
   #ro-rs .au-close{padding:44px 24px}
 }
 
+
+/* ---------- MOBILE NAVIGATION ---------- */
+.ro-navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:46px;height:46px;padding:0 11px;margin-left:6px;flex-shrink:0;
+  background:transparent;border:1px solid var(--border-field);border-radius:var(--radius-1);
+  cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ro-navtoggle span{display:block;height:2px;width:100%;background:var(--navy-700);
+  border-radius:2px;transition:transform var(--duration-fast) var(--ease-out),
+  opacity var(--duration-fast) var(--ease-out)}
+.ro-navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ro-navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.ro-navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.ro-mnav{display:none}
+.ro-mnav[hidden]{display:none}
+
+@media (max-width:900px){
+  .ro-navtoggle{display:flex}
+  .ro-mnav:not([hidden]){display:flex;flex-direction:column;
+    background:var(--white);border-bottom:1px solid var(--border-card);
+    box-shadow:var(--shadow-nav);padding:12px var(--space-4) 20px}
+  .ro-mnav a{display:flex;align-items:center;min-height:52px;padding:0 8px;
+    font-family:var(--font-display);font-weight:var(--weight-regular);
+    font-size:var(--display-nav-size);letter-spacing:var(--display-nav-track);
+    color:var(--navy-700);text-decoration:none;
+    border-bottom:1px solid var(--hairline-dark-soft)}
+  .ro-mnav a:last-child{border-bottom:0}
+  .ro-mnav a:active{background:var(--grey-100)}
+  .ro-mnav .ro-mnav-cta{justify-content:center;min-height:54px;margin-bottom:8px;padding:0 20px;
+    background:var(--action);color:var(--action-label);border-bottom:0;
+    font-family:var(--font-condensed);font-weight:var(--weight-bold);
+    font-size:var(--label-cta-sm-size);letter-spacing:var(--label-cta-sm-track);
+    text-transform:uppercase}
+  .ro-mnav .ro-mnav-call{justify-content:center;min-height:54px;margin-bottom:10px;padding:0 20px;
+    border:1px solid var(--yellow-line-45);border-bottom:1px solid var(--yellow-line-45);
+    background:var(--yellow-tint-06);color:var(--navy-700);
+    font-family:var(--font-condensed);font-weight:var(--weight-bold);
+    font-size:var(--label-cta-sm-size);letter-spacing:var(--label-cta-sm-track);
+    text-transform:uppercase}
+}
+@media (max-width:640px){
+  /* the header CTA moves into the menu so the bar stays uncluttered */
+  header .ro-btn--sm{display:none}
+  /* large CTAs have fixed 48px side padding and nowrap, which overflows
+     narrow phones. Let them breathe and wrap. */
+  .ro-btn--lg,.ro-btn--md{padding-left:var(--space-5);padding-right:var(--space-5);
+    white-space:normal;text-align:center;max-width:100%}
+}
 </style>
 </head>
 <body>
@@ -542,9 +590,21 @@ a:hover{color:var(--yellow-500)}
 <div style="display:flex;align-items:center;flex-shrink:0;gap:4px">
 <a href="tel:+17033895362" style="padding:0 20px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.32px;color:#1E3A5F">(703) 389-5362</a>
 <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--sm">Book a call</a>
+<button class="ro-navtoggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="ro-mnav"><span></span><span></span><span></span></button>
 </div>
 </div>
 </header>
+<div class="ro-mnav" id="ro-mnav" hidden>
+<a class="ro-mnav-cta" href="/contact/">Book a call</a>
+<a class="ro-mnav-call" href="tel:+17033895362">Call (703) 389-5362</a>
+<a href="/services/">Services</a>
+<a href="/physical-therapy-marketing/">For Physical Therapists</a>
+<a href="/chiropractic-marketing/">For Chiropractors</a>
+<a href="/resources/">Resources</a>
+<a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+</div>
+
 <div id="ro-rs">
 
 <section class="au-hero">
@@ -615,9 +675,33 @@ a:hover{color:var(--yellow-500)}
 <div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Services</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/services/local-seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">Local SEO</a></li><li><a href="/services/seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">SEO + GEO</a></li><li><a href="/services/google-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Google Ads</a></li><li><a href="/services/facebook-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Meta Ads</a></li><li><a href="/services/reviews/" style="font-size:14px;color:#8A90A8;text-decoration:none">Reviews &amp; Reputation</a></li><li><a href="/services/web-design/" style="font-size:14px;color:#8A90A8;text-decoration:none">Web Design</a></li><li><a href="/services/front-desk-conversion/" style="font-size:14px;color:#8A90A8;text-decoration:none">Front Desk Conversion</a></li><li><a href="/services/patient-reactivation/" style="font-size:14px;color:#8A90A8;text-decoration:none">Patient Reactivation</a></li></ul></div>
 <div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Resources</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
 </div>
-<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8"><span>&copy; 2026 Ranking Out. All rights reserved.</span><span>(703) 389-5362 &middot; info@rankingout.com</span></div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8"><span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#8A90A8;text-decoration:none">Privacy Policy</a></span><span>(703) 389-5362 &middot; info@rankingout.com</span></div>
 </div>
 </footer>
 </div>
+<script>
+(function(){
+  var b=document.querySelector('.ro-navtoggle'), m=document.getElementById('ro-mnav');
+  if(!b||!m) return;
+  function set(open){
+    b.setAttribute('aria-expanded',open?'true':'false');
+    b.setAttribute('aria-label',open?'Close menu':'Open menu');
+    if(open){m.removeAttribute('hidden');}else{m.setAttribute('hidden','');}
+  }
+  b.addEventListener('click',function(e){
+    e.stopPropagation();
+    set(b.getAttribute('aria-expanded')!=='true');
+  });
+  document.addEventListener('click',function(e){
+    if(b.getAttribute('aria-expanded')==='true'&&!m.contains(e.target)&&e.target!==b) set(false);
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}
+  });
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>900&&b.getAttribute('aria-expanded')==='true') set(false);
+  });
+})();
+</script>
 </body>
 </html>
