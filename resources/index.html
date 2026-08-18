@@ -3,30 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Marketing Services for PT &amp; Chiropractic Clinics | Ranking Out</title>
-<meta name="description" content="SEO, Google Ads, reviews, and patient reactivation built for physical therapy and chiropractic practices. Everything you need to own local search and fill your schedule.">
+<title>Resources for PT &amp; Chiropractic Practices | Ranking Out</title>
+<meta name="description" content="Practical guides for practice owners on patient reactivation and local SEO. Detailed enough to run yourself. No email required, nothing gated.">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Marketing Services for Physical Therapy &amp; Chiropractic Clinics">
-<meta property="og:description" content="SEO, Google Ads, reviews, and patient reactivation built for physical therapy and chiropractic practices.">
-<meta property="og:url" content="https://rankingout.com/services/">
-<link rel="canonical" href="https://rankingout.com/services/">
+<meta property="og:title" content="Guides Worth Your Time">
+<meta property="og:description" content="Practical guides for physical therapy and chiropractic practice owners. Nothing gated, no email required.">
+<meta property="og:url" content="https://rankingout.com/resources/">
+<link rel="canonical" href="https://rankingout.com/resources/">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CollectionPage",
-"name":"Marketing Services for Physical Therapy &amp; Chiropractic Clinics",
-"url":"https://rankingout.com/services/",
+"name":"Resources for Physical Therapy and Chiropractic Practices",
+"url":"https://rankingout.com/resources/",
 "about":{"@type":"ProfessionalService","name":"Ranking Out","url":"https://rankingout.com"},
-"mainEntity":{"@type":"ItemList","itemListElement":[
-{"@type":"ListItem","position":1,"name":"Local SEO","url":"https://rankingout.com/services/local-seo/"},
-{"@type":"ListItem","position":2,"name":"SEO + GEO","url":"https://rankingout.com/services/seo/"},
-{"@type":"ListItem","position":3,"name":"Google Ads","url":"https://rankingout.com/services/google-ads/"},
-{"@type":"ListItem","position":4,"name":"Meta Ads","url":"https://rankingout.com/services/facebook-ads/"},
-{"@type":"ListItem","position":5,"name":"Reviews &amp; Reputation","url":"https://rankingout.com/services/reviews/"},
-{"@type":"ListItem","position":6,"name":"Web Design","url":"https://rankingout.com/services/web-design/"},
-{"@type":"ListItem","position":7,"name":"Front Desk Conversion","url":"https://rankingout.com/services/front-desk-conversion/"},
-{"@type":"ListItem","position":8,"name":"Patient Reactivation","url":"https://rankingout.com/services/patient-reactivation/"}
-]}}
+"hasPart":[
+{"@type":"Article","name":"How to Run a Database Reactivation Campaign","url":"https://rankingout.com/reactivation/"},
+{"@type":"Article","name":"The Local SEO Plan Behind a New Practice Website","url":"https://rankingout.com/physical-therapy-sw/"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://rankingout.com/"},
+{"@type":"ListItem","position":2,"name":"Resources","item":"https://rankingout.com/resources/"}
+]}
 </script>
 
 <style>
@@ -355,88 +355,150 @@ a:hover{color:var(--yellow-500)}
 
 
 /* ==========================================================================
-   /services -- built on the shared Ranking Out design system.
-   Scoped to #ro-sv so nothing leaks.
+   Audience page pattern (physical therapy / chiropractic).
+   Scoped to #ro-rs so nothing leaks.
    ========================================================================== */
-#ro-sv{font-family:var(--font-body);color:var(--text-body)}
-#ro-sv *{box-sizing:border-box}
-#ro-sv .sv-wrap{max-width:var(--container-wide);margin:0 auto;padding:0 var(--gutter)}
-#ro-sv .sv-section{padding:var(--section-y) var(--gutter);border-bottom:1px solid var(--border-card)}
-#ro-sv .sv-soft{background:var(--surface-alt)}
-#ro-sv h2{
+#ro-rs{font-family:var(--font-body);color:var(--text-body)}
+#ro-rs *{box-sizing:border-box}
+#ro-rs .au-wrap{max-width:var(--container-wide);margin:0 auto;padding:0 var(--gutter)}
+#ro-rs .au-section{padding:var(--section-y) var(--gutter);border-bottom:1px solid var(--border-card)}
+#ro-rs .au-soft{background:var(--surface-alt)}
+#ro-rs h2{
   font-family:var(--font-display);font-weight:var(--weight-regular);
   font-size:clamp(2rem,4.4vw,3.4rem);line-height:1;letter-spacing:.9px;
   color:var(--text-display);margin:16px 0 0}
-#ro-sv h3{
+#ro-rs h3{
   font-family:var(--font-display);font-weight:var(--weight-regular);
-  font-size:1.6rem;line-height:1;letter-spacing:.5px;
+  font-size:1.45rem;line-height:1;letter-spacing:.5px;
   color:var(--text-display);margin:0}
-#ro-sv p{margin:0}
+#ro-rs p{margin:0}
+
+#ro-rs .au-crumb{
+  display:flex;align-items:center;gap:10px;margin:0 0 24px;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:var(--label-tick-size);letter-spacing:var(--label-tick-track);
+  text-transform:uppercase;color:var(--text-on-inverse-muted)}
+#ro-rs .au-crumb a{color:var(--text-on-inverse-muted);text-decoration:none}
+#ro-rs .au-crumb a:hover{color:var(--action)}
+#ro-rs .au-eyebrow{
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:var(--label-eyebrow-size);letter-spacing:var(--label-eyebrow-track);
+  text-transform:uppercase;color:var(--action)}
 
 /* ---------- HERO ---------- */
-#ro-sv .sv-hero{
+#ro-rs .au-hero{
   background-color:var(--surface-inverse);
   background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
                    linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
   background-size:var(--blueprint-pitch) var(--blueprint-pitch);
-  padding:140px var(--gutter) 96px;text-align:center}
-#ro-sv .sv-hero .sv-wrap{display:flex;flex-direction:column;align-items:center}
-#ro-sv .sv-hero h1{
-  font-family:var(--font-display);font-weight:var(--weight-regular);
-  font-size:clamp(2.6rem,6.4vw,5.4rem);line-height:.98;letter-spacing:-1px;
-  color:var(--text-on-inverse);margin:0;max-width:20ch}
-#ro-sv .sv-hero-lede{
-  margin-top:28px;max-width:620px;
+  padding:120px var(--gutter) 96px;text-align:center}
+#ro-rs .au-hero .au-wrap{display:flex;flex-direction:column;align-items:center}
+#ro-rs .au-hero h1{
+  margin:16px 0 0;font-family:var(--font-display);font-weight:var(--weight-regular);
+  font-size:clamp(2.5rem,6vw,5rem);line-height:.98;letter-spacing:-1px;
+  color:var(--text-on-inverse);max-width:17ch}
+#ro-rs .au-hero-lede{
+  margin-top:28px;max-width:650px;
   font-size:var(--body-lede-size);line-height:var(--body-lede-line);
   color:var(--text-on-inverse-body)}
-#ro-sv .sv-hero .ro-btn{margin-top:36px}
+#ro-rs .au-hero .ro-btn{margin-top:36px}
 
-/* ---------- INTRO ---------- */
-#ro-sv .sv-intro{text-align:center}
-#ro-sv .sv-intro .sv-wrap{max-width:720px}
-#ro-sv .sv-intro p{font-size:var(--body-prose-size);line-height:var(--body-prose-line);color:var(--text-body)}
-#ro-sv .sv-intro p + p{margin-top:20px}
+/* ---------- PROSE ---------- */
+#ro-rs .au-intro .au-wrap{max-width:var(--container-prose)}
+#ro-rs .au-intro p{
+  font-size:var(--body-prose-size);line-height:var(--body-prose-line);color:var(--text-body)}
+#ro-rs .au-intro p + p{margin-top:22px}
+#ro-rs .au-intro strong{color:var(--text-display)}
 
-/* ---------- SECTION HEAD (kicker / h2 / lede) ---------- */
-#ro-sv .sv-head{max-width:640px;margin:0 auto;text-align:center}
-#ro-sv .sv-kicker{
+/* ---------- SECTION HEAD ---------- */
+#ro-rs .au-head{max-width:690px;margin:0 auto;text-align:center}
+#ro-rs .au-kicker{
   display:inline-flex;align-items:center;justify-content:center;gap:12px;
   font-family:var(--font-condensed);font-weight:var(--weight-bold);
   font-size:var(--label-kicker-size);letter-spacing:var(--label-kicker-track);
   text-transform:uppercase;color:var(--action)}
-#ro-sv .sv-kicker:before{content:"";width:32px;height:2px;background:var(--action);flex-shrink:0}
-#ro-sv .sv-head-lede{
-  margin-top:12px;font-style:italic;
+#ro-rs .au-kicker:before{content:"";width:32px;height:2px;background:var(--action);flex-shrink:0}
+#ro-rs .au-head-lede{
+  margin-top:20px;
   font-size:var(--body-prose-size);line-height:var(--body-prose-line);color:var(--text-muted)}
 
-/* ---------- CARD GRIDS ---------- */
-#ro-sv .sv-grid{display:grid;gap:22px;margin-top:48px}
-#ro-sv .sv-grid--4{grid-template-columns:repeat(4,1fr)}
-#ro-sv .sv-grid--2{
-  grid-template-columns:repeat(2,1fr);
-  max-width:820px;margin-left:auto;margin-right:auto}
-
-#ro-sv .sv-card{
+/* ---------- REALITY CARDS ---------- */
+#ro-rs .au-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+#ro-rs .au-card{
   background:var(--surface-card);border:1px solid var(--border-card);
-  border-radius:var(--radius-5);padding:32px;
+  border-radius:var(--radius-5);padding:30px;
   display:flex;flex-direction:column;gap:12px;
   transition:box-shadow var(--duration-base) var(--ease-out),
              transform var(--duration-base) var(--ease-out)}
-#ro-sv .sv-card:hover{box-shadow:var(--shadow-card-sm);transform:translateY(-2px)}
-#ro-sv .sv-card p{
-  font-size:var(--body-mid-size);line-height:var(--body-mid-line);
-  color:var(--text-muted);flex-grow:1}
-#ro-sv .sv-learn{
-  display:inline-flex;align-items:center;gap:8px;margin-top:4px;
+#ro-rs .au-card:hover{box-shadow:var(--shadow-card-sm);transform:translateY(-2px)}
+#ro-rs .au-card-num{
+  display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;
+  min-width:36px;height:36px;padding:0 10px;
+  background:var(--action);color:var(--action-label);
+  font-family:var(--font-condensed);font-weight:var(--weight-extrabold);
+  font-size:var(--label-micro-size);letter-spacing:var(--label-micro-track)}
+#ro-rs .au-card p{
+  font-size:var(--body-mid-size);line-height:var(--body-mid-line);color:var(--text-muted)}
+
+/* ---------- SEARCH EXAMPLES ---------- */
+#ro-rs .au-queries{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;justify-content:center}
+#ro-rs .au-q{
+  display:inline-flex;align-items:center;gap:9px;padding:11px 18px;
+  background:var(--surface-card);border:1px solid var(--border-card);
+  border-radius:var(--radius-pill);
+  font-size:var(--body-mid-size);color:var(--text-body)}
+#ro-rs .au-q span{color:var(--text-muted);font-size:.9em}
+
+/* ---------- PRIORITY STACK ---------- */
+#ro-rs .au-stack{
+  list-style:none;margin:48px auto 0;padding:0;max-width:var(--container-media);
+  display:flex;flex-direction:column;gap:2px}
+#ro-rs .au-step{
+  display:flex;align-items:flex-start;gap:20px;padding:26px 28px;
+  background:var(--surface-card);border:1px solid var(--border-card)}
+#ro-rs .au-step-n{
+  flex-shrink:0;width:38px;height:38px;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--action);color:var(--action-label);
+  font-family:var(--font-condensed);font-weight:var(--weight-extrabold);
+  font-size:var(--label-micro-size);letter-spacing:var(--label-micro-track)}
+#ro-rs .au-step-body{flex:1}
+#ro-rs .au-step-body h3{font-size:1.3rem}
+#ro-rs .au-step-body p{
+  margin-top:9px;font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-muted)}
+#ro-rs .au-step-link{
+  display:inline-block;margin-top:12px;
   font-family:var(--font-condensed);font-weight:var(--weight-bold);
   font-size:var(--label-tick-size);letter-spacing:var(--label-tick-track);
   text-transform:uppercase;color:var(--navy-400);text-decoration:none}
-#ro-sv .sv-learn:hover{color:var(--yellow-600)}
-#ro-sv .sv-arrow{font-size:1.1em;transition:transform var(--duration-fast) var(--ease-out)}
-#ro-sv .sv-learn:hover .sv-arrow{transform:translateX(3px)}
+#ro-rs .au-step-link:hover{color:var(--yellow-600)}
+
+/* ---------- CALLOUT ---------- */
+#ro-rs .au-callout{
+  margin:48px auto 0;max-width:var(--container-media);
+  background-color:var(--surface-inverse-deep);
+  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
+                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
+  background-size:var(--blueprint-pitch) var(--blueprint-pitch);
+  border:2px solid var(--border-emphasis);padding:40px 36px}
+#ro-rs .au-callout .au-co-tag{
+  margin:0;font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:var(--label-kicker-size);letter-spacing:var(--label-kicker-track);
+  text-transform:uppercase;color:var(--action)}
+#ro-rs .au-callout .au-co-h{
+  margin-top:12px;font-family:var(--font-display);font-weight:var(--weight-regular);
+  font-size:1.9rem;line-height:1.04;letter-spacing:.4px;color:var(--text-on-inverse)}
+#ro-rs .au-callout .au-co-p{
+  margin-top:16px;font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-on-inverse-body)}
+#ro-rs .au-callout .au-co-p + .au-co-p{margin-top:14px}
+#ro-rs .au-callout .au-co-p strong{color:var(--text-on-inverse)}
 
 /* ---------- CLOSE ---------- */
-#ro-sv .sv-close{
+#ro-rs .au-close{
   background-color:var(--surface-inverse-deep);
   background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
                    linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
@@ -444,24 +506,23 @@ a:hover{color:var(--yellow-500)}
   border:2px solid var(--border-emphasis);
   padding:64px 44px;text-align:center;
   display:flex;flex-direction:column;align-items:center}
-#ro-sv .sv-close h2{color:var(--text-on-inverse);margin:0}
-#ro-sv .sv-close p{
+#ro-rs .au-close h2{color:var(--text-on-inverse);margin:0}
+#ro-rs .au-close p{
   margin-top:20px;max-width:56ch;
   font-size:var(--body-prose-size);line-height:var(--body-prose-line);
   color:var(--text-on-inverse-body)}
-#ro-sv .sv-close p + p{margin-top:14px}
-#ro-sv .sv-close .ro-btn{margin-top:32px}
-#ro-sv .sv-section:last-of-type{border-bottom:0}
+#ro-rs .au-close .ro-btn{margin-top:32px}
+#ro-rs .au-section:last-of-type{border-bottom:0}
 
-@media (max-width:820px){
-  #ro-sv .sv-grid--4{grid-template-columns:repeat(2,1fr)}
+@media (max-width:900px){
+  #ro-rs .au-grid{grid-template-columns:1fr}
 }
 @media (max-width:640px){
-  #ro-sv .sv-hero{padding:96px var(--gutter) 64px}
-  #ro-sv .sv-section{padding:64px var(--gutter)}
-  #ro-sv .sv-grid--4{grid-template-columns:1fr}
-  #ro-sv .sv-grid--2{grid-template-columns:1fr}
-  #ro-sv .sv-close{padding:44px 24px}
+  #ro-rs .au-hero{padding:88px var(--gutter) 64px}
+  #ro-rs .au-section{padding:64px var(--gutter)}
+  #ro-rs .au-step{flex-direction:column;gap:14px}
+  #ro-rs .au-callout{padding:30px 24px}
+  #ro-rs .au-close{padding:44px 24px}
 }
 
 </style>
@@ -484,115 +545,63 @@ a:hover{color:var(--yellow-500)}
 </div>
 </div>
 </header>
-<div id="ro-sv">
+<div id="ro-rs">
 
-<!-- ============================ HERO ============================ -->
-<section class="sv-hero">
-  <div class="sv-wrap">
-    <h1>Marketing Services for Physical Therapy &amp; Chiropractic Clinics</h1>
-    <p class="sv-hero-lede">Everything your practice needs to own local search and fill your schedule with new patients.</p>
-    <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow">Get Your Free Growth Plan<span class="ro-btn__arrow">&rarr;</span></a>
+<section class="au-hero">
+  <div class="au-wrap">
+    <p class="au-crumb"><a href="/">Home</a><span>/</span><span>Resources</span></p>
+    <p class="au-eyebrow">Resources</p>
+    <h1>Guides Worth Your Time</h1>
+    <p class="au-hero-lede">Written for practice owners, not for other marketers. Enough detail that you could run the work yourself if you wanted to.</p>
+    <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow">Book A Call<span class="ro-btn__arrow">&rarr;</span></a>
   </div>
 </section>
 
-<!-- ============================ INTRO ============================ -->
-<section class="sv-section sv-intro">
-  <div class="sv-wrap">
-    <p><strong>Most agencies sell you traffic and call it a day. Traffic doesn't pay your rent &mdash; booked visits do.</strong></p>
-    <p>We build the full path: get found by patients searching for care, get chosen over the clinic down the street, and get them actually on the schedule. Every service below is one piece of that path. Run one, or run all eight.</p>
+<section class="au-section au-intro">
+  <div class="au-wrap">
+    <p>Most agency content exists to make you feel like the work is too complicated to attempt. <strong>These are written the other way round.</strong> If you have the time and someone on staff who can own it, everything below is genuinely runnable in-house.</p>
+    <p>Plenty of owners read them, decide they would rather spend those hours treating patients, and call us. That is a fair trade either way.</p>
   </div>
 </section>
 
-<!-- ============================ SECTION 1 -- GET FOUND ============================ -->
-<section class="sv-section sv-soft" id="get-found">
-  <div class="sv-wrap">
-    <div class="sv-head">
-      <p class="sv-kicker">Step 1</p>
-      <h2>Get Found</h2>
-      <p class="sv-head-lede">Show up where patients are looking.</p>
-    </div>
+<section class="au-section au-soft">
+  <div class="au-wrap">
+    <ul class="au-stack">
+      <li class="au-step">
+        <span class="au-step-n">01</span>
+        <div class="au-step-body">
+          <h3>How To Run A Database Reactivation Campaign</h3>
+          <p>The complete nine-step process for turning a dormant patient list into booked visits. Auditing the list before you send anything, segmenting by age and last engagement, writing the re-opener, building the sequence, choosing the channel mix, pacing it so you do not torch your list, routing replies fast, and measuring against a benchmark that is actually realistic.</p>
+          <p><strong>Read this one first if your schedule has gaps next month.</strong> It is the fastest money in most practices and the thing owners are most likely to have never tried.</p>
+          <a href="/reactivation/" class="au-step-link">Read the guide &rarr;</a>
+        </div>
+      </li>
+      <li class="au-step">
+        <span class="au-step-n">02</span>
+        <div class="au-step-body">
+          <h3>The Local SEO Plan Behind A New Practice Website</h3>
+          <p>A working document rather than a theory piece. The seven-phase plan we are implementing for a new in-home physical therapy practice with no website, no rankings, no reviews and no traffic history. Page architecture, what gets built at launch versus at maturity, the quality gates, and the reasoning behind the pages we deliberately do not build.</p>
+          <p><strong>Useful if you are starting from zero,</strong> opening an additional location, or trying to work out why a two hundred page keyword matrix is the wrong answer.</p>
+          <a href="/physical-therapy-sw/" class="au-step-link">Read the plan &rarr;</a>
+        </div>
+      </li>
+    </ul>
 
-    <div class="sv-grid sv-grid--4">
-      <div class="sv-card">
-        <h3>Local SEO</h3>
-        <p>Rank #1 in the Google Maps pack when patients search for care near them.</p>
-        <a href="/services/local-seo/" class="sv-learn">Learn More<span class="sv-arrow">&rarr;</span></a>
-      </div>
-      <div class="sv-card">
-        <h3>SEO + GEO</h3>
-        <p>Rank organically on Google and in AI search &mdash; ChatGPT, Gemini, and AI Overviews.</p>
-        <a href="/services/seo/" class="sv-learn">Learn More<span class="sv-arrow">&rarr;</span></a>
-      </div>
-      <div class="sv-card">
-        <h3>Google Ads</h3>
-        <p>Put your clinic in front of patients who are searching to book today.</p>
-        <a href="/services/google-ads/" class="sv-learn">Learn More<span class="sv-arrow">&rarr;</span></a>
-      </div>
-      <div class="sv-card">
-        <h3>Meta Ads</h3>
-        <p>Fill workshops and cash-pay programs with targeted Facebook and Instagram campaigns.</p>
-        <a href="/services/facebook-ads/" class="sv-learn">Learn More<span class="sv-arrow">&rarr;</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ SECTION 2 -- GET CHOSEN ============================ -->
-<section class="sv-section" id="get-chosen">
-  <div class="sv-wrap">
-    <div class="sv-head">
-      <p class="sv-kicker">Step 2</p>
-      <h2>Get Chosen</h2>
-      <p class="sv-head-lede">Win the patient who's comparing you to three other clinics.</p>
-    </div>
-
-    <div class="sv-grid sv-grid--2">
-      <div class="sv-card">
-        <h3>Reviews &amp; Reputation</h3>
-        <p>Build a steady flow of 5-star reviews that lift your rankings and win the click.</p>
-        <a href="/services/reviews/" class="sv-learn">Learn More<span class="sv-arrow">&rarr;</span></a>
-      </div>
-      <div class="sv-card">
-        <h3>Web Design</h3>
-        <p>Fast, custom clinic websites built to turn visitors into booked appointments.</p>
-        <a href="/services/web-design/" class="sv-learn">Learn More<span class="sv-arrow">&rarr;</span></a>
-      </div>
+    <div class="au-callout">
+      <p class="au-co-tag">A note on these</p>
+      <p class="au-co-h">Nothing here is gated.</p>
+      <p class="au-co-p">No email required, no form in front of the content, no drip sequence waiting for you afterwards. If a guide is useful, it should be useful without you having to trade for it.</p>
+      <p class="au-co-p"><strong>If you would rather we ran it,</strong> that is what the rest of the site is about.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================ SECTION 3 -- GET BOOKED ============================ -->
-<section class="sv-section sv-soft" id="get-booked">
-  <div class="sv-wrap">
-    <div class="sv-head">
-      <p class="sv-kicker">Step 3</p>
-      <h2>Get Booked</h2>
-      <p class="sv-head-lede">Close the leads you're already paying for.</p>
-    </div>
-
-    <div class="sv-grid sv-grid--2">
-      <div class="sv-card">
-        <h3>Front Desk Conversion</h3>
-        <p>Stop leaking patients at the phone. Track every call, recover the missed ones, and fix what happens after someone dials.</p>
-        <a href="/services/front-desk-conversion/" class="sv-learn">Learn More<span class="sv-arrow">&rarr;</span></a>
-      </div>
-      <div class="sv-card">
-        <h3>Patient Reactivation</h3>
-        <p>Turn your dormant patient list into booked visits with email and SMS campaigns.</p>
-        <a href="/services/patient-reactivation/" class="sv-learn">Learn More<span class="sv-arrow">&rarr;</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ CLOSING CTA ============================ -->
-<section class="sv-section">
-  <div class="sv-wrap">
-    <div class="sv-close">
-      <h2>Not sure where to start?</h2>
-      <p>Most clinics don't need all eight. They need the two or three that fix the biggest leak.</p>
-      <p>Tell us where you are and we'll map it out &mdash; what's working, what's costing you patients, and what to run first.</p>
-      <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow">Get Your Free Growth Plan<span class="ro-btn__arrow">&rarr;</span></a>
+<section class="au-section">
+  <div class="au-wrap">
+    <div class="au-close">
+      <h2>Rather Have Us Run It?</h2>
+      <p>Tell us where your schedule is soft and what you have already tried. We will tell you which of these is worth your time and which one we would run for you.</p>
+      <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow">Book A Call<span class="ro-btn__arrow">&rarr;</span></a>
     </div>
   </div>
 </section>
@@ -602,8 +611,8 @@ a:hover{color:var(--yellow-500)}
 <footer style="background:#0B0E1A;border-top:1px solid rgba(247,198,0,0.15);padding:60px 24px 32px">
 <div style="max-width:1100px;margin:0 auto">
 <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:48px">
-<div><div style="display:flex;align-items:center;gap:12px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="27" height="26" style="height:26px;display:block" role="img" aria-label="Ranking Out"><g fill="#FFFFFF"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1.4px;color:#FFFFFF">Ranking<span style="color:#F7C600"> Out</span></span></div><p style="margin:14px 0 0;max-width:34ch;font-size:14px;line-height:21px;color:#8A90A8">We reactivate the leads you already gave up on and book appointments straight into your calendar. Arlington, Virginia.</p></div>
-<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Services</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/services/local-seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">Local SEO</a></li><li><a href="/services/seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">SEO + GEO</a></li><li><a href="/services/google-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Google Ads</a></li></ul></div>
+<div><div style="display:flex;align-items:center;gap:12px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="27" height="26" style="height:26px;display:block" role="img" aria-label="Ranking Out"><g fill="#FFFFFF"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1.4px;color:#FFFFFF">Ranking<span style="color:#F7C600"> Out</span></span></div><p style="margin:14px 0 0;max-width:34ch;font-size:14px;line-height:21px;color:#8A90A8">Local search for physical therapy and chiropractic practices. Arlington, Virginia.</p></div>
+<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Services</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/services/local-seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">Local SEO</a></li><li><a href="/services/seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">SEO + GEO</a></li><li><a href="/services/google-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Google Ads</a></li><li><a href="/services/facebook-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Meta Ads</a></li><li><a href="/services/reviews/" style="font-size:14px;color:#8A90A8;text-decoration:none">Reviews &amp; Reputation</a></li><li><a href="/services/web-design/" style="font-size:14px;color:#8A90A8;text-decoration:none">Web Design</a></li><li><a href="/services/front-desk-conversion/" style="font-size:14px;color:#8A90A8;text-decoration:none">Front Desk Conversion</a></li><li><a href="/services/patient-reactivation/" style="font-size:14px;color:#8A90A8;text-decoration:none">Patient Reactivation</a></li></ul></div>
 <div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Resources</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
 </div>
 <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8"><span>&copy; 2026 Ranking Out. All rights reserved.</span><span>(703) 389-5362 &middot; info@rankingout.com</span></div>
