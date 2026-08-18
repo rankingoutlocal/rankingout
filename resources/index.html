@@ -334,7 +334,6 @@ a:hover{color:var(--yellow-500)}
 /* Responsive -- the design export is a fixed desktop mock; these breakpoints
    are new, written to keep the same visual hierarchy down to phone width. */
 @media (max-width:900px){
-  header nav{display:none!important}
   #top h1{font-size:clamp(2rem,6.4vw,3.4rem);line-height:1.02;letter-spacing:-0.6px}
   #leaks h2,#tiers h2,#offer h2{font-size:clamp(2.2rem,7vw,3.4rem);line-height:1.08}
   #leaks > div > div,
@@ -527,6 +526,7 @@ a:hover{color:var(--yellow-500)}
 
 
 /* ---------- MOBILE NAVIGATION ---------- */
+@media (max-width:1160px){header nav{display:none!important}}
 .ro-navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;
   width:46px;height:46px;padding:0 11px;margin-left:6px;flex-shrink:0;
   background:transparent;border:1px solid var(--border-field);border-radius:var(--radius-1);
@@ -541,7 +541,7 @@ a:hover{color:var(--yellow-500)}
 .ro-mnav{display:none}
 .ro-mnav[hidden]{display:none}
 
-@media (max-width:900px){
+@media (max-width:1160px){
   .ro-navtoggle{display:flex}
   .ro-mnav:not([hidden]){display:flex;flex-direction:column;
     background:var(--white);border-bottom:1px solid var(--border-card);
@@ -582,13 +582,15 @@ a:hover{color:var(--yellow-500)}
 <header style="height:86px;background:#FFFFFF;box-shadow:0 1px 8px rgba(0,0,0,0.08),0 2px 24px rgba(0,0,0,0.04);display:flex;justify-content:center;box-sizing:border-box">
 <div style="width:100%;max-width:1200px;display:flex;align-items:stretch;padding:0 32px;box-sizing:border-box">
 <a href="/" style="display:flex;align-items:center;gap:14px;padding-right:32px;text-decoration:none;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="30" height="29" style="height:30px;display:block" role="img" aria-label="Ranking Out"><g fill="#1E3A5F"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1.6px;color:#0B0E1A">Ranking<span style="color:#F7C600"> Out</span></span></a>
-<nav style="flex-grow:1;display:flex;justify-content:center;align-items:stretch;gap:8px">
-<a href="/services/" style="display:flex;align-items:center;padding:0 20px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.32px;color:#1E3A5F">Services</a>
-<a href="/#leaks" style="display:flex;align-items:center;padding:0 20px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.32px;color:#1E3A5F">Results</a>
-<a href="/#offer" style="display:flex;align-items:center;padding:0 20px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.32px;color:#1E3A5F">Questions</a>
+<nav style="flex-grow:1;display:flex;justify-content:center;align-items:stretch;gap:2px">
+<a href="/services/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
+<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
+<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
+<a href="/resources/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Resources</a>
+<a href="/about/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
+<a href="/contact/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
 </nav>
 <div style="display:flex;align-items:center;flex-shrink:0;gap:4px">
-<a href="tel:+17033895362" style="padding:0 20px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.32px;color:#1E3A5F">(703) 389-5362</a>
 <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--sm">Book a call</a>
 <button class="ro-navtoggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="ro-mnav"><span></span><span></span><span></span></button>
 </div>
@@ -699,7 +701,7 @@ a:hover{color:var(--yellow-500)}
     if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}
   });
   window.addEventListener('resize',function(){
-    if(window.innerWidth>900&&b.getAttribute('aria-expanded')==='true') set(false);
+    if(window.innerWidth>1160&&b.getAttribute('aria-expanded')==='true') set(false);
   });
 })();
 </script>
