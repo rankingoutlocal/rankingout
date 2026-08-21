@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+/* Analytics opt-out for this browser. Survives IP and network changes. */
+(function(){
+  var KEY = 'ro_ga_optout', ID = 'G-LGS7VMSNGR';
+  try {
+    var q = window.location.search || '';
+    if (q.indexOf('ga_optout=1') > -1) { localStorage.setItem(KEY, '1'); }
+    else if (q.indexOf('ga_optout=0') > -1) { localStorage.removeItem(KEY); }
+    if (localStorage.getItem(KEY) === '1') { window['ga-disable-' + ID] = true; }
+  } catch (e) {
+    /* private mode, blocked storage: fall through and just measure normally */
+  }
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LGS7VMSNGR"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LGS7VMSNGR');
+</script>
+<title>Free Session For PT &amp; Chiropractic Owners | Ranking Out</title>
+<meta name="robots" content="noindex,follow">
+<link rel="preload" href="/fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B0E1A">
+<meta name="description" content="Bring past patients back from the list already in your EMR, and answer every new enquiry in minutes. Free 20-minute session for private practice owners.">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ranking Out">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://rankingout.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ranking Out. Local search for physical therapy and chiropractic practices.">
+<meta property="og:title" content="The Cheapest Appointment You Will Ever Book Is With Someone You Have Already Treated">
+<meta property="og:description" content="You paid to acquire them once. Reaching them again costs almost nothing.">
+<meta property="og:url" content="https://rankingout.com/demo/">
+
+<style>
+
+/* Ranking Out -- design system v2 (navy / caution-yellow, blueprint grid).
+   Single file. Fonts self-hosted as embedded base64 woff2 -- zero external
+   requests, zero build step, drop-in ready for GitHub Pages.
+   Ported from a Claude Design export: components/core/Button.jsx and
+   Badge.jsx were hand-converted to static .ro-btn / .ro-badge classes below
+   since this page ships with no JS framework. */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);color:var(--text-body);background:var(--surface-page)}
+img,svg{max-width:100%}
+
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/barlow-condensed-400.woff2) format('woff2');}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/barlow-condensed-600.woff2) format('woff2');}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/barlow-condensed-700.woff2) format('woff2');}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/barlow-condensed-800.woff2) format('woff2');}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/bebas-neue-400.woff2) format('woff2');}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:300 800;font-display:swap;src:url(/fonts/figtree-var.woff2) format('woff2');}
+
+
+
+
+
+
+
+:root{
+  /* --- Navy scale: the brand's structural colour --- */
+  --navy-1000:#0B0E1A; /* deepest: banner bar, CTA label ink */
+  --navy-950:#0F1526;
+  --navy-900:#161D2D;
+  --navy-800:#253662;
+  --navy-700:#1E3A5F; /* deep navy section fill */
+  --navy-600:#132C54; /* hero fill */
+  --navy-500:#2A4F7A; /* raised navy card */
+  --navy-400:#2A6496; /* display-type highlight */
+  --navy-300:#4A9FD5; /* glow only */
+
+  /* --- Yellow: the single action colour --- */
+  --yellow-500:#F7C600;
+  --yellow-600:#E0B300; /* pressed / hover-dark, derived */
+  --yellow-tint-06:rgba(247,198,0,0.06);
+  --yellow-tint-10:rgba(247,198,0,0.10);
+  --yellow-line-15:rgba(247,198,0,0.15);
+  --yellow-line-20:rgba(247,198,0,0.20);
+  --yellow-line-30:rgba(247,198,0,0.30);
+  --yellow-line-45:rgba(247,198,0,0.45);
+  --yellow-wash:#FFFCF2; /* warm off-white panel */
+
+  /* --- Neutrals: light surfaces + prose --- */
+  --white:#FFFFFF;
+  --paper:#FFFEFB;
+  --grey-25:#FAFBFC;
+  --grey-50:#F7F8FA;
+  --grey-100:#F5F7FA;
+  --grey-200:#EEF2F7;
+  --grey-300:#E5E7EB;
+  --grey-350:#E4E7ED;
+  --grey-400:#94A3B8;
+  --grey-450:#94A0B3;
+  --grey-500:#9AA1AD;
+  --grey-600:#6B7280;
+  --grey-700:#4C5362;
+  --grey-800:#374151;
+  --grey-900:#2D3444;
+
+  /* --- Slate: type on navy --- */
+  --slate-200:#C8CEDF;
+  --slate-400:#8A90A8;
+
+  /* --- Signals --- */
+  --blue-600:#2563EB;
+  --blue-400:#60A5FA;
+  --green-700:#047857;
+  --green-600:#059669;
+  --amber-700:#C2760A;
+  --red-700:#B91C1C;
+  --red-600:#DC2626;
+
+  /* --- Hairlines --- */
+  --hairline-dark:rgba(0,0,0,0.08);
+  --hairline-dark-soft:rgba(0,0,0,0.06);
+  --hairline-light:rgba(255,255,255,0.08);
+  --wash-light:rgba(255,255,255,0.05);
+}
+
+/* -- Semantic aliases --------------------------------------------- */
+:root{
+  --surface-page:var(--white);
+  --surface-alt:var(--grey-50);
+  --surface-card:var(--white);
+  --surface-card-warm:var(--yellow-wash);
+  --surface-inverse:var(--navy-600);
+  --surface-inverse-deep:var(--navy-700);
+  --surface-inverse-card:var(--navy-500);
+  --surface-bar:var(--navy-1000);
+
+  --text-display:var(--navy-1000);
+  --text-body:var(--grey-800);
+  --text-muted:var(--grey-600);
+  --text-on-inverse:var(--white);
+  --text-on-inverse-body:var(--slate-200);
+  --text-on-inverse-muted:var(--slate-400);
+
+  --action:var(--yellow-500);
+  --action-hover:var(--yellow-600);
+  --action-label:var(--navy-1000);
+
+  --accent-eyebrow:var(--yellow-500);
+  --accent-eyebrow-inverse:var(--slate-400);
+
+  --border-card:var(--hairline-dark);
+  --border-card-inverse:var(--hairline-light);
+  --border-emphasis:var(--yellow-line-30);
+  --border-field:var(--grey-350);
+
+  --signal-good:var(--green-700);
+  --signal-warn:var(--amber-700);
+  --signal-bad:var(--red-700);
+  --signal-none:var(--grey-400);
+}
+
+/* Ranking Out -- type tokens. Three families, each with one job.
+   Sizes and letter-spacings are the source file's literal values. */
+:root{
+  --font-display:"Bebas Neue","Barlow Condensed",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --font-condensed:"Barlow Condensed",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --font-body:Figtree,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+
+  /* Display -- Bebas Neue, regular weight only */
+  --display-hero-size:110px;
+  --display-hero-line:104.5px;
+  --display-hero-track:-2.2px;
+  --display-section-size:80px;
+  --display-section-line:76px;
+  --display-section-track:1.6px;
+  --display-sub-size:24px;
+  --display-nav-size:22px;
+  --display-nav-track:1.32px;
+  --display-xs-size:18px;
+
+  /* Condensed -- Barlow Condensed 700, always uppercase */
+  --label-cta-size:20px;      --label-cta-track:1.2px;
+  --label-cta-sm-size:18px;   --label-cta-sm-track:1.44px;
+  --label-col-size:16px;      --label-col-track:0.96px;
+  --label-row-size:15px;      --label-row-track:0.6px;
+  --label-eyebrow-size:14px;  --label-eyebrow-track:2.8px;
+  --label-meta-size:14px;     --label-meta-track:0.7px;
+  --label-kicker-size:13px;   --label-kicker-track:1.95px;
+  --label-pill-size:13px;     --label-pill-track:1.3px;
+  --label-micro-size:12px;    --label-micro-track:2.4px;
+  --label-tick-size:12px;     --label-tick-track:2.16px;
+
+  /* Body -- Figtree */
+  --body-lede-size:18px;   --body-lede-line:30.6px;
+  --body-prose-size:17px;  --body-prose-line:30.6px;
+  --body-base-size:16px;   --body-base-line:24px;
+  --body-mid-size:14.5px;  --body-mid-line:22px;
+  --body-sm-size:14px;     --body-sm-line:21px;
+  --body-xs-size:13px;     --body-xs-line:20.8px;
+  --body-2xs-size:12px;    --body-2xs-line:18px;
+  --body-3xs-size:9px;     --body-3xs-line:14px;
+
+  --weight-light:300;
+  --weight-regular:400;
+  --weight-semibold:600;
+  --weight-bold:700;
+  --weight-extrabold:800;
+  --weight-black:900;
+}
+
+/* Ranking Out -- spacing, layout and radii. The source runs a loose 4px rhythm
+   with several deliberate off-grid values (9, 14, 26, 34) -- kept verbatim. */
+:root{
+  --space-1:4px;
+  --space-2:8px;
+  --space-2h:9px;
+  --space-3:12px;
+  --space-3h:14px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-6h:26px;
+  --space-8:32px;
+  --space-9:36px;
+  --space-10:40px;
+  --space-11:44px;
+  --space-12:48px;
+  --space-14:56px;
+  --space-15:60px;
+  --space-20:80px;
+  --space-25:100px;
+
+  /* Layout */
+  --container-nav:1200px;
+  --container-wide:1100px;
+  --container-media:820px;
+  --container-prose:720px;
+  --container-narrow:640px;
+  --gutter:24px;
+  --gutter-nav:32px;
+  --section-y:100px;
+  --nav-height:86px;
+  --banner-height:38px;
+  --grid-gap:48px;
+
+  /* Radii -- sharp on interactive/dark, soft on light content panels */
+  --radius-0:0px;
+  --radius-1:4px;
+  --radius-2:8px;
+  --radius-2h:9px;
+  --radius-3:10px;
+  --radius-4:12px;
+  --radius-5:14px;
+  --radius-6:16px;
+  --radius-7:18px;
+  --radius-8:20px;
+  --radius-10:26px;
+  --radius-pill:999px;
+}
+
+/* Ranking Out -- shadows, glows, motion, and the blueprint grid background. */
+:root{
+  --shadow-nav:0 1px 8px rgba(0,0,0,0.08), 0 2px 24px rgba(0,0,0,0.04);
+  --shadow-media:0 34px 80px -34px rgba(15,23,42,0.5);
+  --shadow-panel:0 30px 70px -42px rgba(15,23,42,0.4);
+  --shadow-card:0 24px 64px -30px rgba(15,23,42,0.35);
+  --shadow-card-sm:0 18px 44px -30px rgba(15,23,42,0.35);
+  --shadow-action:0 4px 16px rgba(247,198,0,0.3);
+  --shadow-float:0 0 1px rgba(114,118,139,0.32), 0 6px 24px rgba(12,13,25,0.06), 0 12px 48px rgba(12,13,25,0.06), 0 24px 96px rgba(12,13,25,0.06);
+  --glow-display:0 0 20px rgba(74,159,213,0.4);
+
+  --ease-out:cubic-bezier(0.16,1,0.3,1); /* @kind other */
+  --duration-fast:150ms; /* @kind other */
+  --duration-base:250ms; /* @kind other */
+  --ticker-duration:35s; /* @kind other */
+
+  /* Blueprint grid: two 1px rules on a 40px pitch, at 4% yellow */
+  --blueprint-line:rgba(245,200,0,0.04);
+  --blueprint-pitch:40px;
+}
+
+/* Ranking Out -- the few utilities that carry the identity. Everything else is
+   componentised; this file exists so a hand-written page can match the system. */
+.ro-blueprint-grid{background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);background-size:var(--blueprint-pitch) var(--blueprint-pitch)}
+.ro-display{font-family:var(--font-display);font-weight:var(--weight-regular);font-size:var(--display-section-size);line-height:var(--display-section-line);letter-spacing:var(--display-section-track);color:var(--text-display)}
+.ro-display-hero{font-family:var(--font-display);font-weight:var(--weight-regular);font-size:var(--display-hero-size);line-height:var(--display-hero-line);letter-spacing:var(--display-hero-track);color:var(--text-on-inverse)}
+.ro-lede{font-family:var(--font-body);font-size:var(--body-lede-size);line-height:var(--body-lede-line);color:var(--text-body)}
+.ro-prose{font-family:var(--font-body);font-size:var(--body-prose-size);line-height:var(--body-prose-line);color:var(--text-body)}
+.ro-label{font-family:var(--font-condensed);font-weight:var(--weight-bold);text-transform:uppercase;line-height:100%}
+.ro-hairline{height:1px;border:0;background:var(--hairline-dark)}
+.ro-container{max-width:var(--container-wide);margin:0 auto;padding:0 var(--gutter)}
+.ro-section{padding:var(--section-y) var(--gutter)}
+a{color:var(--navy-400);text-decoration:none}
+a:hover{color:var(--yellow-500)}
+
+/* Ranking Out -- Button and Badge components.
+   Static equivalents of the Claude Design system's Button.jsx / Badge.jsx,
+   hand-ported so this page needs no JS runtime. Hover states are additions
+   (the source components define transitions but hover colours live in the
+   design tool's own interaction layer, not in the exported markup) -- they
+   follow the token system's own --action-hover value. */
+.ro-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  text-transform:uppercase;line-height:100%;text-decoration:none;border:0;
+  border-radius:var(--radius-0);cursor:pointer;
+  transition:background-color var(--duration-fast) var(--ease-out),
+             color var(--duration-fast) var(--ease-out),
+             border-color var(--duration-fast) var(--ease-out);
+  white-space:nowrap;box-sizing:border-box;
+}
+.ro-btn--lg{padding:var(--space-5) var(--space-12);font-size:var(--label-cta-size);letter-spacing:var(--label-cta-track)}
+.ro-btn--md{padding:18px var(--space-8);font-size:var(--label-cta-sm-size);letter-spacing:var(--label-cta-sm-track)}
+.ro-btn--sm{
+  padding:0 var(--space-9);height:48px;font-size:var(--display-nav-size);
+  font-family:var(--font-display);font-weight:var(--weight-regular);
+  letter-spacing:var(--display-nav-track);
+}
+.ro-btn--primary{background:var(--action);color:var(--action-label)}
+.ro-btn--primary:hover{background:var(--action-hover)}
+.ro-btn--ghost{background:transparent;color:var(--text-display);border:1px solid var(--border-field)}
+.ro-btn--ghost:hover{background:var(--yellow-tint-06);border-color:var(--yellow-line-30)}
+.ro-btn--ghost-inverse{background:transparent;color:var(--text-on-inverse);border:1px solid var(--yellow-line-45)}
+.ro-btn--ghost-inverse:hover{background:var(--yellow-tint-10)}
+.ro-btn--link{background:transparent;color:var(--navy-700);padding:0 var(--space-5);font-family:var(--font-display);font-weight:var(--weight-regular);font-size:var(--display-nav-size);letter-spacing:var(--display-nav-track)}
+.ro-btn--block{display:flex;width:100%}
+.ro-btn--glow{box-shadow:var(--shadow-action)}
+.ro-btn__arrow{font-size:1.1em}
+
+/* Badge: hairline pill, translucent yellow wash, live dot, condensed micro-caps. */
+.ro-badge{
+  display:inline-flex;align-items:center;gap:var(--space-2);
+  padding:var(--space-2) var(--space-5);border-radius:var(--radius-0);
+  font-family:var(--font-condensed);font-weight:var(--weight-regular);
+  font-size:var(--label-pill-size);letter-spacing:var(--label-pill-track);
+  line-height:100%;text-transform:uppercase;box-sizing:border-box;
+}
+.ro-badge--inverse{background:var(--yellow-tint-06);border:1px solid var(--yellow-line-15);color:var(--text-on-inverse-muted)}
+.ro-badge--solid{background:var(--action);border:1px solid var(--action);color:var(--action-label)}
+.ro-badge--light{background:var(--yellow-wash);border:1px solid var(--yellow-line-30);color:var(--text-display)}
+.ro-badge__dot{
+  width:10.83px;height:10.83px;margin-right:-2px;border-radius:var(--radius-pill);
+  background:var(--action);opacity:.557;flex-shrink:0;
+}
+
+/* Responsive -- the design export is a fixed desktop mock; these breakpoints
+   are new, written to keep the same visual hierarchy down to phone width. */
+@media (max-width:900px){
+  #top h1{font-size:clamp(2rem,6.4vw,3.4rem);line-height:1.02;letter-spacing:-0.6px}
+  #leaks h2,#tiers h2,#offer h2{font-size:clamp(2.2rem,7vw,3.4rem);line-height:1.08}
+  #leaks > div > div,
+  #tiers > div > div{grid-template-columns:1fr!important}
+  #offer > div{grid-template-columns:1fr!important}
+}
+@media (max-width:640px){
+  header > div{padding:0 var(--space-4)!important}
+  header a[href="tel:+17033895362"]{display:none}
+  .ro-btn--sm{padding:0 var(--space-5);font-size:var(--display-xs-size)}
+  #top{padding:120px var(--gutter) 56px}
+  #leaks,#tiers,#offer{padding:64px var(--gutter)}
+  #offer > div > div:first-child{padding:var(--space-8)!important}
+  footer > div > div:first-child{grid-template-columns:1fr!important}
+  footer > div > div:last-child{flex-direction:column;align-items:flex-start!important}
+}
+
+
+
+/* ==========================================================================
+   /services -- built on the shared Ranking Out design system.
+   Scoped to #ro-sv so nothing leaks.
+   ========================================================================== */
+#ro-sv{font-family:var(--font-body);color:var(--text-body)}
+#ro-sv *{box-sizing:border-box}
+#ro-sv .sv-wrap{max-width:var(--container-wide);margin:0 auto;padding:0 var(--gutter)}
+#ro-sv .sv-section{padding:var(--section-y) var(--gutter);border-bottom:1px solid var(--border-card)}
+#ro-sv .sv-soft{background:var(--surface-alt)}
+#ro-sv h2{
+  font-family:var(--font-display);font-weight:var(--weight-regular);
+  font-size:clamp(2rem,4.4vw,3.4rem);line-height:1;letter-spacing:.9px;
+  color:var(--text-display);margin:16px 0 0}
+#ro-sv h3{
+  font-family:var(--font-display);font-weight:var(--weight-regular);
+  font-size:1.6rem;line-height:1;letter-spacing:.5px;
+  color:var(--text-display);margin:0}
+#ro-sv p{margin:0}
+
+/* ---------- HERO ---------- */
+#ro-sv .sv-hero{
+  background-color:var(--surface-inverse);
+  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
+                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
+  background-size:var(--blueprint-pitch) var(--blueprint-pitch);
+  padding:140px var(--gutter) 96px;text-align:center}
+#ro-sv .sv-hero .sv-wrap{display:flex;flex-direction:column;align-items:center}
+#ro-sv .sv-hero h1{
+  font-family:var(--font-display);font-weight:var(--weight-regular);
+  font-size:clamp(2.6rem,6.4vw,5.4rem);line-height:.98;letter-spacing:-1px;
+  color:var(--text-on-inverse);margin:0;max-width:20ch}
+#ro-sv .sv-hero-lede{
+  margin-top:28px;max-width:620px;
+  font-size:var(--body-lede-size);line-height:var(--body-lede-line);
+  color:var(--text-on-inverse-body)}
+#ro-sv .sv-hero .ro-btn{margin-top:36px}
+
+/* ---------- INTRO ---------- */
+#ro-sv .sv-intro{text-align:center}
+#ro-sv .sv-intro .sv-wrap{max-width:720px}
+#ro-sv .sv-intro p{font-size:var(--body-prose-size);line-height:var(--body-prose-line);color:var(--text-body)}
+#ro-sv .sv-intro p + p{margin-top:20px}
+
+/* ---------- SECTION HEAD (kicker / h2 / lede) ---------- */
+#ro-sv .sv-head{max-width:640px;margin:0 auto;text-align:center}
+#ro-sv .sv-kicker{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:var(--label-kicker-size);letter-spacing:var(--label-kicker-track);
+  text-transform:uppercase;color:var(--action)}
+#ro-sv .sv-kicker:before{content:"";width:32px;height:2px;background:var(--action);flex-shrink:0}
+#ro-sv .sv-head-lede{
+  margin-top:12px;font-style:italic;
+  font-size:var(--body-prose-size);line-height:var(--body-prose-line);color:var(--text-muted)}
+
+/* ---------- CARD GRIDS ---------- */
+#ro-sv .sv-grid{display:grid;gap:22px;margin-top:48px}
+#ro-sv .sv-grid--4{grid-template-columns:repeat(4,1fr)}
+#ro-sv .sv-grid--2{
+  grid-template-columns:repeat(2,1fr);
+  max-width:820px;margin-left:auto;margin-right:auto}
+
+#ro-sv .sv-card{
+  background:var(--surface-card);border:1px solid var(--border-card);
+  border-radius:var(--radius-5);padding:32px;
+  display:flex;flex-direction:column;gap:12px;
+  transition:box-shadow var(--duration-base) var(--ease-out),
+             transform var(--duration-base) var(--ease-out)}
+#ro-sv .sv-card:hover{box-shadow:var(--shadow-card-sm);transform:translateY(-2px)}
+#ro-sv .sv-card p{
+  font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-muted);flex-grow:1}
+#ro-sv .sv-learn{
+  display:inline-flex;align-items:center;gap:8px;margin-top:4px;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:var(--label-tick-size);letter-spacing:var(--label-tick-track);
+  text-transform:uppercase;color:var(--navy-400);text-decoration:none}
+#ro-sv .sv-learn:hover{color:var(--yellow-600)}
+#ro-sv .sv-arrow{font-size:1.1em;transition:transform var(--duration-fast) var(--ease-out)}
+#ro-sv .sv-learn:hover .sv-arrow{transform:translateX(3px)}
+
+/* ---------- CLOSE ---------- */
+#ro-sv .sv-close{
+  background-color:var(--surface-inverse-deep);
+  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
+                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
+  background-size:var(--blueprint-pitch) var(--blueprint-pitch);
+  border:2px solid var(--border-emphasis);
+  padding:64px 44px;text-align:center;
+  display:flex;flex-direction:column;align-items:center}
+#ro-sv .sv-close h2{color:var(--text-on-inverse);margin:0}
+#ro-sv .sv-close p{
+  margin-top:20px;max-width:56ch;
+  font-size:var(--body-prose-size);line-height:var(--body-prose-line);
+  color:var(--text-on-inverse-body)}
+#ro-sv .sv-close p + p{margin-top:14px}
+#ro-sv .sv-close .ro-btn{margin-top:32px}
+#ro-sv .sv-section:last-of-type{border-bottom:0}
+
+@media (max-width:820px){
+  #ro-sv .sv-grid--4{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  #ro-sv .sv-hero{padding:96px var(--gutter) 64px}
+  #ro-sv .sv-section{padding:64px var(--gutter)}
+  #ro-sv .sv-grid--4{grid-template-columns:1fr}
+  #ro-sv .sv-grid--2{grid-template-columns:1fr}
+  #ro-sv .sv-close{padding:44px 24px}
+}
+
+
+/* ---------- MOBILE NAVIGATION ---------- */
+@media (max-width:1040px){header nav{display:none!important}}
+.ro-navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:46px;height:46px;padding:0 11px;margin-left:6px;flex-shrink:0;
+  background:transparent;border:1px solid var(--border-field);border-radius:var(--radius-1);
+  cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ro-navtoggle span{display:block;height:2px;width:100%;background:var(--navy-700);
+  border-radius:2px;transition:transform var(--duration-fast) var(--ease-out),
+  opacity var(--duration-fast) var(--ease-out)}
+.ro-navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ro-navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.ro-navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.ro-mnav{display:none}
+.ro-mnav[hidden]{display:none}
+
+@media (max-width:1040px){
+  .ro-navtoggle{display:flex}
+  .ro-mnav:not([hidden]){display:flex;flex-direction:column;
+    background:var(--white);border-bottom:1px solid var(--border-card);
+    box-shadow:var(--shadow-nav);padding:12px var(--space-4) 20px}
+  .ro-mnav a{display:flex;align-items:center;min-height:52px;padding:0 8px;
+    font-family:var(--font-display);font-weight:var(--weight-regular);
+    font-size:var(--display-nav-size);letter-spacing:var(--display-nav-track);
+    color:var(--navy-700);text-decoration:none;
+    border-bottom:1px solid var(--hairline-dark-soft)}
+  .ro-mnav a:last-child{border-bottom:0}
+  .ro-mnav a:active{background:var(--grey-100)}
+  .ro-mnav .ro-mnav-cta{justify-content:center;min-height:54px;margin-bottom:8px;padding:0 20px;
+    background:var(--action);color:var(--action-label);border-bottom:0;
+    font-family:var(--font-condensed);font-weight:var(--weight-bold);
+    font-size:var(--label-cta-sm-size);letter-spacing:var(--label-cta-sm-track);
+    text-transform:uppercase}
+  .ro-mnav .ro-mnav-call{justify-content:center;min-height:54px;margin-bottom:10px;padding:0 20px;
+    border:1px solid var(--yellow-line-45);border-bottom:1px solid var(--yellow-line-45);
+    background:var(--yellow-tint-06);color:var(--navy-700);
+    font-family:var(--font-condensed);font-weight:var(--weight-bold);
+    font-size:var(--label-cta-sm-size);letter-spacing:var(--label-cta-sm-track);
+    text-transform:uppercase}
+}
+@media (max-width:640px){
+  /* the header CTA moves into the menu so the bar stays uncluttered */
+  header .ro-btn--sm{display:none}
+  /* large CTAs have fixed 48px side padding and nowrap, which overflows
+     narrow phones. Let them breathe and wrap. */
+  .ro-btn--lg,.ro-btn--md{padding-left:var(--space-5);padding-right:var(--space-5);
+    white-space:normal;text-align:center;max-width:100%}
+}
+
+/* ---------- SERVICES DROPDOWN ---------- */
+header{position:relative;z-index:120}
+.ro-dd{position:relative;display:flex;align-items:stretch}
+.ro-dd-t:after{content:"";margin-left:7px;width:0;height:0;
+  border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:5px solid currentColor;opacity:.6;
+  transition:transform var(--duration-fast,.15s) var(--ease-out,ease)}
+.ro-dd[data-open="true"] .ro-dd-t:after{transform:rotate(180deg)}
+.ro-dd-p{display:none;position:absolute;top:100%;left:-14px;z-index:130;
+  min-width:560px;padding:18px 16px 14px;
+  grid-template-columns:1fr 1fr;gap:1px 14px;
+  background:var(--white,#fff);border:1px solid var(--border-card);
+  border-top:3px solid var(--action);box-shadow:0 14px 40px rgba(11,14,26,.16)}
+.ro-dd[data-open="true"] .ro-dd-p{display:grid}
+.ro-dd-p a{display:block;padding:10px 12px;text-decoration:none;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:1rem;letter-spacing:.4px;color:var(--navy-700,#1E3A5F);
+  border-left:2px solid transparent}
+.ro-dd-p a:hover{background:var(--grey-100,#F1F3F7);border-left-color:var(--action)}
+.ro-dd-h{grid-column:1/-1;margin:0 0 6px;padding:0 12px;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:11px;letter-spacing:1.7px;text-transform:uppercase;
+  color:var(--text-muted,#6B7186)}
+.ro-dd-h2{margin-top:14px;padding-top:14px;border-top:1px solid var(--border-card)}
+.ro-dd-all{grid-column:1/-1;margin-top:10px;padding-top:12px!important;
+  border-top:1px solid var(--border-card);color:var(--navy-400,#3A5C8F)!important}
+
+/* The header phone number does not fit once the bar gets narrow. Below 900 the
+   mobile menu carries it instead, as a full-width call button. */
+@media (max-width:900px){header a[href^="tel:"]{display:none!important}}
+
+/* ---------- MOBILE SERVICES ACCORDION ---------- */
+.ro-mnav-acc{display:none}
+.ro-mnav-sub{display:none}
+@media (max-width:1040px){
+  .ro-mnav:not([hidden]) .ro-mnav-acc{display:flex;align-items:center;
+    justify-content:space-between;width:100%;min-height:52px;padding:0 8px;
+    background:none;border:0;border-bottom:1px solid var(--hairline-dark-soft);
+    font-family:var(--font-display);font-weight:var(--weight-regular);
+    font-size:var(--display-nav-size);letter-spacing:var(--display-nav-track);
+    color:var(--navy-700);text-align:left;cursor:pointer;
+    -webkit-tap-highlight-color:transparent}
+  .ro-mnav-acc:after{content:"+";font-family:var(--font-condensed);
+    font-size:1.4rem;color:var(--action)}
+  .ro-mnav-acc[aria-expanded="true"]:after{content:"\2212"}
+  .ro-mnav-sub:not([hidden]){display:flex;flex-direction:column;
+    padding:4px 0 8px 14px;border-left:2px solid var(--action);
+    margin:8px 0 10px}
+  .ro-mnav-sub a{min-height:46px;font-family:var(--font-condensed)!important;
+    font-weight:var(--weight-bold)!important;font-size:1.02rem!important;
+    letter-spacing:.4px!important;border-bottom:0!important}
+}
+
+#ro-sv .sv-aud-line{margin-top:20px!important;padding-top:16px;border-top:1px solid var(--border-card);
+  font-size:var(--body-mid-size)!important;color:var(--text-muted)!important}
+#ro-sv .sv-aud-line a{color:var(--navy-400);text-decoration:underline}
+#ro-sv .sv-intro a{color:var(--navy-400);text-decoration:underline}
+#ro-sv .sv-diag{list-style:none;margin:20px 0 24px;padding:0;display:flex;flex-direction:column;gap:14px}
+#ro-sv .sv-diag li{position:relative;padding-left:27px;max-width:66ch;
+  font-size:var(--body-mid-size);line-height:var(--body-mid-line);color:var(--text-body)}
+#ro-sv .sv-diag li:before{content:"\2192";position:absolute;left:0;top:0;
+  color:var(--action);font-weight:var(--weight-bold)}
+#ro-sv .sv-diag a{color:var(--navy-400);text-decoration:underline}
+#ro-sv .sv-close-alt{margin-top:22px!important;font-size:var(--body-mid-size)!important;
+  color:var(--text-muted)!important}
+#ro-sv .sv-close-alt a{color:var(--navy-400);text-decoration:underline}
+#ro-sv .sv-grid--5{grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
+
+#ro-sv .sv-close .sv-diag li{color:var(--text-on-inverse-body)}
+#ro-sv .sv-close .sv-diag strong{color:var(--text-on-inverse)}
+#ro-sv .sv-close .sv-diag a{color:var(--action)!important;text-decoration:underline}
+#ro-sv .sv-close .sv-close-alt{color:var(--text-on-inverse-muted)!important}
+#ro-sv .sv-close .sv-close-alt a{color:var(--action)!important;text-decoration:underline}
+#ro-sv .sv-close p{color:var(--text-on-inverse-body)}
+#ro-sv .sv-grid--4{grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr))}
+
+/* ==========================================================================
+   /grow-your-practice/ -- pillar page. Scoped to #ro-gp.
+   ========================================================================== */
+#ro-gp{font-family:var(--font-body);color:var(--text-body)}
+#ro-gp *{box-sizing:border-box}
+#ro-gp .gp-wrap{max-width:var(--container-prose);margin:0 auto}
+#ro-gp .gp-section{padding:var(--section-y) var(--gutter)}
+#ro-gp .gp-soft{background:var(--surface-alt);
+  border-top:1px solid var(--border-card);border-bottom:1px solid var(--border-card)}
+#ro-gp p{margin:0}
+#ro-gp strong{color:var(--text-display)}
+#ro-gp a{color:var(--navy-400);text-decoration:underline}
+#ro-gp a:hover{color:var(--yellow-600)}
+
+#ro-gp .gp-crumb{display:flex;align-items:center;gap:10px;margin:0 0 24px;flex-wrap:wrap;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:var(--label-tick-size);letter-spacing:var(--label-tick-track);
+  text-transform:uppercase;color:var(--text-on-inverse-muted)}
+#ro-gp .gp-crumb a{color:var(--text-on-inverse-muted);text-decoration:none}
+#ro-gp .gp-crumb a:hover{color:var(--action)}
+
+#ro-gp .gp-hero{
+  background-color:var(--surface-inverse);
+  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
+                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
+  background-size:var(--blueprint-pitch) var(--blueprint-pitch);
+  padding:110px var(--gutter) 88px}
+#ro-gp .gp-eyebrow{margin:0 0 16px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+#ro-gp .gp-hero h1{margin:0;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:clamp(2.4rem,6vw,4.4rem);
+  line-height:1;letter-spacing:-.4px;color:var(--text-on-inverse);max-width:17ch}
+#ro-gp .gp-lede{margin:24px 0 34px;max-width:60ch;font-size:1.14rem;line-height:1.62;
+  color:var(--text-on-inverse-body)}
+
+#ro-gp h2{margin:0 0 14px;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:clamp(1.9rem,4vw,2.9rem);
+  line-height:1.04;letter-spacing:.6px;color:var(--text-display);max-width:20ch}
+#ro-gp .gp-kicker{margin:0 0 12px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+#ro-gp .gp-sub{margin-bottom:34px!important;color:var(--text-muted)!important;
+  font-size:var(--body-mid-size)!important}
+#ro-gp .gp-section > .gp-wrap > p{font-size:var(--body-prose-size);
+  line-height:var(--body-prose-line);color:var(--text-body)}
+#ro-gp .gp-section > .gp-wrap > p + p{margin-top:17px}
+#ro-gp .gp-lead{font-size:clamp(1.3rem,2.6vw,1.75rem)!important;line-height:1.4!important;
+  color:var(--text-display)!important;margin-bottom:10px;max-width:22ch!important}
+
+#ro-gp .gp-note{margin-top:28px;padding:22px 24px;background:var(--surface-alt);
+  border-left:3px solid var(--action)}
+#ro-gp .gp-soft .gp-note{background:var(--surface-card)}
+#ro-gp .gp-note p{font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-muted)}
+
+/* ---------- ASSET BLOCKS ---------- */
+#ro-gp .gp-asset{padding:30px 30px;margin-bottom:18px;background:var(--surface-card);
+  border:1px solid var(--border-card);border-left:3px solid var(--action)}
+#ro-gp .gp-soft .gp-asset{background:var(--white,#fff)}
+#ro-gp .gp-asset:last-child{margin-bottom:0}
+#ro-gp .gp-asset-h{display:flex;align-items:flex-start;gap:18px;margin-bottom:14px}
+#ro-gp .gp-n{flex-shrink:0;width:40px;height:40px;display:flex;align-items:center;
+  justify-content:center;background:var(--surface-inverse);color:var(--action);
+  font-family:var(--font-display);font-size:19px;line-height:1;letter-spacing:.5px}
+#ro-gp .gp-asset h3{margin:0;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:1.55rem;line-height:1.12;
+  letter-spacing:.3px;color:var(--text-display)}
+#ro-gp .gp-asset p{font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-body)}
+#ro-gp .gp-asset p + p{margin-top:13px}
+#ro-gp .gp-go{margin-top:16px!important;padding-top:14px;
+  border-top:1px solid var(--border-card);color:var(--text-muted)!important}
+
+/* ---------- INVENTORY ---------- */
+#ro-gp .gp-inventory{margin-top:34px;padding:36px 34px;
+  background-color:var(--surface-inverse-deep);
+  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
+                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
+  background-size:var(--blueprint-pitch) var(--blueprint-pitch);
+  border:2px solid var(--action)}
+#ro-gp .gp-inv-tag{margin:0 0 14px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+#ro-gp .gp-inventory p{font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-on-inverse-body)}
+#ro-gp .gp-inventory strong{color:var(--text-on-inverse)}
+#ro-gp .gp-inventory ol{margin:20px 0 0;padding-left:22px;
+  display:flex;flex-direction:column;gap:12px}
+#ro-gp .gp-inventory li{font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-on-inverse-body)}
+#ro-gp .gp-inventory li::marker{color:var(--action);font-weight:700}
+#ro-gp .gp-inv-close{margin-top:24px!important;padding-top:18px;
+  border-top:1px solid var(--border-emphasis)}
+
+/* ---------- CLOSE ---------- */
+#ro-gp .gp-close{padding:44px 40px;background:var(--surface-card);
+  border:1px solid var(--border-card);border-left:3px solid var(--action)}
+#ro-gp .gp-close h2{margin-bottom:16px}
+#ro-gp .gp-close p{font-size:var(--body-prose-size);
+  line-height:var(--body-prose-line);color:var(--text-body)}
+#ro-gp .gp-close .ro-btn{margin-top:26px}
+#ro-gp .gp-close-alt{margin-top:22px!important;color:var(--text-muted)!important;
+  font-size:var(--body-mid-size)!important}
+
+@media (max-width:640px){
+  #ro-gp .gp-hero{padding:82px var(--gutter) 62px}
+  #ro-gp .gp-section{padding:58px var(--gutter)}
+  #ro-gp .gp-asset{padding:24px 22px}
+  #ro-gp .gp-asset-h{gap:14px}
+  #ro-gp .gp-inventory{padding:26px 22px}
+  #ro-gp .gp-close{padding:30px 24px}
+}
+
+.ro-dd-start{grid-column:1/-1;margin-bottom:10px;padding-bottom:12px!important;border-bottom:1px solid var(--border-card);color:var(--navy-700)!important}
+
+/* ==========================================================================
+   /demo/ -- paid-traffic landing page. Scoped to #ro-lp.
+   Stripped header, calendar in the hero, no exits except the booking.
+   ========================================================================== */
+#ro-lp{font-family:var(--font-body);color:var(--text-body)}
+#ro-lp *{box-sizing:border-box}
+#ro-lp .lp-wrap{max-width:var(--container-wide,1100px);margin:0 auto}
+#ro-lp .lp-section{padding:86px var(--gutter)}
+#ro-lp .lp-soft{background:var(--surface-alt);
+  border-top:1px solid var(--border-card);border-bottom:1px solid var(--border-card)}
+#ro-lp p{margin:0}
+#ro-lp strong{color:var(--text-display)}
+#ro-lp a{color:var(--navy-400)}
+#ro-lp .ro-btn{text-decoration:none!important}
+
+/* ---------- HERO WITH BOOKER ---------- */
+#ro-lp .lp-hero{position:relative;overflow:hidden;
+  background-color:var(--surface-inverse);
+  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
+                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
+  background-size:var(--blueprint-pitch) var(--blueprint-pitch);
+  padding:56px var(--gutter) 72px}
+/* a soft light behind the booker so the white card reads as lifted, not pasted */
+#ro-lp .lp-hero:before{content:"";position:absolute;top:-160px;right:-140px;
+  width:620px;height:620px;pointer-events:none;
+  background:radial-gradient(circle,rgba(247,198,0,0.13) 0%,rgba(247,198,0,0) 66%)}
+#ro-lp .lp-split{position:relative;display:grid;gap:44px;align-items:start;
+  grid-template-columns:minmax(0,1fr) minmax(0,468px)}
+#ro-lp .lp-eyebrow{margin:0 0 16px;padding-bottom:14px;
+  border-bottom:1px solid var(--border-emphasis);display:inline-block;
+  font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+#ro-lp .lp-hero h1{margin:0;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:clamp(2.1rem,3.6vw,3.35rem);
+  line-height:1.02;letter-spacing:-.2px;color:var(--text-on-inverse)}
+#ro-lp .lp-lede{margin-top:18px;font-size:1.2rem;line-height:1.5;color:var(--action)}
+#ro-lp .lp-body{margin-top:16px;max-width:56ch;font-size:1.02rem;line-height:1.62;
+  color:var(--text-on-inverse-body)}
+#ro-lp .lp-bullets{list-style:none;margin:26px 0 0;padding:0;
+  display:flex;flex-direction:column;gap:14px}
+#ro-lp .lp-bullets li{position:relative;padding-left:30px;max-width:58ch;
+  font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-on-inverse-body)}
+#ro-lp .lp-bullets li:before{content:"\2713";position:absolute;left:0;top:0;
+  color:var(--action);font-weight:var(--weight-bold)}
+#ro-lp .lp-bullets strong{color:var(--text-on-inverse)}
+#ro-lp .lp-trust{margin-top:28px;padding-top:20px;
+  border-top:1px solid var(--border-emphasis);max-width:58ch;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:.86rem;letter-spacing:1.1px;text-transform:uppercase;line-height:1.7;
+  color:var(--text-on-inverse-muted)}
+
+/* ---------- THE BOOKER ---------- */
+#ro-lp .lp-booker{background:var(--white,#fff);border:1px solid var(--border-card);
+  border-top:5px solid var(--action);
+  box-shadow:0 0 0 1px rgba(247,198,0,0.22),0 30px 80px -30px rgba(0,0,0,0.6);
+  padding:24px 22px 18px;position:sticky;top:16px}
+#ro-lp .lp-booker-head{margin-bottom:18px;padding-bottom:16px;
+  border-bottom:1px solid var(--border-card)}
+#ro-lp .lp-booker-tag{margin:0 0 9px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--yellow-600)}
+#ro-lp .lp-booker-h{font-family:var(--font-display);font-weight:var(--weight-regular);
+  font-size:1.58rem;line-height:1.08;letter-spacing:.3px;color:var(--text-display)}
+#ro-lp .lp-booker-p{margin-top:9px;font-size:var(--body-mid-size);
+  line-height:var(--body-mid-line);color:var(--text-muted)}
+#ro-lp .lp-cal{width:100%;min-height:620px;overflow:auto}
+#ro-lp .lp-booker-alt{margin-top:14px;padding-top:14px;
+  border-top:1px solid var(--border-card);text-align:center;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:.9rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-muted)}
+
+/* ---------- SECTIONS ---------- */
+/* the section rule below targets `.lp-wrap > p`, which the kicker is, so these
+   selectors have to out-specify it rather than merely follow it */
+#ro-lp .lp-section > .lp-wrap > p.lp-kicker{margin:0 0 14px;
+  display:flex;align-items:center;gap:12px;max-width:none;
+  font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);line-height:1.2;
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--yellow-600)}
+#ro-lp .lp-kicker:before{content:"";width:28px;height:2px;background:var(--action);flex:none}
+#ro-lp .lp-dark > .lp-wrap > p.lp-kicker{color:var(--action)}
+#ro-lp h2{margin:0 0 20px;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:clamp(1.85rem,3.6vw,2.75rem);
+  line-height:1.05;letter-spacing:.5px;color:var(--text-display);max-width:22ch}
+#ro-lp .lp-section > .lp-wrap > p{font-size:var(--body-prose-size);
+  line-height:var(--body-prose-line);color:var(--text-body);max-width:66ch}
+#ro-lp .lp-close-line{margin-top:26px!important;padding-left:18px;
+  border-left:3px solid var(--action);
+  font-size:1.1rem!important;line-height:1.55!important;color:var(--text-display)!important}
+#ro-lp .lp-jump{margin-top:32px}
+
+/* ---------- STATS ---------- */
+#ro-lp .lp-stats{display:grid;gap:18px;margin:32px 0;
+  grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))}
+#ro-lp .lp-stat{display:flex;flex-direction:column;padding:26px 24px;
+  background:var(--surface-card);border:1px solid var(--border-card);
+  border-top:3px solid var(--action);box-shadow:var(--shadow-card-sm)}
+#ro-lp .lp-fig{display:block;margin-bottom:12px;padding-bottom:12px;
+  border-bottom:1px solid var(--border-card);
+  font-family:var(--font-display);font-size:3rem;line-height:1;letter-spacing:.5px;
+  color:var(--text-display)}
+#ro-lp .lp-lab{font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-body)}
+#ro-lp .lp-count{margin-top:8px;padding:28px 30px;background:var(--surface-alt);
+  border-left:3px solid var(--action);max-width:70ch}
+#ro-lp .lp-count p{font-size:var(--body-prose-size);line-height:var(--body-prose-line)}
+#ro-lp .lp-count p + p{margin-top:14px}
+
+/* ---------- DARK SECTIONS ---------- */
+#ro-lp .lp-dark{
+  background-color:var(--surface-inverse);
+  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
+                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
+  background-size:var(--blueprint-pitch) var(--blueprint-pitch)}
+#ro-lp .lp-dark h2{color:var(--text-on-inverse)}
+#ro-lp .lp-dark .lp-section > .lp-wrap > p,#ro-lp .lp-dark-p{
+  color:var(--text-on-inverse-body)!important}
+#ro-lp .lp-dark strong{color:var(--text-on-inverse)}
+#ro-lp .lp-dark-p{font-size:var(--body-prose-size);line-height:var(--body-prose-line);max-width:66ch}
+#ro-lp .lp-dark-p + .lp-dark-p{margin-top:15px}
+#ro-lp .lp-proof{display:grid;gap:18px;margin:30px 0 24px;
+  grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
+#ro-lp .lp-pnum{display:flex;flex-direction:column;padding:26px 22px;
+  background:rgba(255,255,255,.05);border:1px solid var(--border-emphasis);
+  border-top:4px solid var(--action)}
+/* the revenue number is the one that matters, so it gets the solid fill */
+#ro-lp .lp-pnum--hero{background:var(--action);border-color:var(--action)}
+#ro-lp .lp-pnum--hero .lp-fig2{color:var(--navy-1000)}
+#ro-lp .lp-pnum--hero .lp-plab{color:var(--navy-900)}
+#ro-lp .lp-fig2{display:block;margin-bottom:10px;font-family:var(--font-display);
+  font-size:clamp(2.4rem,4.4vw,3.4rem);line-height:.95;color:var(--action)}
+#ro-lp .lp-plab{font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:.94rem;letter-spacing:1.3px;text-transform:uppercase;line-height:1.45;
+  color:var(--text-on-inverse-body)}
+/* readable on the blueprint fill: panel, not a whisper */
+#ro-lp .lp-caveat{max-width:74ch;padding:20px 24px;
+  background:rgba(255,255,255,.06);border-left:3px solid var(--action);
+  font-size:1rem!important;line-height:1.65!important;
+  color:var(--text-on-inverse-body)!important}
+#ro-lp .lp-oblig{margin:22px 0;padding-left:22px;display:flex;flex-direction:column;gap:14px;max-width:66ch}
+#ro-lp .lp-oblig li{font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-on-inverse-body)}
+#ro-lp .lp-oblig li::marker{color:var(--action);font-weight:700}
+
+/* ---------- CARDS ---------- */
+/* four channels, so a fixed 2x2 rather than auto-fit -- three across leaves a
+   single orphan card on the second row */
+#ro-lp .lp-cards{display:grid;gap:20px;margin-top:32px;
+  grid-template-columns:repeat(2,minmax(0,1fr))}
+#ro-lp .lp-card{display:flex;flex-direction:column;padding:28px 26px;
+  background:var(--surface-card);border:1px solid var(--border-card);
+  border-top:3px solid var(--action);box-shadow:var(--shadow-card-sm)}
+#ro-lp .lp-cn{display:block;margin-bottom:12px;font-family:var(--font-display);
+  font-size:1.35rem;line-height:1;letter-spacing:1.6px;color:var(--yellow-600)}
+#ro-lp .lp-card h3{margin:0 0 10px;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:1.45rem;line-height:1.12;
+  letter-spacing:.3px;color:var(--text-display)}
+#ro-lp .lp-card p{font-size:var(--body-mid-size);line-height:var(--body-mid-line);color:var(--text-body)}
+#ro-lp .lp-card-tag{margin-top:auto!important;padding-top:14px;
+  border-top:1px solid var(--border-card);
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:.86rem;letter-spacing:1.1px;text-transform:uppercase;color:var(--yellow-600)!important}
+#ro-lp .lp-card p + .lp-card-tag{margin-top:auto!important}
+
+/* ---------- FOLLOW-UP: LIMITS AND TRANSCRIPT, SIDE BY SIDE ---------- */
+/* transcript first (it does the persuading), guardrails alongside it as a
+   top-aligned sidebar so the shorter panel reads as deliberate, not truncated */
+#ro-lp .lp-fu{display:grid;gap:26px;margin-top:34px;align-items:start;
+  grid-template-columns:minmax(0,1fr) minmax(0,0.82fr)}
+#ro-lp .lp-fu .lp-chat{order:1}
+#ro-lp .lp-fu .lp-never{order:2}
+
+#ro-lp .lp-never{display:flex;flex-direction:column;padding:30px 28px;
+  background-color:var(--surface-inverse-deep);
+  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
+                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
+  background-size:var(--blueprint-pitch) var(--blueprint-pitch);
+  border:1px solid var(--border-emphasis);border-top:4px solid var(--action)}
+#ro-lp .lp-never-tag{margin:0 0 18px;padding-bottom:16px;
+  border-bottom:1px solid var(--border-emphasis);
+  font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+/* flex:1 + space-between lets the panel match the transcript's height without
+   leaving a dead block of navy at the bottom */
+#ro-lp .lp-never ul{list-style:none;margin:0;padding:0;
+  display:flex;flex-direction:column;gap:15px}
+#ro-lp .lp-never li{position:relative;padding-left:30px;padding-bottom:15px;
+  border-bottom:1px solid rgba(247,198,0,0.14);
+  font-size:var(--body-mid-size);line-height:var(--body-mid-line);color:var(--text-on-inverse-body)}
+#ro-lp .lp-never li:last-child{padding-bottom:0;border-bottom:0}
+#ro-lp .lp-never li:before{content:"\2715";position:absolute;left:0;top:0;
+  color:var(--action);font-weight:var(--weight-bold);font-size:.86em;line-height:1.7}
+#ro-lp .lp-never strong{color:var(--text-on-inverse)}
+
+/* ---------- CHAT ---------- */
+#ro-lp .lp-chat{display:flex;flex-direction:column;background:var(--white,#fff);
+  border:1px solid var(--border-card);border-top:4px solid var(--navy-700);
+  box-shadow:var(--shadow-card-sm);overflow:hidden}
+#ro-lp .lp-chat-bar{display:flex;align-items:center;gap:9px;
+  padding:14px 22px;background:var(--surface-inverse-deep);
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:var(--label-kicker-size);letter-spacing:var(--label-kicker-track);
+  text-transform:uppercase;color:var(--text-on-inverse)}
+#ro-lp .lp-chat-dot{width:8px;height:8px;flex:none;border-radius:50%;
+  background:#3DDC84;box-shadow:0 0 0 3px rgba(61,220,132,.22)}
+#ro-lp .lp-thread{flex:1;display:flex;flex-direction:column;gap:12px;padding:22px 22px 18px}
+#ro-lp .lp-msg{max-width:88%;padding:13px 16px}
+#ro-lp .lp-msg--in{background:var(--grey-100,#F1F3F7);
+  border-radius:12px 12px 12px 2px;align-self:flex-start}
+#ro-lp .lp-msg--out{align-self:flex-end;background:var(--yellow-tint-10);
+  border:1px solid var(--yellow-line-30);border-radius:12px 12px 2px 12px}
+#ro-lp .lp-meta{display:block;margin-bottom:6px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:.78rem;letter-spacing:1px;
+  text-transform:uppercase;color:var(--text-muted)}
+#ro-lp .lp-msg p{font-size:.97rem;line-height:1.55;color:var(--text-body)}
+#ro-lp .lp-booked{margin-top:auto;padding:14px 16px;background:var(--surface-inverse);
+  color:var(--action);font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:.92rem;letter-spacing:1.2px;text-transform:uppercase;text-align:center}
+
+/* ---------- CHECKS / FIT ---------- */
+#ro-lp .lp-checks{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
+#ro-lp .lp-checks li{position:relative;padding-left:30px;max-width:66ch;
+  font-size:var(--body-mid-size);line-height:var(--body-mid-line);color:var(--text-body)}
+#ro-lp .lp-checks li:before{content:"\2713";position:absolute;left:0;top:0;
+  color:var(--action);font-weight:var(--weight-bold)}
+#ro-lp .lp-fit{display:grid;gap:22px;margin-top:30px;align-items:stretch;
+  grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))}
+#ro-lp .lp-fit-col{padding:30px 28px;background:var(--white,#fff);
+  border:1px solid var(--border-card);box-shadow:var(--shadow-card-sm)}
+#ro-lp .lp-fit-col--yes{border-top:3px solid var(--action)}
+#ro-lp .lp-fit-col--no{border-top:3px solid var(--grey-400)}
+#ro-lp .lp-fit-tag{margin:0 0 18px;padding-bottom:14px;
+  border-bottom:1px solid var(--border-card);
+  font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--yellow-600)}
+#ro-lp .lp-fit-col--no .lp-fit-tag{color:var(--text-muted)}
+#ro-lp .lp-fit ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px}
+#ro-lp .lp-fit li{position:relative;padding-left:30px;
+  font-size:var(--body-mid-size);line-height:var(--body-mid-line);color:var(--text-body)}
+#ro-lp .lp-yes li:before{content:"\2713";position:absolute;left:0;top:0;color:var(--action);font-weight:700}
+#ro-lp .lp-no li:before{content:"\2715";position:absolute;left:0;top:0;color:var(--text-muted);font-weight:700;font-size:.86em;line-height:1.7}
+#ro-lp .lp-ask{margin-top:30px!important;padding:24px 26px;background:var(--white,#fff);
+  border-left:3px solid var(--action);box-shadow:var(--shadow-card-sm);
+  font-size:1.08rem!important;line-height:1.55!important;
+  color:var(--text-display)!important;max-width:70ch}
+
+/* ---------- FINAL ---------- */
+#ro-lp .lp-final{background:var(--surface-alt);border-top:1px solid var(--border-card);text-align:center}
+#ro-lp .lp-final h2{margin-left:auto;margin-right:auto;max-width:20ch}
+#ro-lp .lp-final > .lp-wrap > p{margin-left:auto;margin-right:auto;max-width:60ch}
+#ro-lp .lp-final-alt{margin-top:22px!important;font-size:var(--body-mid-size)!important;
+  color:var(--text-muted)!important}
+
+/* header CTA lives outside #ro-lp, and every header element is inline-styled,
+   so overriding it needs !important */
+.lp-hdr-cta:hover{background:#E0B300!important}
+@media (max-width:700px){
+  /* the booker is the first thing on the page at this width, so the header
+     button is redundant and only creates an overflow risk */
+  .lp-hdr-cta{display:none!important}
+}
+
+@media (max-width:980px){
+  #ro-lp .lp-split{grid-template-columns:1fr;gap:34px}
+  #ro-lp .lp-booker{position:static;order:2}
+  #ro-lp .lp-copy{order:1}
+  #ro-lp .lp-fu{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  #ro-lp .lp-cards{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  #ro-lp .lp-hero{padding:36px var(--gutter) 48px}
+  #ro-lp .lp-section{padding:58px var(--gutter)}
+  #ro-lp .lp-cal{min-height:560px}
+  #ro-lp .lp-msg{max-width:100%}
+  #ro-lp .lp-never,#ro-lp .lp-fit-col{padding:24px 22px}
+  #ro-lp .lp-thread{padding:18px 18px 14px}
+  #ro-lp .lp-count{padding:24px 22px}
+}
+</style>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Cheapest Appointment You Will Ever Book Is With Someone You Have Already Treated">
+<meta name="twitter:description" content="You paid to acquire them once. Reaching them again costs almost nothing.">
+<meta name="twitter:image" content="https://rankingout.com/og.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Free 20-minute session","url":"https://rankingout.com/demo/","description":"A free 20-minute session for private practice PT and chiropractic owners: what the dormant patient list is worth, where the practice shows up locally, and which is worth more to fix first.","isPartOf":{"@type":"WebSite","name":"Ranking Out","url":"https://rankingout.com/"},"publisher":{"@id":"https://rankingout.com/#business"}}</script>
+<!-- ===================================================================
+     META PIXEL - 946704693191227
+     Supplied 21 Aug 2026. The guard below refuses to initialise on
+     anything that is not a plain numeric ID, so a bad paste fails
+     quietly rather than throwing on the page.
+     =================================================================== -->
+<script>
+(function(){
+  var PIXEL_ID = '946704693191227';
+  if (!/^\d{10,20}$/.test(PIXEL_ID)) return;   // guard: only fire on a real numeric ID
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
+})();
+</script>
+</head>
+<body>
+<div style="font-family:Figtree,-apple-system,sans-serif;background:#FFFFFF">
+
+<header style="height:74px;background:#FFFFFF;box-shadow:0 1px 8px rgba(0,0,0,0.08);display:flex;justify-content:center;box-sizing:border-box">
+<div style="width:100%;max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-sizing:border-box">
+<a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="26" height="25" style="height:26px;display:block" role="img" aria-label="Ranking Out"><g fill="#1E3A5F"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:27px;letter-spacing:1.4px;color:#0B0E1A">Ranking<span style="color:#F7C600"> Out</span></span></a>
+<a href="#book" class="lp-hdr-cta" style="display:inline-block;padding:11px 20px;background:#F7C600;color:#0B0E1A;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:1.4px;text-transform:uppercase;white-space:nowrap">Book Your Free Session</a>
+</div>
+</header>
+<div id="ro-lp">
+
+<section class="lp-hero">
+  <div class="lp-wrap lp-split">
+    <div class="lp-copy">
+      <p class="lp-eyebrow">For private practice PT &amp; chiropractic owners</p>
+      <h1>The Cheapest Appointment You Will Ever Book Is With Someone You Have Already Treated</h1>
+      <p class="lp-lede">You paid to acquire them once. Reaching them again costs almost nothing.</p>
+      <p class="lp-body">Ranking Out brings past patients back from the list already in your EMR, answers every new enquiry within minutes, and fills the gaps referrals used to fill. Built only for physical therapy and chiropractic practices.</p>
+      <ul class="lp-bullets">
+        <li><strong>The enquiry at 11pm is booked before Monday.</strong> Not chased on Tuesday, when they have already called somebody else.</li>
+        <li><strong>Past patients come back from the list you already own.</strong> No ad spend, no waiting on rankings, no new traffic required.</li>
+        <li><strong>Cold campaigns fill the gaps referrals used to fill</strong>, without depending on a physician remembering your name.</li>
+        <li><strong>You will know what a patient actually costs you</strong>, which is the number that makes every other decision obvious.</li>
+      </ul>
+      <p class="lp-trust">Private practice owners only &middot; We verify every practice &middot; Built for healthcare communication, with a business associate agreement in place</p>
+    </div>
+
+    <div class="lp-booker" id="book">
+      <div class="lp-booker-head">
+        <p class="lp-booker-tag">Free 20-minute session</p>
+        <p class="lp-booker-h">See what your practice is leaving on the table</p>
+        <p class="lp-booker-p">Pick a time. Most of it is about your numbers, not our product.</p>
+      </div>
+      <div id="my-cal-inline-meeting" class="lp-cal"></div>
+      <p class="lp-booker-alt">No obligation, and nothing to prepare</p>
+    </div>
+  </div>
+</section>
+
+<section class="lp-section">
+  <div class="lp-wrap">
+    <p class="lp-kicker">The problem</p>
+    <h2>Most Owners Are Marketing Reactively, And Losing More Than They Realise</h2>
+    <p>The referral model is thinning out. Enquiries arrive and go unanswered for a day and a half. And the database of everyone you have ever treated sits untouched while you pay to attract strangers.</p>
+    <div class="lp-stats">
+      <div class="lp-stat"><span class="lp-fig">97%</span><span class="lp-lab">of clinics report reduced physician referrals. The bring-donuts-to-doctors era is over.</span></div>
+      <div class="lp-stat"><span class="lp-fig">7</span><span class="lp-lab">touches the average enquiry needs before it is reached. Most clinics have no follow-up system at all.</span></div>
+      <div class="lp-stat"><span class="lp-fig">5x</span><span class="lp-lab">more expensive to acquire a new patient than to bring back one who already knows you.</span></div>
+    </div>
+    <div class="lp-count">
+      <p><strong>Then open your practice management system and count.</strong> How many people did you discharge in the last three years who have not been back? In a practice of any age it is hundreds. Often thousands.</p>
+      <p>Every one of them already trusts you, already knows where you are, and costs almost nothing to reach.</p>
+    </div>
+    <p class="lp-close-line">The clinics that grow predictably are not grinding harder. <strong>They are working the asset they already own before they buy another one.</strong></p>
+  </div>
+</section>
+
+<section class="lp-section lp-dark">
+  <div class="lp-wrap">
+    <p class="lp-kicker">Proof</p>
+    <h2>What The Work Has Produced</h2>
+    <div class="lp-proof">
+      <div class="lp-pnum"><span class="lp-fig2">126%</span><span class="lp-plab">increase in website traffic</span></div>
+      <div class="lp-pnum"><span class="lp-fig2">40</span><span class="lp-plab">patient appointments a month</span></div>
+      <div class="lp-pnum"><span class="lp-fig2">22</span><span class="lp-plab">booked from one workshop</span></div>
+      <div class="lp-pnum lp-pnum--hero"><span class="lp-fig2">$22k</span><span class="lp-plab">from that single afternoon</span></div>
+    </div>
+    <p class="lp-caveat">What happens in your practice depends on your market, your list and your offer, and we will give you a realistic range on the call rather than these numbers.</p>
+  </div>
+</section>
+
+<section class="lp-section">
+  <div class="lp-wrap">
+    <p class="lp-kicker">How it works</p>
+    <h2>One System. Three Growth Channels.</h2>
+    <p>Most practices run marketing reactively: one-off campaigns, manual follow-up, crossed fingers. Ranking Out runs all three in the background while you treat patients.</p>
+    <div class="lp-cards">
+      <div class="lp-card">
+        <span class="lp-cn">01</span>
+        <h3>Past patient reactivation</h3>
+        <p>The best source of appointments in your practice is already in your EMR. Personalised messages at scale restart conversations and bring patients back at a fraction of the cost of advertising for new ones.</p>
+        <p class="lp-card-tag">Lowest cost per patient of anything you can run</p>
+      </div>
+      <div class="lp-card">
+        <span class="lp-cn">02</span>
+        <h3>New patient acquisition</h3>
+        <p>Local campaigns that reach people who have the problem and have not started searching yet. Built around offers specific to physical therapy and chiropractic, not a generalist template.</p>
+        <p class="lp-card-tag">Ends the dependency on somebody remembering you</p>
+      </div>
+      <div class="lp-card">
+        <span class="lp-cn">03</span>
+        <h3>Follow-up that never sleeps</h3>
+        <p>The enquiry that arrives at 11pm on a Friday gets an answer in under two minutes, gets its questions answered, and is booked before your front desk opens on Monday.</p>
+        <p class="lp-card-tag">The patients you were already losing, kept</p>
+      </div>
+      <div class="lp-card">
+        <span class="lp-cn">04</span>
+        <h3>Reporting you can act on</h3>
+        <p>Every campaign, every dollar, every patient in one place. Not to admire, but so you finally know what a patient costs you and what one is worth.</p>
+        <p class="lp-card-tag">No more guessing what is working</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-section lp-soft">
+  <div class="lp-wrap">
+    <p class="lp-kicker">The automated follow-up</p>
+    <h2>Every Enquiry Gets Answered. Every Time.</h2>
+    <p>A new enquiry at midnight on a Friday gets a reply in under two minutes, handles the back and forth, and books the appointment before Monday. Nothing goes cold over a weekend.</p>
+
+    <div class="lp-fu">
+      <div class="lp-never">
+        <p class="lp-never-tag">And here is what it will never do</p>
+        <ul>
+          <li><strong>It does not give clinical advice, and it does not try.</strong></li>
+          <li>Anything describing symptoms, urgency or distress <strong>routes to a person immediately</strong>.</li>
+          <li>It answers questions about hours, insurance, location and availability, and it books appointments. That is the whole job.</li>
+          <li><strong>You approve every message template</strong> before a single one sends.</li>
+          <li>Recordings and transcripts are set up for healthcare from the start, with a business associate agreement in place.</li>
+        </ul>
+      </div>
+
+      <div class="lp-chat">
+        <div class="lp-chat-bar"><span class="lp-chat-dot"></span>Sample conversation</div>
+        <div class="lp-thread">
+          <div class="lp-msg lp-msg--in"><span class="lp-meta">New enquiry &middot; 11:48 PM</span><p>Hi, I saw your ad on Facebook. I've had lower back pain for 3 months and nothing's worked. Can you help with this?</p></div>
+          <div class="lp-msg lp-msg--out"><span class="lp-meta">11:49 PM</span><p>Yes, that's exactly what we work with. Chronic back pain that hasn't responded to other treatment is one of the most common things we see. Want to come in for a free evaluation so we can take a closer look?</p></div>
+          <div class="lp-msg lp-msg--in"><span class="lp-meta">11:52 PM</span><p>Yeah, I'd be open to that. When can I come in?</p></div>
+          <div class="lp-msg lp-msg--out"><span class="lp-meta">11:52 PM</span><p>We have openings Thursday at 2pm or Friday at 10am. Which works better for you?</p></div>
+          <div class="lp-msg lp-msg--in"><span class="lp-meta">11:54 PM</span><p>Thursday at 2 works.</p></div>
+        </div>
+        <p class="lp-booked">New patient booked &middot; 11:54 PM &middot; Thursday 2:00 PM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-section">
+  <div class="lp-wrap">
+    <p class="lp-kicker">What you will see</p>
+    <h2>This Is Not A Software Walkthrough</h2>
+    <p>Twenty minutes, and most of it is about your practice rather than our product. We will count what is sitting in your list, look at where you show up locally, and tell you which of the two is worth more to fix first.</p>
+    <ul class="lp-checks">
+      <li><strong>What your dormant list is actually worth</strong>, using your own patient value</li>
+      <li>Where you appear across your catchment, and which practices own the areas you lose</li>
+      <li>What a reactivation campaign looks like, from export to booked appointments</li>
+      <li>How the follow-up handles a real enquiry, including the ones it escalates</li>
+      <li><strong>Which one we would start with, and what it would cost</strong></li>
+    </ul>
+    <p class="lp-close-line">If the honest answer is that you do not need us yet, you will hear that instead of a pitch. It happens more often than you would expect.</p>
+    <a href="#book" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow lp-jump">Show Me What My Practice Is Leaving On The Table<span class="ro-btn__arrow">&rarr;</span></a>
+  </div>
+</section>
+
+<section class="lp-section lp-dark">
+  <div class="lp-wrap">
+    <p class="lp-kicker">What we put behind it</p>
+    <h2>Ten Appointments In Thirty Days, Or You Get The $997 Back</h2>
+    <p class="lp-dark-p">No notice period, no penalty, and you keep everything we built.</p>
+    <p class="lp-dark-p"><strong>What we need from you for that to apply.</strong> A guarantee that claims to be unconditional was written by somebody who does not intend to honour it. Three things:</p>
+    <ol class="lp-oblig">
+      <li><strong>At least 300 contactable past patients</strong>, exported within five days.</li>
+      <li><strong>Somebody who keeps the appointments we book.</strong> We book them, your practice has to hold them.</li>
+      <li><strong>A phone that gets answered.</strong> If a patient we booked calls back and reaches voicemail, that is not a campaign result either way.</li>
+    </ol>
+    <p class="lp-dark-p">Hold up your end and if the number does not arrive, that is on us and you should not be paying for it.</p>
+  </div>
+</section>
+
+<section class="lp-section lp-soft">
+  <div class="lp-wrap">
+    <p class="lp-kicker">Is this for you?</p>
+    <h2>Who This Is And Is Not For</h2>
+    <div class="lp-fit">
+      <div class="lp-fit-col lp-fit-col--yes">
+        <p class="lp-fit-tag">This is a fit if</p>
+        <ul class="lp-yes">
+          <li>You own or operate a private practice PT or chiropractic clinic</li>
+          <li>You are tired of the feast-or-famine cycle</li>
+          <li>You want a system running in the background, not another tool to manage</li>
+          <li><strong>You have at least 300 past patients you are not contacting</strong></li>
+          <li>You want outcomes and ROI, not a marketing course</li>
+        </ul>
+      </div>
+      <div class="lp-fit-col lp-fit-col--no">
+        <p class="lp-fit-tag">This is not a fit if</p>
+        <ul class="lp-no">
+          <li>You are hospital-owned (HOPTS) or physician-owned (POPTS)</li>
+          <li><strong>You have fewer than 300 contactable past patients.</strong> Below that the arithmetic does not work and we will tell you on the call rather than take the engagement</li>
+          <li><strong>Your catchment is already taken.</strong> We work with one practice per catchment</li>
+          <li>You want a generalist agency rather than something built only for PT and chiropractic</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lp-ask">Ask any agency you are considering how many prospects they disqualified this year. The answer will tell you more than any case study.</p>
+  </div>
+</section>
+
+<section class="lp-section lp-final">
+  <div class="lp-wrap">
+    <h2>See What Your Practice Is Leaving On The Table</h2>
+    <p>Twenty minutes. We will count your dormant list, look at where you show up locally, and tell you which one is worth more. No obligation, and nothing to prepare.</p>
+    <a href="#book" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow lp-jump">Book My Session<span class="ro-btn__arrow">&rarr;</span></a>
+    <p class="lp-final-alt">Private practice PT and chiropractic owners only.</p>
+  </div>
+</section>
+
+</div>
+<footer style="background:#0B0E1A;padding:34px 24px;border-top:1px solid rgba(247,198,0,0.15)">
+<div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8">
+<span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#8A90A8;text-decoration:none">Privacy Policy</a></span>
+<span><a href="mailto:info@rankingout.com" style="color:#8A90A8;text-decoration:none">info@rankingout.com</a></span>
+</div>
+</footer>
+</div>
+<script type="text/javascript">
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "meeting", {origin:"https://app.cal.com"});
+Cal.config = Cal.config || {};
+Cal.config.forwardQueryParams = true;
+Cal.ns.meeting("inline", {
+  elementOrSelector:"#my-cal-inline-meeting",
+  config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+  calLink: "rankingout/meeting",
+});
+Cal.ns.meeting("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#0F224A"}},"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<script>
+/* ---------------------------------------------------------------
+   Landing page conversion tracking. GA4 always, Meta Pixel when the
+   ID has been filled in. Every call is wrapped so a blocked or absent
+   tag never throws on the page.
+   --------------------------------------------------------------- */
+(function(){
+  function ga(name, params){
+    try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch(e){}
+  }
+  function meta(name, params){
+    try { if (typeof fbq === 'function') fbq('track', name, params || {}); } catch(e){}
+  }
+
+  /* --- the conversion: a completed booking on the Cal.com embed --- */
+  function bindCal(){
+    try {
+      if (!window.Cal || !window.Cal.ns || !window.Cal.ns.meeting) return false;
+      Cal.ns.meeting('on', {action: 'bookingSuccessful', callback: function(){
+        ga('generate_lead', {method:'cal.com', page:'lp_demo', value:1, currency:'USD'});
+        ga('booking_complete', {method:'cal.com', page:'lp_demo'});
+        meta('Lead', {content_name:'Free 20-minute session', value:1, currency:'USD'});
+      }});
+      Cal.ns.meeting('on', {action: 'linkReady', callback: function(){
+        ga('booking_widget_ready', {page:'lp_demo'});
+      }});
+      Cal.ns.meeting('on', {action: 'bookingFailed', callback: function(){
+        ga('booking_failed', {page:'lp_demo'});
+      }});
+      return true;
+    } catch(e){ return false; }
+  }
+  if (!bindCal()){
+    var n=0, t=setInterval(function(){ if (bindCal() || ++n>40) clearInterval(t); }, 250);
+  }
+
+  /* --- secondary conversions --- */
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0){
+      ga('phone_click', {page:'lp_demo', link_text:(a.innerText||'').trim().slice(0,60)});
+      meta('Contact', {content_name:'Phone click'});
+    } else if (href.indexOf('mailto:') === 0){
+      ga('email_click', {page:'lp_demo'});
+    } else if (href === '#book'){
+      ga('cta_click', {page:'lp_demo', link_text:(a.innerText||'').trim().slice(0,60)});
+    }
+  }, true);
+
+  /* --- scroll depth, so a dead page is visibly dead in GA4 --- */
+  var hits = {};
+  function depth(){
+    var h = document.documentElement;
+    var pct = (h.scrollTop + window.innerHeight) / h.scrollHeight * 100;
+    [25,50,75,90].forEach(function(m){
+      if (pct >= m && !hits[m]){ hits[m] = 1; ga('scroll_depth', {page:'lp_demo', percent:m}); }
+    });
+  }
+  window.addEventListener('scroll', depth, {passive:true});
+  depth();
+})();
+</script>
+</body>
+</html>
