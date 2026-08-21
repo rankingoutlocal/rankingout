@@ -3,6 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+/* Analytics opt-out for this browser. Survives IP and network changes. */
+(function(){
+  var KEY = 'ro_ga_optout', ID = 'G-LGS7VMSNGR';
+  try {
+    var q = window.location.search || '';
+    if (q.indexOf('ga_optout=1') > -1) { localStorage.setItem(KEY, '1'); }
+    else if (q.indexOf('ga_optout=0') > -1) { localStorage.removeItem(KEY); }
+    if (localStorage.getItem(KEY) === '1') { window['ga-disable-' + ID] = true; }
+  } catch (e) {
+    /* private mode, blocked storage: fall through and just measure normally */
+  }
+})();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGS7VMSNGR"></script>
 <script>
@@ -12,9 +26,20 @@ gtag('js', new Date());
 gtag('config', 'G-LGS7VMSNGR');
 </script>
 <title>Google Ads for PT &amp; Chiropractic Clinics | Ranking Out</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B0E1A">
 <meta name="description" content="Google and Bing ads for physical therapy and chiropractic clinics, optimized for booked patients instead of clicks. Done-for-you PPC management.">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Ranking Out">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://rankingout.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ranking Out. Local search for physical therapy and chiropractic practices.">
 <meta property="og:title" content="Ads Optimized For Booked Patients, Not Clicks">
 <meta property="og:description" content="PPC for physical therapy and chiropractic clinics. Precise targeting, custom landing pages, and every dollar tracked to booked appointments.">
 <meta property="og:url" content="https://rankingout.com/services/google-ads/">
@@ -571,7 +596,7 @@ a:hover{color:var(--yellow-500)}
 
 
 /* ---------- MOBILE NAVIGATION ---------- */
-@media (max-width:1160px){header nav{display:none!important}}
+@media (max-width:1280px){header nav{display:none!important}}
 .ro-navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;
   width:46px;height:46px;padding:0 11px;margin-left:6px;flex-shrink:0;
   background:transparent;border:1px solid var(--border-field);border-radius:var(--radius-1);
@@ -586,7 +611,7 @@ a:hover{color:var(--yellow-500)}
 .ro-mnav{display:none}
 .ro-mnav[hidden]{display:none}
 
-@media (max-width:1160px){
+@media (max-width:1280px){
   .ro-navtoggle{display:flex}
   .ro-mnav:not([hidden]){display:flex;flex-direction:column;
     background:var(--white);border-bottom:1px solid var(--border-card);
@@ -618,7 +643,47 @@ a:hover{color:var(--yellow-500)}
   .ro-btn--lg,.ro-btn--md{padding-left:var(--space-5);padding-right:var(--space-5);
     white-space:normal;text-align:center;max-width:100%}
 }
+
+/* ---------- FAQ (shared, unscoped) ---------- */
+.ro-faq{padding:var(--section-y) var(--gutter);background:var(--surface-alt);
+  border-top:1px solid var(--border-card)}
+.ro-faq-wrap{max-width:var(--container-prose);margin:0 auto}
+.ro-faq-kicker{margin:0 0 14px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+.ro-faq h2{margin:0 0 26px;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:clamp(1.9rem,4vw,2.9rem);
+  line-height:1.04;letter-spacing:.6px;color:var(--text-display)}
+.ro-faq-item{border-top:1px solid var(--border-card)}
+.ro-faq-item:last-child{border-bottom:1px solid var(--border-card)}
+.ro-faq-item summary{list-style:none;cursor:pointer;display:flex;
+  justify-content:space-between;align-items:flex-start;gap:20px;padding:19px 0;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:1.14rem;line-height:1.35;letter-spacing:.2px;color:var(--text-display)}
+.ro-faq-item summary::-webkit-details-marker{display:none}
+.ro-faq-item summary::marker{content:""}
+.ro-faq-item summary:after{content:"+";flex-shrink:0;line-height:1.1;
+  font-family:var(--font-condensed);font-size:1.5rem;color:var(--action)}
+.ro-faq-item[open] summary:after{content:"\2212"}
+.ro-faq-a{padding:0 0 24px;max-width:66ch}
+.ro-faq-a p{margin:0 0 15px;font-size:var(--body-prose-size);
+  line-height:var(--body-prose-line);color:var(--text-body)}
+.ro-faq-a p:last-child{margin-bottom:0}
+.ro-faq-a strong{color:var(--text-display)}
+.ro-faq-foot{margin:32px 0 0;font-size:var(--body-mid-size);
+  line-height:var(--body-mid-line);color:var(--text-muted)}
+.ro-faq-foot a{color:var(--navy-400);text-decoration:underline}
+.ro-faq-foot a:hover{color:var(--yellow-600)}
+@media (max-width:640px){
+  .ro-faq{padding:56px var(--gutter)}
+  .ro-faq-item summary{font-size:1.05rem;padding:17px 0}
+}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"We tried Google Ads and burned through the budget. What went wrong?","acceptedAnswer":{"@type":"Answer","text":"In nearly every account we open, the same four things. Broad match left on, so you paid for people searching for jobs and for free advice. Traffic pointed at the homepage instead of a page built for the search. No conversion tracking, so nothing could be judged. And automated bidding optimising toward clicks nobody wanted. Google's defaults are designed to spend your budget, not to fill your schedule. That is not a conspiracy, it is just whose product it is."}},{"@type":"Question","name":"What should we budget?","acceptedAnswer":{"@type":"Answer","text":"Wrong first question, and asking it in that order is how clinics lose money. The right sequence is: what is a new patient worth to you across their whole plan of care, what share of enquiries you convert, and what you can therefore afford to pay for one. Once you know that number, the budget answers itself. A practice where a patient is worth three thousand dollars can outbid one who has never done the arithmetic, every single time, and still profit."}},{"@type":"Question","name":"Should we do ads or SEO first?","acceptedAnswer":{"@type":"Answer","text":"If you need patients this month, ads. If you want patients in eighteen months at a cost that keeps falling, search. Most practices need both, in that order, and resent being told so. Here is the part worth hearing: ads are rented and search is owned. The clinics that only ever rent spend more every year forever. The ones that only build spend a quiet, nervous first quarter. Running ads while the organic work matures is how you avoid both."}},{"@type":"Question","name":"Who owns the ad account?","acceptedAnswer":{"@type":"Answer","text":"You do, and this is not a small point. The account is built inside your own Google Ads account, with us given access. If we part company you keep the account, the history, the conversion data and the negative keyword list, which is often the single most valuable asset in an old account. Any agency that will not do this is holding your data hostage as a retention strategy. Ask the question before you sign anything, with anyone."}},{"@type":"Question","name":"How quickly does this work?","acceptedAnswer":{"@type":"Answer","text":"You will be visible within hours of launch. That is the genuine advantage of paid search and there is nothing else like it. Being profitable takes longer. The first four to six weeks are spent buying information: which searches actually convert, which ones waste money, what a booked patient really costs. Judge the account on month three, not month one, and do not let anyone tell you the learning period is optional."}},{"@type":"Question","name":"Can we just send the ads to our homepage?","acceptedAnswer":{"@type":"Answer","text":"You can. It is the most common and most expensive mistake in the category. Somebody searching for shoulder pain treatment and landing on a page about your clinic's history has to work out for themselves whether you can help. Most will not bother. One page, one search intent, one action. That change alone frequently does more for cost per booked patient than any amount of bid tinkering."}}]}</script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ads Optimized For Booked Patients, Not Clicks">
+<meta name="twitter:description" content="PPC for physical therapy and chiropractic clinics. Precise targeting, custom landing pages, and every dollar tracked to booked appointments.">
+<meta name="twitter:image" content="https://rankingout.com/og.jpg">
 </head>
 <body>
 <div style="font-family:Figtree,-apple-system,sans-serif;background:#FFFFFF">
@@ -628,12 +693,13 @@ a:hover{color:var(--yellow-500)}
 <div style="width:100%;max-width:1200px;display:flex;align-items:stretch;padding:0 32px;box-sizing:border-box">
 <a href="/" style="display:flex;align-items:center;gap:14px;padding-right:32px;text-decoration:none;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="30" height="29" style="height:30px;display:block" role="img" aria-label="Ranking Out"><g fill="#1E3A5F"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1.6px;color:#0B0E1A">Ranking<span style="color:#F7C600"> Out</span></span></a>
 <nav style="flex-grow:1;display:flex;justify-content:center;align-items:stretch;gap:2px">
-<a href="/services/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
-<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
-<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
-<a href="/resources/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Resources</a>
-<a href="/about/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
-<a href="/contact/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
+<a href="/services/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
+<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
+<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
+<a href="/results/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Results</a>
+<a href="/pricing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Pricing</a>
+<a href="/about/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
+<a href="/contact/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
 </nav>
 <div style="display:flex;align-items:center;flex-shrink:0;gap:4px">
 <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--sm">Book a call</a>
@@ -647,7 +713,8 @@ a:hover{color:var(--yellow-500)}
 <a href="/services/">Services</a>
 <a href="/physical-therapy-marketing/">For Physical Therapists</a>
 <a href="/chiropractic-marketing/">For Chiropractors</a>
-<a href="/resources/">Resources</a>
+<a href="/results/">Results</a>
+<a href="/pricing/">Pricing</a>
 <a href="/about/">About</a>
 <a href="/contact/">Contact</a>
 </div>
@@ -669,9 +736,9 @@ a:hover{color:var(--yellow-500)}
 <section class="ga-section ga-intro">
   <div class="ga-wrap">
     <h2 style="text-align:center;margin-bottom:36px">Most Clinics Struggle To Run Profitable PPC Campaigns</h2>
-    <p>Most practices running Google Ads are bleeding money. They're bidding blindly on broad keywords, targeting too wide of a radius, and trusting Google's "smart" automated settings &mdash; settings designed to spend your budget, not to fill your schedule.</p>
+    <p>Most practices running Google Ads are bleeding money. They're bidding blindly on broad keywords, targeting too wide of a radius, and trusting Google's "smart" automated settings, settings designed to spend your budget, not to fill your schedule.</p>
     <p>The result? Sky-high cost per click, wasted spend on people three states away searching for stretches, and a handful of leads that never become appointments. <strong>You're paying for clicks from people who were never going to book with you.</strong></p>
-    <p>It doesn't have to be this way. When PPC is done right &mdash; with precise targeting, custom landing pages, and relentless optimization &mdash; it becomes the fastest, most predictable new patient channel a clinic has.</p>
+    <p>It doesn't have to be this way. When PPC is done right, with precise targeting, custom landing pages, and relentless optimization, it becomes the fastest, most predictable new patient channel a clinic has.</p>
   </div>
 
   <div class="ga-signals">
@@ -692,12 +759,12 @@ a:hover{color:var(--yellow-500)}
     </div>
 
     <ul class="ga-checks">
-      <li><span class="ga-tick">&#10003;</span><span><strong>Instant top-of-Google visibility</strong> &mdash; appear above organic results within hours of launch.</span></li>
-      <li><span class="ga-tick">&#10003;</span><span><strong>Precision targeting</strong> &mdash; exact zip codes, cities, and drive-time radius around each location. No wasted spend.</span></li>
-      <li><span class="ga-tick">&#10003;</span><span><strong>Lower cost per patient</strong> &mdash; aggressive negative keywords, bid strategies, and landing page optimization.</span></li>
-      <li><span class="ga-tick">&#10003;</span><span><strong>Service and condition focus</strong> &mdash; dedicated campaigns for each service line you want to fill.</span></li>
-      <li><span class="ga-tick">&#10003;</span><span><strong>High-intent prospects only</strong> &mdash; bottom-funnel searches from people actively looking to book care.</span></li>
-      <li><span class="ga-tick">&#10003;</span><span><strong>Transparent reporting</strong> &mdash; every dollar tracked to leads, calls, and booked appointments.</span></li>
+      <li><span class="ga-tick">&#10003;</span><span><strong>Instant top-of-Google visibility</strong>: appear above organic results within hours of launch.</span></li>
+      <li><span class="ga-tick">&#10003;</span><span><strong>Precision targeting</strong>: exact zip codes, cities, and drive-time radius around each location. No wasted spend.</span></li>
+      <li><span class="ga-tick">&#10003;</span><span><strong>Lower cost per patient</strong>: aggressive negative keywords, bid strategies, and landing page optimization.</span></li>
+      <li><span class="ga-tick">&#10003;</span><span><strong>Service and condition focus</strong>: dedicated campaigns for each service line you want to fill.</span></li>
+      <li><span class="ga-tick">&#10003;</span><span><strong>High-intent prospects only</strong>: bottom-funnel searches from people actively looking to book care.</span></li>
+      <li><span class="ga-tick">&#10003;</span><span><strong>Transparent reporting</strong>: every dollar tracked to leads, calls, and booked appointments.</span></li>
     </ul>
   </div>
 </section>
@@ -708,7 +775,7 @@ a:hover{color:var(--yellow-500)}
     <div class="ga-head">
       <p class="ga-kicker">What's included</p>
       <h2>Our PPC Management Is Built To Uncover Profitable Searches</h2>
-      <p class="ga-head-lede">A completely done-for-you service. You set the growth goals &mdash; we build and manage the campaigns that deliver the right patients at the right cost.</p>
+      <p class="ga-head-lede">A completely done-for-you service. You set the growth goals, we build and manage the campaigns that deliver the right patients at the right cost.</p>
     </div>
 
     <div class="ga-grid">
@@ -725,7 +792,7 @@ a:hover{color:var(--yellow-500)}
       <div class="ga-card">
         <span class="ga-card-num">03</span>
         <h3>Custom Landing Page Design</h3>
-        <p>We design and build high-converting landing pages for every campaign. No sending ad traffic to your homepage &mdash; each page is engineered to turn a click into a booked appointment.</p>
+        <p>We design and build high-converting landing pages for every campaign. No sending ad traffic to your homepage, each page is engineered to turn a click into a booked appointment.</p>
       </div>
       <div class="ga-card">
         <span class="ga-card-num">04</span>
@@ -740,17 +807,17 @@ a:hover{color:var(--yellow-500)}
       <div class="ga-card">
         <span class="ga-card-num">06</span>
         <h3>Bid &amp; Budget Management</h3>
-        <p>We manage your bids daily &mdash; adjusting by keyword, device, location, and time of day. Budget is allocated to the campaigns and keywords producing the best cost per booked patient.</p>
+        <p>We manage your bids daily, adjusting by keyword, device, location, and time of day. Budget is allocated to the campaigns and keywords producing the best cost per booked patient.</p>
       </div>
       <div class="ga-card">
         <span class="ga-card-num">07</span>
         <h3>Performance Tracking</h3>
-        <p>Call tracking, form tracking, and conversion attribution are configured from day one &mdash; set up HIPAA-consciously, so you see which keywords produce appointments without exposing patient detail.</p>
+        <p>Call tracking, form tracking, and conversion attribution are configured from day one, set up HIPAA-consciously, so you see which keywords produce appointments without exposing patient detail.</p>
       </div>
       <div class="ga-card">
         <span class="ga-card-num">08</span>
         <h3>A/B Testing &amp; Optimization</h3>
-        <p>We test everything &mdash; ad copy, headlines, landing pages, CTAs, and bid strategies. Continuous optimization means campaigns get better and cheaper month over month.</p>
+        <p>We test everything: ad copy, headlines, landing pages, CTAs, and bid strategies. Continuous optimization means campaigns get better and cheaper month over month.</p>
       </div>
       <div class="ga-card">
         <span class="ga-card-num">09</span>
@@ -760,7 +827,7 @@ a:hover{color:var(--yellow-500)}
     </div>
 
     <div style="text-align:center">
-      <a href="/services/front-desk-conversion/" class="ga-xref">Ads get the call &mdash; see Front Desk Conversion for what happens next &rarr;</a>
+      <a href="/services/front-desk-conversion/" class="ga-xref">Ads get the call, see Front Desk Conversion for what happens next &rarr;</a>
     </div>
   </div>
 </section>
@@ -771,7 +838,7 @@ a:hover{color:var(--yellow-500)}
     <div class="ga-head">
       <p class="ga-kicker">Custom design + A/B testing</p>
       <h2>Every Campaign Gets Its Own Landing Page</h2>
-      <p class="ga-head-lede">We never point ad traffic at your homepage. Each campaign gets a page built for one service, one intent, and one action &mdash; then we test headlines, layouts, and calls-to-action to drive your cost per booked patient down month after month.</p>
+      <p class="ga-head-lede">We never point ad traffic at your homepage. Each campaign gets a page built for one service, one intent, and one action, then we test headlines, layouts, and calls-to-action to drive your cost per booked patient down month after month.</p>
     </div>
 
     <div class="ga-mocks">
@@ -823,7 +890,7 @@ a:hover{color:var(--yellow-500)}
     <p class="ga-mock-note">Illustrative page concepts. Your actual pages are written around your services, your intake process, and the insurers you accept.</p>
 
     <div style="text-align:center">
-      <a href="/services/web-design/" class="ga-xref">For your main site rather than campaign pages &mdash; see Web Design &rarr;</a>
+      <a href="/services/web-design/" class="ga-xref">For your main site rather than campaign pages, see Web Design &rarr;</a>
     </div>
   </div>
 </section>
@@ -841,12 +908,43 @@ a:hover{color:var(--yellow-500)}
 
 </div>
 
+<section class="ro-faq">
+<div class="ro-faq-wrap">
+<p class="ro-faq-kicker">Straight answers</p>
+<h2>Paid Search, Answered Plainly</h2>
+<details class="ro-faq-item">
+<summary>We tried Google Ads and burned through the budget. What went wrong?</summary>
+<div class="ro-faq-a"><p>In nearly every account we open, the same four things. Broad match left on, so you paid for people searching for jobs and for free advice. Traffic pointed at the homepage instead of a page built for the search. No conversion tracking, so nothing could be judged. And automated bidding optimising toward clicks nobody wanted.</p><p><strong>Google's defaults are designed to spend your budget, not to fill your schedule.</strong> That is not a conspiracy, it is just whose product it is.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>What should we budget?</summary>
+<div class="ro-faq-a"><p>Wrong first question, and asking it in that order is how clinics lose money.</p><p>The right sequence is: what is a new patient worth to you across their whole plan of care, what share of enquiries you convert, and what you can therefore afford to pay for one. <strong>Once you know that number, the budget answers itself.</strong> A practice where a patient is worth three thousand dollars can outbid one who has never done the arithmetic, every single time, and still profit.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Should we do ads or SEO first?</summary>
+<div class="ro-faq-a"><p>If you need patients this month, ads. If you want patients in eighteen months at a cost that keeps falling, search. Most practices need both, in that order, and resent being told so.</p><p>Here is the part worth hearing: <strong>ads are rented and search is owned.</strong> The clinics that only ever rent spend more every year forever. The ones that only build spend a quiet, nervous first quarter. Running ads while the organic work matures is how you avoid both.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Who owns the ad account?</summary>
+<div class="ro-faq-a"><p>You do, and this is not a small point. The account is built inside your own Google Ads account, with us given access.</p><p>If we part company you keep the account, the history, the conversion data and the negative keyword list, which is often the single most valuable asset in an old account. <strong>Any agency that will not do this is holding your data hostage as a retention strategy.</strong> Ask the question before you sign anything, with anyone.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>How quickly does this work?</summary>
+<div class="ro-faq-a"><p>You will be visible within hours of launch. That is the genuine advantage of paid search and there is nothing else like it.</p><p>Being profitable takes longer. The first four to six weeks are spent buying information: which searches actually convert, which ones waste money, what a booked patient really costs. <strong>Judge the account on month three, not month one</strong>, and do not let anyone tell you the learning period is optional.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Can we just send the ads to our homepage?</summary>
+<div class="ro-faq-a"><p>You can. It is the most common and most expensive mistake in the category.</p><p>Somebody searching for shoulder pain treatment and landing on a page about your clinic's history has to work out for themselves whether you can help. Most will not bother. <strong>One page, one search intent, one action.</strong> That change alone frequently does more for cost per booked patient than any amount of bid tinkering.</p></div>
+</details>
+<p class="ro-faq-foot">Question that is not here? <a href="/contact/">Ask it on a call</a> and we will answer it straight, including when the answer is that you should not buy this from us.</p>
+</div>
+</section>
 <footer style="background:#0B0E1A;border-top:1px solid rgba(247,198,0,0.15);padding:60px 24px 32px">
 <div style="max-width:1100px;margin:0 auto">
 <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:48px">
 <div><a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="27" height="26" style="height:26px;display:block" role="img" aria-label="Ranking Out"><g fill="#FFFFFF"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1.4px;color:#FFFFFF">Ranking<span style="color:#F7C600"> Out</span></span></a><p style="margin:14px 0 0;max-width:34ch;font-size:14px;line-height:21px;color:#8A90A8">We reactivate the leads you already gave up on and book appointments straight into your calendar. Arlington, Virginia.</p></div>
 <div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Services</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/services/" style="font-size:14px;color:#8A90A8;text-decoration:none">All Services</a></li><li><a href="/services/local-seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">Local SEO</a></li><li><a href="/services/seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">SEO + GEO</a></li><li><a href="/services/google-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Google Ads</a></li><li><a href="/services/facebook-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Meta Ads</a></li><li><a href="/services/reviews/" style="font-size:14px;color:#8A90A8;text-decoration:none">Reviews &amp; Reputation</a></li><li><a href="/services/web-design/" style="font-size:14px;color:#8A90A8;text-decoration:none">Web Design</a></li><li><a href="/services/front-desk-conversion/" style="font-size:14px;color:#8A90A8;text-decoration:none">Front Desk Conversion</a></li><li><a href="/services/patient-reactivation/" style="font-size:14px;color:#8A90A8;text-decoration:none">Patient Reactivation</a></li></ul></div>
-<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Resources</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
+<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/results/" style="font-size:14px;color:#8A90A8;text-decoration:none">Results</a></li><li><a href="/pricing/" style="font-size:14px;color:#8A90A8;text-decoration:none">What It Costs</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Guides</a></li><li><a href="/compare/" style="font-size:14px;color:#8A90A8;text-decoration:none">How To Decide</a></li><li><a href="/arlington-va/" style="font-size:14px;color:#8A90A8;text-decoration:none">Arlington &amp; DC Metro</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
 </div>
 <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8"><span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#8A90A8;text-decoration:none">Privacy Policy</a></span><span><a href="tel:+17033895362" style="color:#8A90A8;text-decoration:none">(703) 389-5362</a> &middot; <a href="mailto:info@rankingout.com" style="color:#8A90A8;text-decoration:none">info@rankingout.com</a></span></div>
 </div>
@@ -872,8 +970,30 @@ a:hover{color:var(--yellow-500)}
     if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}
   });
   window.addEventListener('resize',function(){
-    if(window.innerWidth>1160&&b.getAttribute('aria-expanded')==='true') set(false);
+    if(window.innerWidth>1280&&b.getAttribute('aria-expanded')==='true') set(false);
   });
+})();
+</script>
+<script>
+/* GA4 conversion events. Fails silently if gtag is blocked or absent. */
+(function(){
+  function ev(name, params){
+    try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0){
+      ev('phone_click', {link_url: href, link_text: (a.innerText||'').trim().slice(0,80),
+                         page_path: location.pathname});
+    } else if (href.indexOf('mailto:') === 0){
+      ev('email_click', {link_url: href, page_path: location.pathname});
+    } else if (href.indexOf('/contact/') !== -1){
+      ev('book_cta_click', {link_text: (a.innerText||'').trim().slice(0,80),
+                            page_path: location.pathname});
+    }
+  }, true);
 })();
 </script>
 </body>

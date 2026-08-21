@@ -3,6 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+/* Analytics opt-out for this browser. Survives IP and network changes. */
+(function(){
+  var KEY = 'ro_ga_optout', ID = 'G-LGS7VMSNGR';
+  try {
+    var q = window.location.search || '';
+    if (q.indexOf('ga_optout=1') > -1) { localStorage.setItem(KEY, '1'); }
+    else if (q.indexOf('ga_optout=0') > -1) { localStorage.removeItem(KEY); }
+    if (localStorage.getItem(KEY) === '1') { window['ga-disable-' + ID] = true; }
+  } catch (e) {
+    /* private mode, blocked storage: fall through and just measure normally */
+  }
+})();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGS7VMSNGR"></script>
 <script>
@@ -12,9 +26,20 @@ gtag('js', new Date());
 gtag('config', 'G-LGS7VMSNGR');
 </script>
 <title>Web Design for PT &amp; Chiropractic Clinics | Ranking Out</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B0E1A">
 <meta name="description" content="Fast, accessible, custom-built websites for physical therapy and chiropractic clinics. Built to turn visitors into booked appointments, not just look good.">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Ranking Out">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://rankingout.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ranking Out. Local search for physical therapy and chiropractic practices.">
 <meta property="og:title" content="Clinic Websites Built To Convert">
 <meta property="og:description" content="Fast, accessible, custom-built websites for physical therapy and chiropractic clinics, engineered to turn visitors into booked appointments.">
 <meta property="og:url" content="https://rankingout.com/services/web-design/">
@@ -555,7 +580,7 @@ a:hover{color:var(--yellow-500)}
 
 
 /* ---------- MOBILE NAVIGATION ---------- */
-@media (max-width:1160px){header nav{display:none!important}}
+@media (max-width:1280px){header nav{display:none!important}}
 .ro-navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;
   width:46px;height:46px;padding:0 11px;margin-left:6px;flex-shrink:0;
   background:transparent;border:1px solid var(--border-field);border-radius:var(--radius-1);
@@ -570,7 +595,7 @@ a:hover{color:var(--yellow-500)}
 .ro-mnav{display:none}
 .ro-mnav[hidden]{display:none}
 
-@media (max-width:1160px){
+@media (max-width:1280px){
   .ro-navtoggle{display:flex}
   .ro-mnav:not([hidden]){display:flex;flex-direction:column;
     background:var(--white);border-bottom:1px solid var(--border-card);
@@ -602,7 +627,47 @@ a:hover{color:var(--yellow-500)}
   .ro-btn--lg,.ro-btn--md{padding-left:var(--space-5);padding-right:var(--space-5);
     white-space:normal;text-align:center;max-width:100%}
 }
+
+/* ---------- FAQ (shared, unscoped) ---------- */
+.ro-faq{padding:var(--section-y) var(--gutter);background:var(--surface-alt);
+  border-top:1px solid var(--border-card)}
+.ro-faq-wrap{max-width:var(--container-prose);margin:0 auto}
+.ro-faq-kicker{margin:0 0 14px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+.ro-faq h2{margin:0 0 26px;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:clamp(1.9rem,4vw,2.9rem);
+  line-height:1.04;letter-spacing:.6px;color:var(--text-display)}
+.ro-faq-item{border-top:1px solid var(--border-card)}
+.ro-faq-item:last-child{border-bottom:1px solid var(--border-card)}
+.ro-faq-item summary{list-style:none;cursor:pointer;display:flex;
+  justify-content:space-between;align-items:flex-start;gap:20px;padding:19px 0;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:1.14rem;line-height:1.35;letter-spacing:.2px;color:var(--text-display)}
+.ro-faq-item summary::-webkit-details-marker{display:none}
+.ro-faq-item summary::marker{content:""}
+.ro-faq-item summary:after{content:"+";flex-shrink:0;line-height:1.1;
+  font-family:var(--font-condensed);font-size:1.5rem;color:var(--action)}
+.ro-faq-item[open] summary:after{content:"\2212"}
+.ro-faq-a{padding:0 0 24px;max-width:66ch}
+.ro-faq-a p{margin:0 0 15px;font-size:var(--body-prose-size);
+  line-height:var(--body-prose-line);color:var(--text-body)}
+.ro-faq-a p:last-child{margin-bottom:0}
+.ro-faq-a strong{color:var(--text-display)}
+.ro-faq-foot{margin:32px 0 0;font-size:var(--body-mid-size);
+  line-height:var(--body-mid-line);color:var(--text-muted)}
+.ro-faq-foot a{color:var(--navy-400);text-decoration:underline}
+.ro-faq-foot a:hover{color:var(--yellow-600)}
+@media (max-width:640px){
+  .ro-faq{padding:56px var(--gutter)}
+  .ro-faq-item summary{font-size:1.05rem;padding:17px 0}
+}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Our site looks fine. Why would we rebuild it?","acceptedAnswer":{"@type":"Answer","text":"Looking fine and working are different questions, and the second one is measurable. How many people who land on your site call you? If you do not know, that is the finding. A practice sending a hundred visitors a week to a site converting at one percent is buying one patient. At four percent it is buying four, from the same traffic and the same spend. That is the cheapest growth available to most clinics and it requires no new marketing at all."}},{"@type":"Question","name":"Who owns the site when it is finished?","acceptedAnswer":{"@type":"Answer","text":"You do. The domain, the hosting, the content, all of it, and it is transferable the day you ask. Be careful here with anyone who builds on their own proprietary platform and rents it back to you. It looks cheaper monthly and it means leaving costs you the entire asset. Ask any web company one question before signing: if we part company, what exactly do we walk away with?"}},{"@type":"Question","name":"How long does a build take?","acceptedAnswer":{"@type":"Answer","text":"Six to ten weeks for a practice site, and most of that is not the building. It is deciding what the site has to accomplish, writing pages that say something, and getting photography that does not look bought. The projects that overrun are almost always waiting on content from the practice, which is worth knowing before you start so you can put somebody in charge of it."}},{"@type":"Question","name":"Do we need a blog?","acceptedAnswer":{"@type":"Answer","text":"Not the kind you are picturing. An abandoned blog with three posts from 2023 actively damages you, because it is the clearest possible signal that nobody is home. What earns its place is a small number of pages answering what patients ask before they book. Write six of those properly and stop. That is better than forty thin posts and considerably better than a blog you will not maintain."}},{"@type":"Question","name":"What about ADA and accessibility?","acceptedAnswer":{"@type":"Answer","text":"It should be built in rather than bolted on, and for practices taking federal healthcare funding it is not optional. Accessible sites also happen to be faster, cleaner and easier for search engines to read, which is a rare case of the ethical choice and the commercial one being identical. Overlay widgets that promise instant compliance do not deliver it, and have themselves been the subject of litigation."}},{"@type":"Question","name":"Can you work with our existing site instead?","acceptedAnswer":{"@type":"Answer","text":"Often, yes, and we will say so if that is the better answer. If the foundation is sound, fixing conversion, speed and structure costs a fraction of a rebuild and produces most of the gain. If the platform is fighting you, we will tell you that too, even though it is the smaller invoice. Recommending a rebuild that is not needed is how agencies lose the client that would have stayed for five years."}}]}</script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Clinic Websites Built To Convert">
+<meta name="twitter:description" content="Fast, accessible, custom-built websites for physical therapy and chiropractic clinics, engineered to turn visitors into booked appointments.">
+<meta name="twitter:image" content="https://rankingout.com/og.jpg">
 </head>
 <body>
 <div style="font-family:Figtree,-apple-system,sans-serif;background:#FFFFFF">
@@ -612,12 +677,13 @@ a:hover{color:var(--yellow-500)}
 <div style="width:100%;max-width:1200px;display:flex;align-items:stretch;padding:0 32px;box-sizing:border-box">
 <a href="/" style="display:flex;align-items:center;gap:14px;padding-right:32px;text-decoration:none;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="30" height="29" style="height:30px;display:block" role="img" aria-label="Ranking Out"><g fill="#1E3A5F"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1.6px;color:#0B0E1A">Ranking<span style="color:#F7C600"> Out</span></span></a>
 <nav style="flex-grow:1;display:flex;justify-content:center;align-items:stretch;gap:2px">
-<a href="/services/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
-<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
-<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
-<a href="/resources/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Resources</a>
-<a href="/about/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
-<a href="/contact/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
+<a href="/services/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
+<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
+<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
+<a href="/results/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Results</a>
+<a href="/pricing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Pricing</a>
+<a href="/about/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
+<a href="/contact/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
 </nav>
 <div style="display:flex;align-items:center;flex-shrink:0;gap:4px">
 <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--sm">Book a call</a>
@@ -631,7 +697,8 @@ a:hover{color:var(--yellow-500)}
 <a href="/services/">Services</a>
 <a href="/physical-therapy-marketing/">For Physical Therapists</a>
 <a href="/chiropractic-marketing/">For Chiropractors</a>
-<a href="/resources/">Resources</a>
+<a href="/results/">Results</a>
+<a href="/pricing/">Pricing</a>
 <a href="/about/">About</a>
 <a href="/contact/">Contact</a>
 </div>
@@ -653,7 +720,7 @@ a:hover{color:var(--yellow-500)}
 <section class="wd-section wd-intro">
   <div class="wd-wrap">
     <p>Most practice websites were built by someone who was handed a template and a logo. They look professional enough. They load slowly, bury the phone number, and ask a person in pain to fill out a nine-field form before anyone will talk to them.</p>
-    <p>The visitor you are losing is not the one who never found you. <strong>It is the one who found you, looked around for eleven seconds, and went back to the search results to try the next clinic.</strong> That is a marketing problem you already paid for &mdash; through search, through ads, through referrals &mdash; and it gets lost at the last step.</p>
+    <p>The visitor you are losing is not the one who never found you. <strong>It is the one who found you, looked around for eleven seconds, and went back to the search results to try the next clinic.</strong> That is a marketing problem you already paid for, through search, through ads, through referrals, and it gets lost at the last step.</p>
     <p>We design the site around that moment. Every decision on the page answers one question: what makes this person pick up the phone instead of going back?</p>
   </div>
 </section>
@@ -736,18 +803,18 @@ a:hover{color:var(--yellow-500)}
 
     <div class="wd-panels">
       <div class="wd-panel">
-        <p class="wd-panel-tag">01 &mdash; Accessibility</p>
+        <p class="wd-panel-tag">01, Accessibility</p>
         <h3>Your Site Has To Work For Every Patient</h3>
         <p class="wd-panel-p">A patient recovering from a stroke, managing low vision, or navigating with a keyboard because their shoulder will not hold a mouse is exactly who a rehab clinic exists to serve. If your site locks them out, that is both a lost patient and a real exposure.</p>
         <p class="wd-panel-p"><strong>HHS has set WCAG 2.1 Level AA as the benchmark</strong> for web content at healthcare entities covered by its accessibility rules, with compliance dates now set for 2027 and 2028. We build to that standard on every site, so it is a non-event when it applies to you.</p>
-        <p class="wd-deadline"><strong>Current deadlines:</strong> May 11, 2027 for entities with 15 or more employees, May 10, 2028 for those under 15 &mdash; extended by HHS in May 2026. Whether your practice is a covered entity depends on the federal funding you receive; worth a short conversation with your counsel rather than a guess from a web page.</p>
+        <p class="wd-deadline"><strong>Current deadlines:</strong> May 11, 2027 for entities with 15 or more employees, May 10, 2028 for those under 15, extended by HHS in May 2026. Whether your practice is a covered entity depends on the federal funding you receive; worth a short conversation with your counsel rather than a guess from a web page.</p>
       </div>
 
       <div class="wd-panel">
-        <p class="wd-panel-tag">02 &mdash; Intake forms</p>
+        <p class="wd-panel-tag">02, Intake forms</p>
         <h3>A Contact Form Can Be A HIPAA Problem</h3>
         <p class="wd-panel-p">The moment your form asks "what brings you in?" or "describe your injury," it is collecting protected health information. Where that data lands matters as much as what it says.</p>
-        <p class="wd-panel-p">Most standard form tools and inbox integrations were never built for this and will not sign a business associate agreement. <strong>We build intake on infrastructure that will</strong> &mdash; encrypted in transit and at rest, delivered somewhere appropriate, and never quietly copied into an analytics or advertising pixel along the way.</p>
+        <p class="wd-panel-p">Most standard form tools and inbox integrations were never built for this and will not sign a business associate agreement. <strong>We build intake on infrastructure that will</strong>, encrypted in transit and at rest, delivered somewhere appropriate, and never quietly copied into an analytics or advertising pixel along the way.</p>
       </div>
     </div>
   </div>
@@ -759,22 +826,22 @@ a:hover{color:var(--yellow-500)}
     <div class="wd-head">
       <p class="wd-kicker">What's included</p>
       <h2>New Builds And Rebuilds, Copy Included</h2>
-      <p class="wd-head-lede">Whether you have no site at all or one that stopped earning its keep, the engagement covers the whole thing &mdash; including the words on the pages.</p>
+      <p class="wd-head-lede">Whether you have no site at all or one that stopped earning its keep, the engagement covers the whole thing, including the words on the pages.</p>
     </div>
 
     <ul class="wd-checks">
-      <li><span class="wd-tick">&#10003;</span><span><strong>Site architecture</strong> mapped to how patients actually search &mdash; by condition, by service, by location.</span></li>
+      <li><span class="wd-tick">&#10003;</span><span><strong>Site architecture</strong> mapped to how patients actually search, by condition, by service, by location.</span></li>
       <li><span class="wd-tick">&#10003;</span><span><strong>Custom design</strong> built for your practice, not a template with your logo dropped in the corner.</span></li>
-      <li><span class="wd-tick">&#10003;</span><span><strong>Launch copy written for you</strong> &mdash; home, services, conditions, locations, about, and contact.</span></li>
-      <li><span class="wd-tick">&#10003;</span><span><strong>Conversion paths on every page</strong> &mdash; call, book, or ask a question, always within reach.</span></li>
+      <li><span class="wd-tick">&#10003;</span><span><strong>Launch copy written for you</strong>: home, services, conditions, locations, about, and contact.</span></li>
+      <li><span class="wd-tick">&#10003;</span><span><strong>Conversion paths on every page</strong>: call, book, or ask a question, always within reach.</span></li>
       <li><span class="wd-tick">&#10003;</span><span><strong>Booking integration</strong> that puts appointments straight into the calendar your front desk already uses.</span></li>
       <li><span class="wd-tick">&#10003;</span><span><strong>Medical and local business schema</strong> so search engines and AI assistants can read your practice correctly.</span></li>
-      <li><span class="wd-tick">&#10003;</span><span><strong>Rankings protected on a rebuild</strong> &mdash; redirects mapped and existing equity carried across, not thrown away at launch.</span></li>
+      <li><span class="wd-tick">&#10003;</span><span><strong>Rankings protected on a rebuild</strong>: redirects mapped and existing equity carried across, not thrown away at launch.</span></li>
       <li><span class="wd-tick">&#10003;</span><span><strong>Analytics and call tracking</strong> configured HIPAA-consciously from day one, so you can see what the site is actually producing.</span></li>
     </ul>
 
     <div style="text-align:center">
-      <a href="/services/seo/" class="wd-xref">Launch copy is included here &mdash; ongoing content and rankings live in SEO + GEO &rarr;</a>
+      <a href="/services/seo/" class="wd-xref">Launch copy is included here, ongoing content and rankings live in SEO + GEO &rarr;</a>
     </div>
   </div>
 </section>
@@ -792,12 +859,43 @@ a:hover{color:var(--yellow-500)}
 
 </div>
 
+<section class="ro-faq">
+<div class="ro-faq-wrap">
+<p class="ro-faq-kicker">Straight answers</p>
+<h2>Websites, Answered Plainly</h2>
+<details class="ro-faq-item">
+<summary>Our site looks fine. Why would we rebuild it?</summary>
+<div class="ro-faq-a"><p>Looking fine and working are different questions, and the second one is measurable.</p><p>How many people who land on your site call you? If you do not know, that is the finding. <strong>A practice sending a hundred visitors a week to a site converting at one percent is buying one patient. At four percent it is buying four, from the same traffic and the same spend.</strong> That is the cheapest growth available to most clinics and it requires no new marketing at all.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Who owns the site when it is finished?</summary>
+<div class="ro-faq-a"><p>You do. The domain, the hosting, the content, all of it, and it is transferable the day you ask.</p><p><strong>Be careful here with anyone who builds on their own proprietary platform and rents it back to you.</strong> It looks cheaper monthly and it means leaving costs you the entire asset. Ask any web company one question before signing: if we part company, what exactly do we walk away with?</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>How long does a build take?</summary>
+<div class="ro-faq-a"><p>Six to ten weeks for a practice site, and most of that is not the building.</p><p>It is deciding what the site has to accomplish, writing pages that say something, and getting photography that does not look bought. <strong>The projects that overrun are almost always waiting on content from the practice</strong>, which is worth knowing before you start so you can put somebody in charge of it.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Do we need a blog?</summary>
+<div class="ro-faq-a"><p>Not the kind you are picturing. An abandoned blog with three posts from 2023 actively damages you, because it is the clearest possible signal that nobody is home.</p><p>What earns its place is a small number of pages answering what patients ask before they book. <strong>Write six of those properly and stop.</strong> That is better than forty thin posts and considerably better than a blog you will not maintain.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>What about ADA and accessibility?</summary>
+<div class="ro-faq-a"><p>It should be built in rather than bolted on, and for practices taking federal healthcare funding it is not optional.</p><p>Accessible sites also happen to be faster, cleaner and easier for search engines to read, which is a rare case of the ethical choice and the commercial one being identical. <strong>Overlay widgets that promise instant compliance do not deliver it</strong>, and have themselves been the subject of litigation.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Can you work with our existing site instead?</summary>
+<div class="ro-faq-a"><p>Often, yes, and we will say so if that is the better answer. If the foundation is sound, fixing conversion, speed and structure costs a fraction of a rebuild and produces most of the gain.</p><p><strong>If the platform is fighting you, we will tell you that too, even though it is the smaller invoice.</strong> Recommending a rebuild that is not needed is how agencies lose the client that would have stayed for five years.</p></div>
+</details>
+<p class="ro-faq-foot">Question that is not here? <a href="/contact/">Ask it on a call</a> and we will answer it straight, including when the answer is that you should not buy this from us.</p>
+</div>
+</section>
 <footer style="background:#0B0E1A;border-top:1px solid rgba(247,198,0,0.15);padding:60px 24px 32px">
 <div style="max-width:1100px;margin:0 auto">
 <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:48px">
 <div><a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="27" height="26" style="height:26px;display:block" role="img" aria-label="Ranking Out"><g fill="#FFFFFF"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1.4px;color:#FFFFFF">Ranking<span style="color:#F7C600"> Out</span></span></a><p style="margin:14px 0 0;max-width:34ch;font-size:14px;line-height:21px;color:#8A90A8">We reactivate the leads you already gave up on and book appointments straight into your calendar. Arlington, Virginia.</p></div>
 <div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Services</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/services/" style="font-size:14px;color:#8A90A8;text-decoration:none">All Services</a></li><li><a href="/services/local-seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">Local SEO</a></li><li><a href="/services/seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">SEO + GEO</a></li><li><a href="/services/google-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Google Ads</a></li><li><a href="/services/facebook-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Meta Ads</a></li><li><a href="/services/reviews/" style="font-size:14px;color:#8A90A8;text-decoration:none">Reviews &amp; Reputation</a></li><li><a href="/services/web-design/" style="font-size:14px;color:#8A90A8;text-decoration:none">Web Design</a></li><li><a href="/services/front-desk-conversion/" style="font-size:14px;color:#8A90A8;text-decoration:none">Front Desk Conversion</a></li><li><a href="/services/patient-reactivation/" style="font-size:14px;color:#8A90A8;text-decoration:none">Patient Reactivation</a></li></ul></div>
-<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Resources</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
+<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/results/" style="font-size:14px;color:#8A90A8;text-decoration:none">Results</a></li><li><a href="/pricing/" style="font-size:14px;color:#8A90A8;text-decoration:none">What It Costs</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Guides</a></li><li><a href="/compare/" style="font-size:14px;color:#8A90A8;text-decoration:none">How To Decide</a></li><li><a href="/arlington-va/" style="font-size:14px;color:#8A90A8;text-decoration:none">Arlington &amp; DC Metro</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
 </div>
 <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8"><span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#8A90A8;text-decoration:none">Privacy Policy</a></span><span><a href="tel:+17033895362" style="color:#8A90A8;text-decoration:none">(703) 389-5362</a> &middot; <a href="mailto:info@rankingout.com" style="color:#8A90A8;text-decoration:none">info@rankingout.com</a></span></div>
 </div>
@@ -823,8 +921,30 @@ a:hover{color:var(--yellow-500)}
     if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}
   });
   window.addEventListener('resize',function(){
-    if(window.innerWidth>1160&&b.getAttribute('aria-expanded')==='true') set(false);
+    if(window.innerWidth>1280&&b.getAttribute('aria-expanded')==='true') set(false);
   });
+})();
+</script>
+<script>
+/* GA4 conversion events. Fails silently if gtag is blocked or absent. */
+(function(){
+  function ev(name, params){
+    try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0){
+      ev('phone_click', {link_url: href, link_text: (a.innerText||'').trim().slice(0,80),
+                         page_path: location.pathname});
+    } else if (href.indexOf('mailto:') === 0){
+      ev('email_click', {link_url: href, page_path: location.pathname});
+    } else if (href.indexOf('/contact/') !== -1){
+      ev('book_cta_click', {link_text: (a.innerText||'').trim().slice(0,80),
+                            page_path: location.pathname});
+    }
+  }, true);
 })();
 </script>
 </body>

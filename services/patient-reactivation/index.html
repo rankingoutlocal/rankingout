@@ -3,6 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+/* Analytics opt-out for this browser. Survives IP and network changes. */
+(function(){
+  var KEY = 'ro_ga_optout', ID = 'G-LGS7VMSNGR';
+  try {
+    var q = window.location.search || '';
+    if (q.indexOf('ga_optout=1') > -1) { localStorage.setItem(KEY, '1'); }
+    else if (q.indexOf('ga_optout=0') > -1) { localStorage.removeItem(KEY); }
+    if (localStorage.getItem(KEY) === '1') { window['ga-disable-' + ID] = true; }
+  } catch (e) {
+    /* private mode, blocked storage: fall through and just measure normally */
+  }
+})();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGS7VMSNGR"></script>
 <script>
@@ -11,10 +25,21 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-LGS7VMSNGR');
 </script>
-<title>Patient Reactivation for PT &amp; Chiro Clinics | Ranking Out</title>
+<title>Patient Reactivation for Clinics | Ranking Out</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B0E1A">
 <meta name="description" content="Turn discharged patients into booked visits. Compliant email and SMS reactivation campaigns for physical therapy and chiropractic clinics.">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Ranking Out">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://rankingout.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ranking Out. Local search for physical therapy and chiropractic practices.">
 <meta property="og:title" content="The Patients You Already Treated">
 <meta property="og:description" content="Your practice management system is full of people who finished care and never came back. We build the campaign that reaches them, compliantly.">
 <meta property="og:url" content="https://rankingout.com/services/patient-reactivation/">
@@ -567,7 +592,7 @@ a:hover{color:var(--yellow-500)}
 
 
 /* ---------- MOBILE NAVIGATION ---------- */
-@media (max-width:1160px){header nav{display:none!important}}
+@media (max-width:1280px){header nav{display:none!important}}
 .ro-navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;
   width:46px;height:46px;padding:0 11px;margin-left:6px;flex-shrink:0;
   background:transparent;border:1px solid var(--border-field);border-radius:var(--radius-1);
@@ -582,7 +607,7 @@ a:hover{color:var(--yellow-500)}
 .ro-mnav{display:none}
 .ro-mnav[hidden]{display:none}
 
-@media (max-width:1160px){
+@media (max-width:1280px){
   .ro-navtoggle{display:flex}
   .ro-mnav:not([hidden]){display:flex;flex-direction:column;
     background:var(--white);border-bottom:1px solid var(--border-card);
@@ -614,7 +639,47 @@ a:hover{color:var(--yellow-500)}
   .ro-btn--lg,.ro-btn--md{padding-left:var(--space-5);padding-right:var(--space-5);
     white-space:normal;text-align:center;max-width:100%}
 }
+
+/* ---------- FAQ (shared, unscoped) ---------- */
+.ro-faq{padding:var(--section-y) var(--gutter);background:var(--surface-alt);
+  border-top:1px solid var(--border-card)}
+.ro-faq-wrap{max-width:var(--container-prose);margin:0 auto}
+.ro-faq-kicker{margin:0 0 14px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+.ro-faq h2{margin:0 0 26px;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:clamp(1.9rem,4vw,2.9rem);
+  line-height:1.04;letter-spacing:.6px;color:var(--text-display)}
+.ro-faq-item{border-top:1px solid var(--border-card)}
+.ro-faq-item:last-child{border-bottom:1px solid var(--border-card)}
+.ro-faq-item summary{list-style:none;cursor:pointer;display:flex;
+  justify-content:space-between;align-items:flex-start;gap:20px;padding:19px 0;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:1.14rem;line-height:1.35;letter-spacing:.2px;color:var(--text-display)}
+.ro-faq-item summary::-webkit-details-marker{display:none}
+.ro-faq-item summary::marker{content:""}
+.ro-faq-item summary:after{content:"+";flex-shrink:0;line-height:1.1;
+  font-family:var(--font-condensed);font-size:1.5rem;color:var(--action)}
+.ro-faq-item[open] summary:after{content:"\2212"}
+.ro-faq-a{padding:0 0 24px;max-width:66ch}
+.ro-faq-a p{margin:0 0 15px;font-size:var(--body-prose-size);
+  line-height:var(--body-prose-line);color:var(--text-body)}
+.ro-faq-a p:last-child{margin-bottom:0}
+.ro-faq-a strong{color:var(--text-display)}
+.ro-faq-foot{margin:32px 0 0;font-size:var(--body-mid-size);
+  line-height:var(--body-mid-line);color:var(--text-muted)}
+.ro-faq-foot a{color:var(--navy-400);text-decoration:underline}
+.ro-faq-foot a:hover{color:var(--yellow-600)}
+@media (max-width:640px){
+  .ro-faq{padding:56px var(--gutter)}
+  .ro-faq-item summary{font-size:1.05rem;padding:17px 0}
+}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many past patients do we need for this to work?","acceptedAnswer":{"@type":"Answer","text":"Three hundred contactable records, minimum. Below that the arithmetic does not hold and we will tell you so on the call rather than take the work. We would rather turn the engagement away than run a campaign that cannot produce. Ask how many other agencies have ever disqualified you from something they were trying to sell you. That answer is worth more than anything else on this page."}},{"@type":"Question","name":"Isn't texting former patients a compliance problem?","acceptedAnswer":{"@type":"Answer","text":"It is entirely manageable, and only if the person running it understands the rules rather than discovering them afterwards. Healthcare communications have real latitude for appointment reminders, follow up after discharge, and messages about care. That latitude is not unlimited and it is not the same as marketing consent. The first thing we do is reconcile your list against what you actually have on file: who consented, on which channel, and when. That step is not optional and it is where most campaigns should stop and do not."}},{"@type":"Question","name":"Will this annoy people and burn our list?","acceptedAnswer":{"@type":"Answer","text":"It can, and the way it happens is always the same. A single generic message to everybody, sent all at once, apologising for the intrusion. A note to someone who finished a shoulder programme two years ago should not read like the note to someone who cancelled a course of care in March. Segment it, pace it, write like a human being who remembers them, and route replies to a person fast. Done that way it reads as care, because it is."}},{"@type":"Question","name":"What sort of response is realistic?","acceptedAnswer":{"@type":"Answer","text":"We will give you a range on the call once we know the list size, how old it is, and what they were treated for, and that range will be narrower and lower than what you have been promised elsewhere. Be sceptical of anybody quoting a response rate before they have seen your list. They are quoting an average from somebody else's business, and averages have hidden more bad campaigns than any other number in marketing."}},{"@type":"Question","name":"Why start here instead of running ads?","acceptedAnswer":{"@type":"Answer","text":"Because there are only three ways to grow a practice: more patients, higher value per patient, or more frequent visits. Most owners only ever pull the first lever, which is also the most expensive one. These people already chose you once. They are not a cold audience, they cost nothing to reach, and the trust is already built. Spending to acquire strangers while a thousand former patients sit untouched in your system is the most common and most expensive error in this industry."}},{"@type":"Question","name":"What if it does not work?","acceptedAnswer":{"@type":"Answer","text":"Then we agreed the wrong number, or the list was not what we thought, and you should not be paying for it either way. We set a specific target before starting, in appointments rather than in impressions or replies, so there is something concrete to judge. The obligation runs both ways: we need the list within a few days, a working calendar, and somebody who actually attends the appointments we book. Hold up your end and if the number does not arrive, that is on us."}}]}</script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Patients You Already Treated">
+<meta name="twitter:description" content="Your practice management system is full of people who finished care and never came back. We build the campaign that reaches them, compliantly.">
+<meta name="twitter:image" content="https://rankingout.com/og.jpg">
 </head>
 <body>
 <div style="font-family:Figtree,-apple-system,sans-serif;background:#FFFFFF">
@@ -624,12 +689,13 @@ a:hover{color:var(--yellow-500)}
 <div style="width:100%;max-width:1200px;display:flex;align-items:stretch;padding:0 32px;box-sizing:border-box">
 <a href="/" style="display:flex;align-items:center;gap:14px;padding-right:32px;text-decoration:none;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="30" height="29" style="height:30px;display:block" role="img" aria-label="Ranking Out"><g fill="#1E3A5F"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1.6px;color:#0B0E1A">Ranking<span style="color:#F7C600"> Out</span></span></a>
 <nav style="flex-grow:1;display:flex;justify-content:center;align-items:stretch;gap:2px">
-<a href="/services/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
-<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
-<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
-<a href="/resources/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Resources</a>
-<a href="/about/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
-<a href="/contact/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
+<a href="/services/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
+<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
+<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
+<a href="/results/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Results</a>
+<a href="/pricing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Pricing</a>
+<a href="/about/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
+<a href="/contact/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
 </nav>
 <div style="display:flex;align-items:center;flex-shrink:0;gap:4px">
 <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--sm">Book a call</a>
@@ -643,7 +709,8 @@ a:hover{color:var(--yellow-500)}
 <a href="/services/">Services</a>
 <a href="/physical-therapy-marketing/">For Physical Therapists</a>
 <a href="/chiropractic-marketing/">For Chiropractors</a>
-<a href="/resources/">Resources</a>
+<a href="/results/">Results</a>
+<a href="/pricing/">Pricing</a>
 <a href="/about/">About</a>
 <a href="/contact/">Contact</a>
 </div>
@@ -656,7 +723,7 @@ a:hover{color:var(--yellow-500)}
     <p class="pr-crumb"><a href="/services/">Services</a><span>/</span><span>Patient Reactivation</span></p>
     <p class="pr-eyebrow">Patient Reactivation</p>
     <h1>The Patients You Already Treated</h1>
-    <p class="pr-hero-lede">Your practice management system is full of people who finished care and never came back. Most of them still need you. We build the campaign that reaches them &mdash; without putting your practice on the wrong side of a consent rule.</p>
+    <p class="pr-hero-lede">Your practice management system is full of people who finished care and never came back. Most of them still need you. We build the campaign that reaches them, without putting your practice on the wrong side of a consent rule.</p>
     <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow">Get Your Free Growth Plan<span class="ro-btn__arrow">&rarr;</span></a>
   </div>
 </section>
@@ -664,7 +731,7 @@ a:hover{color:var(--yellow-500)}
 <!-- ============================ THE ASSET ============================ -->
 <section class="pr-section pr-intro">
   <div class="pr-wrap">
-    <p>Every marketing service on this site exists to find you someone new. This one is different. <strong>It works the list you already own</strong> &mdash; and it is almost always the cheapest appointment your practice will book this quarter.</p>
+    <p>Every marketing service on this site exists to find you someone new. This one is different. <strong>It works the list you already own</strong>, and it is almost always the cheapest appointment your practice will book this quarter.</p>
     <p>The distinction that matters: a discharged patient is not a cold lead. They know your name, they have been on your table, and if the care worked, they already trust you. Nobody has to be convinced you are legitimate. They just have to be reminded you exist, at a moment when something hurts.</p>
   </div>
 
@@ -673,7 +740,7 @@ a:hover{color:var(--yellow-500)}
       <div class="pr-col">
         <p class="pr-col-tag">A cold lead</p>
         <h3>Never met you</h3>
-        <p class="pr-col-p">Has to be found, convinced you are credible, persuaded to try, and then booked. You pay for the click, the impression, the landing page, and the follow-up &mdash; and most of them still never come in.</p>
+        <p class="pr-col-p">Has to be found, convinced you are credible, persuaded to try, and then booked. You pay for the click, the impression, the landing page, and the follow-up, and most of them still never come in.</p>
       </div>
       <div class="pr-col pr-col--warm">
         <p class="pr-col-tag">A discharged patient</p>
@@ -724,29 +791,29 @@ a:hover{color:var(--yellow-500)}
     <div class="pr-head">
       <p class="pr-kicker">Why most clinics never run this</p>
       <h2>Texting Your Patient List Is Where Practices Get Burned</h2>
-      <p class="pr-head-lede">This is the highest-risk campaign a clinic can run, and it is why plenty of owners leave the money on the table. It is entirely manageable &mdash; but only if the person running it understands that the wording of the message decides the rules that apply to it.</p>
+      <p class="pr-head-lede">This is the highest-risk campaign a clinic can run, and it is why plenty of owners leave the money on the table. It is entirely manageable, but only if the person running it understands that the wording of the message decides the rules that apply to it.</p>
     </div>
 
     <div class="pr-compliance">
       <p class="pr-comp-tag">The distinction everything turns on</p>
       <p class="pr-comp-h">Care continuity is not a promotion.</p>
-      <p class="pr-comp-p">Federal rules give healthcare communications real latitude &mdash; appointment reminders, follow-up after discharge, messages about a patient's own care. <strong>That latitude disappears the moment a message becomes an advertisement.</strong> Add a discount code and a limited-time offer, and a message that would have been routine patient communication is now telemarketing, held to a stricter consent standard.</p>
+      <p class="pr-comp-p">Federal rules give healthcare communications real latitude, appointment reminders, follow-up after discharge, messages about a patient's own care. <strong>That latitude disappears the moment a message becomes an advertisement.</strong> Add a discount code and a limited-time offer, and a message that would have been routine patient communication is now telemarketing, held to a stricter consent standard.</p>
       <p class="pr-comp-p">So we write reactivation as what it genuinely is: a clinic checking in on a patient it treated, offering a re-evaluation. Not a coupon blast to a purchased-feeling list.</p>
 
       <div class="pr-msgs">
         <div class="pr-msg">
           <p class="pr-msg-tag">&#10007; Reads as advertising</p>
-          <p class="pr-msg-text">"FLASH SALE! 50% off your next adjustment &mdash; this week only! Book now before spots fill up!"</p>
+          <p class="pr-msg-text">"FLASH SALE! 50% off your next adjustment, this week only! Book now before spots fill up!"</p>
           <p class="pr-msg-why">Promotional content, so the healthcare latitude no longer applies. Also reads as spam to the person who trusted you.</p>
         </div>
         <div class="pr-msg pr-msg--ok">
           <p class="pr-msg-tag">&#10003; Reads as care</p>
-          <p class="pr-msg-text">"Hi Sarah, it's the team at the clinic. It's been about a year since we saw you for your back &mdash; how is it holding up? Happy to get you in for a check if it's flared."</p>
+          <p class="pr-msg-text">"Hi Sarah, it's the team at the clinic. It's been about a year since we saw you for your back, how is it holding up? Happy to get you in for a check if it's flared."</p>
           <p class="pr-msg-why">A clinic following up on care it provided. Personal, brief, and easy to reply to or opt out of.</p>
         </div>
       </div>
 
-      <p class="pr-comp-p">Before a single message sends, we audit the list against what you actually have on file &mdash; who consented to be contacted, on which channel, and how recently. <strong>Anyone we cannot stand behind does not get messaged.</strong> A smaller list that is clean is worth far more than a big one that creates exposure, and no reactivation revenue is worth a complaint.</p>
+      <p class="pr-comp-p">Before a single message sends, we audit the list against what you actually have on file, who consented to be contacted, on which channel, and how recently. <strong>Anyone we cannot stand behind does not get messaged.</strong> A smaller list that is clean is worth far more than a big one that creates exposure, and no reactivation revenue is worth a complaint.</p>
       <p class="pr-comp-p">Consent rules also vary by state and change often. We build to the stricter standard and tell you plainly when something is a question for your own counsel rather than for us.</p>
     </div>
   </div>
@@ -762,20 +829,20 @@ a:hover{color:var(--yellow-500)}
     </div>
 
     <ul class="pr-checks">
-      <li><span class="pr-tick">&#10003;</span><span><strong>List audit and clean-up</strong> &mdash; duplicates, bad numbers, deceased and moved records, and anyone without contactable consent removed before we start.</span></li>
-      <li><span class="pr-tick">&#10003;</span><span><strong>Segmentation that matters clinically</strong> &mdash; by condition treated, time since discharge, and whether they completed care or dropped out partway.</span></li>
-      <li><span class="pr-tick">&#10003;</span><span><strong>Message written per segment</strong> &mdash; the note to someone who finished a shoulder program is not the note to someone who cancelled after two visits.</span></li>
+      <li><span class="pr-tick">&#10003;</span><span><strong>List audit and clean-up</strong>: duplicates, bad numbers, deceased and moved records, and anyone without contactable consent removed before we start.</span></li>
+      <li><span class="pr-tick">&#10003;</span><span><strong>Segmentation that matters clinically</strong>: by condition treated, time since discharge, and whether they completed care or dropped out partway.</span></li>
+      <li><span class="pr-tick">&#10003;</span><span><strong>Message written per segment</strong>: the note to someone who finished a shoulder program is not the note to someone who cancelled after two visits.</span></li>
       <li><span class="pr-tick">&#10003;</span><span><strong>Email and SMS sequencing</strong> paced deliberately across weeks, not fired at the whole list on a Tuesday morning.</span></li>
-      <li><span class="pr-tick">&#10003;</span><span><strong>Replies handled and booked</strong> &mdash; a person who answers gets a real conversation and a time on the calendar, not an autoresponder.</span></li>
+      <li><span class="pr-tick">&#10003;</span><span><strong>Replies handled and booked</strong>: a person who answers gets a real conversation and a time on the calendar, not an autoresponder.</span></li>
       <li><span class="pr-tick">&#10003;</span><span><strong>Opt-outs honoured instantly</strong> and recorded against the record, so nobody gets contacted twice after asking you to stop.</span></li>
-      <li><span class="pr-tick">&#10003;</span><span><strong>Reporting to booked visits</strong> &mdash; replies, appointments, and attended evaluations, not open rates.</span></li>
+      <li><span class="pr-tick">&#10003;</span><span><strong>Reporting to booked visits</strong>: replies, appointments, and attended evaluations, not open rates.</span></li>
       <li><span class="pr-tick">&#10003;</span><span><strong>A repeatable cadence</strong> so the list gets worked on a schedule instead of once, in a panic, when the calendar looks thin.</span></li>
     </ul>
 
     <div class="pr-xrefs">
       <a href="/reactivation/" class="pr-xref">Want to run it yourself? Read the step-by-step guide &rarr;</a>
-      <a href="/services/front-desk-conversion/" class="pr-xref">Replies come back as calls &mdash; see Front Desk Conversion &rarr;</a>
-      <a href="/services/facebook-ads/" class="pr-xref">For new leads rather than past patients &mdash; see Meta Ads &rarr;</a>
+      <a href="/services/front-desk-conversion/" class="pr-xref">Replies come back as calls, see Front Desk Conversion &rarr;</a>
+      <a href="/services/facebook-ads/" class="pr-xref">For new leads rather than past patients, see Meta Ads &rarr;</a>
     </div>
   </div>
 </section>
@@ -793,12 +860,43 @@ a:hover{color:var(--yellow-500)}
 
 </div>
 
+<section class="ro-faq">
+<div class="ro-faq-wrap">
+<p class="ro-faq-kicker">Straight answers</p>
+<h2>Reactivation, Answered Plainly</h2>
+<details class="ro-faq-item">
+<summary>How many past patients do we need for this to work?</summary>
+<div class="ro-faq-a"><p>Three hundred contactable records, minimum. Below that the arithmetic does not hold and we will tell you so on the call rather than take the work.</p><p><strong>We would rather turn the engagement away than run a campaign that cannot produce.</strong> Ask how many other agencies have ever disqualified you from something they were trying to sell you. That answer is worth more than anything else on this page.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Isn't texting former patients a compliance problem?</summary>
+<div class="ro-faq-a"><p>It is entirely manageable, and only if the person running it understands the rules rather than discovering them afterwards.</p><p>Healthcare communications have real latitude for appointment reminders, follow up after discharge, and messages about care. That latitude is not unlimited and it is not the same as marketing consent. <strong>The first thing we do is reconcile your list against what you actually have on file:</strong> who consented, on which channel, and when. That step is not optional and it is where most campaigns should stop and do not.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Will this annoy people and burn our list?</summary>
+<div class="ro-faq-a"><p>It can, and the way it happens is always the same. A single generic message to everybody, sent all at once, apologising for the intrusion.</p><p>A note to someone who finished a shoulder programme two years ago should not read like the note to someone who cancelled a course of care in March. <strong>Segment it, pace it, write like a human being who remembers them, and route replies to a person fast.</strong> Done that way it reads as care, because it is.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>What sort of response is realistic?</summary>
+<div class="ro-faq-a"><p>We will give you a range on the call once we know the list size, how old it is, and what they were treated for, and that range will be narrower and lower than what you have been promised elsewhere.</p><p><strong>Be sceptical of anybody quoting a response rate before they have seen your list.</strong> They are quoting an average from somebody else's business, and averages have hidden more bad campaigns than any other number in marketing.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Why start here instead of running ads?</summary>
+<div class="ro-faq-a"><p>Because there are only three ways to grow a practice: more patients, higher value per patient, or more frequent visits. Most owners only ever pull the first lever, which is also the most expensive one.</p><p><strong>These people already chose you once.</strong> They are not a cold audience, they cost nothing to reach, and the trust is already built. Spending to acquire strangers while a thousand former patients sit untouched in your system is the most common and most expensive error in this industry.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>What if it does not work?</summary>
+<div class="ro-faq-a"><p>Then we agreed the wrong number, or the list was not what we thought, and you should not be paying for it either way.</p><p>We set a specific target before starting, in appointments rather than in impressions or replies, so there is something concrete to judge. <strong>The obligation runs both ways:</strong> we need the list within a few days, a working calendar, and somebody who actually attends the appointments we book. Hold up your end and if the number does not arrive, that is on us.</p></div>
+</details>
+<p class="ro-faq-foot">Question that is not here? <a href="/contact/">Ask it on a call</a> and we will answer it straight, including when the answer is that you should not buy this from us.</p>
+</div>
+</section>
 <footer style="background:#0B0E1A;border-top:1px solid rgba(247,198,0,0.15);padding:60px 24px 32px">
 <div style="max-width:1100px;margin:0 auto">
 <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:48px">
 <div><a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="27" height="26" style="height:26px;display:block" role="img" aria-label="Ranking Out"><g fill="#FFFFFF"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1.4px;color:#FFFFFF">Ranking<span style="color:#F7C600"> Out</span></span></a><p style="margin:14px 0 0;max-width:34ch;font-size:14px;line-height:21px;color:#8A90A8">We reactivate the leads you already gave up on and book appointments straight into your calendar. Arlington, Virginia.</p></div>
 <div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Services</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/services/" style="font-size:14px;color:#8A90A8;text-decoration:none">All Services</a></li><li><a href="/services/local-seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">Local SEO</a></li><li><a href="/services/seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">SEO + GEO</a></li><li><a href="/services/google-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Google Ads</a></li><li><a href="/services/facebook-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Meta Ads</a></li><li><a href="/services/reviews/" style="font-size:14px;color:#8A90A8;text-decoration:none">Reviews &amp; Reputation</a></li><li><a href="/services/web-design/" style="font-size:14px;color:#8A90A8;text-decoration:none">Web Design</a></li><li><a href="/services/front-desk-conversion/" style="font-size:14px;color:#8A90A8;text-decoration:none">Front Desk Conversion</a></li><li><a href="/services/patient-reactivation/" style="font-size:14px;color:#8A90A8;text-decoration:none">Patient Reactivation</a></li></ul></div>
-<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Resources</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
+<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/results/" style="font-size:14px;color:#8A90A8;text-decoration:none">Results</a></li><li><a href="/pricing/" style="font-size:14px;color:#8A90A8;text-decoration:none">What It Costs</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Guides</a></li><li><a href="/compare/" style="font-size:14px;color:#8A90A8;text-decoration:none">How To Decide</a></li><li><a href="/arlington-va/" style="font-size:14px;color:#8A90A8;text-decoration:none">Arlington &amp; DC Metro</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
 </div>
 <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8"><span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#8A90A8;text-decoration:none">Privacy Policy</a></span><span><a href="tel:+17033895362" style="color:#8A90A8;text-decoration:none">(703) 389-5362</a> &middot; <a href="mailto:info@rankingout.com" style="color:#8A90A8;text-decoration:none">info@rankingout.com</a></span></div>
 </div>
@@ -824,8 +922,30 @@ a:hover{color:var(--yellow-500)}
     if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}
   });
   window.addEventListener('resize',function(){
-    if(window.innerWidth>1160&&b.getAttribute('aria-expanded')==='true') set(false);
+    if(window.innerWidth>1280&&b.getAttribute('aria-expanded')==='true') set(false);
   });
+})();
+</script>
+<script>
+/* GA4 conversion events. Fails silently if gtag is blocked or absent. */
+(function(){
+  function ev(name, params){
+    try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0){
+      ev('phone_click', {link_url: href, link_text: (a.innerText||'').trim().slice(0,80),
+                         page_path: location.pathname});
+    } else if (href.indexOf('mailto:') === 0){
+      ev('email_click', {link_url: href, page_path: location.pathname});
+    } else if (href.indexOf('/contact/') !== -1){
+      ev('book_cta_click', {link_text: (a.innerText||'').trim().slice(0,80),
+                            page_path: location.pathname});
+    }
+  }, true);
 })();
 </script>
 </body>

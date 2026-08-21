@@ -3,6 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+/* Analytics opt-out for this browser. Survives IP and network changes. */
+(function(){
+  var KEY = 'ro_ga_optout', ID = 'G-LGS7VMSNGR';
+  try {
+    var q = window.location.search || '';
+    if (q.indexOf('ga_optout=1') > -1) { localStorage.setItem(KEY, '1'); }
+    else if (q.indexOf('ga_optout=0') > -1) { localStorage.removeItem(KEY); }
+    if (localStorage.getItem(KEY) === '1') { window['ga-disable-' + ID] = true; }
+  } catch (e) {
+    /* private mode, blocked storage: fall through and just measure normally */
+  }
+})();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGS7VMSNGR"></script>
 <script>
@@ -11,12 +25,23 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-LGS7VMSNGR');
 </script>
-<title>The Local SEO Plan Behind a Medical Practice Website We're Building Right Now | Ranking Out</title>
-<meta name="description" content="A planning-stage breakdown of the seven-phase local SEO framework, using an in-home physical therapy build as the worked example. Nothing is live yet -- this is the plan.">
+<title>The Local SEO Plan for a New PT Practice | Ranking Out</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B0E1A">
+<meta name="description" content="A seven-phase local SEO framework, worked through on an in-home physical therapy build with no site, no rankings and no reviews. The plan, before the results.">
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="The Local SEO Plan Behind a Medical Practice Website We're Building Right Now">
-<meta property="og:description" content="Seven phases, 78 pages, every phase gated on the last one's data. The full framework, published before the results exist.">
+<meta property="og:site_name" content="Ranking Out">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://rankingout.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ranking Out. Local search for physical therapy and chiropractic practices.">
+<meta property="og:title" content="The Local SEO Plan Behind a Practice Website We Are Building Now">
+<meta property="og:description" content="Seven phases, every one gated on the last one's data. The full framework, published before the results exist.">
 <meta property="og:url" content="https://rankingout.com/physical-therapy-sw/">
 <link rel="canonical" href="https://rankingout.com/physical-therapy-sw/">
 
@@ -680,7 +705,7 @@ a:hover{color:var(--yellow-500)}
 
 
 /* ---------- MOBILE NAVIGATION ---------- */
-@media (max-width:1160px){header nav{display:none!important}}
+@media (max-width:1280px){header nav{display:none!important}}
 .ro-navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;
   width:46px;height:46px;padding:0 11px;margin-left:6px;flex-shrink:0;
   background:transparent;border:1px solid var(--border-field);border-radius:var(--radius-1);
@@ -695,7 +720,7 @@ a:hover{color:var(--yellow-500)}
 .ro-mnav{display:none}
 .ro-mnav[hidden]{display:none}
 
-@media (max-width:1160px){
+@media (max-width:1280px){
   .ro-navtoggle{display:flex}
   .ro-mnav:not([hidden]){display:flex;flex-direction:column;
     background:var(--white);border-bottom:1px solid var(--border-card);
@@ -728,6 +753,10 @@ a:hover{color:var(--yellow-500)}
     white-space:normal;text-align:center;max-width:100%}
 }
 </style>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Local SEO Plan Behind a Practice Website We Are Building Now">
+<meta name="twitter:description" content="Seven phases, every one gated on the last one's data. The full framework, published before the results exist.">
+<meta name="twitter:image" content="https://rankingout.com/og.jpg">
 </head>
 <body>
 <div style="font-family:Figtree,-apple-system,sans-serif;background:#FFFFFF">
@@ -737,12 +766,13 @@ a:hover{color:var(--yellow-500)}
 <div style="width:100%;max-width:1200px;display:flex;align-items:stretch;padding:0 32px;box-sizing:border-box">
 <a href="/" style="display:flex;align-items:center;gap:14px;padding-right:32px;text-decoration:none;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="30" height="29" style="height:30px;display:block" role="img" aria-label="Ranking Out"><g fill="#1E3A5F"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1.6px;color:#0B0E1A">Ranking<span style="color:#F7C600"> Out</span></span></a>
 <nav style="flex-grow:1;display:flex;justify-content:center;align-items:stretch;gap:2px">
-<a href="/services/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
-<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
-<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
-<a href="/resources/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Resources</a>
-<a href="/about/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
-<a href="/contact/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
+<a href="/services/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
+<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
+<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
+<a href="/results/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Results</a>
+<a href="/pricing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Pricing</a>
+<a href="/about/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
+<a href="/contact/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
 </nav>
 <div style="display:flex;align-items:center;flex-shrink:0;gap:4px">
 <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--sm">Book a call</a>
@@ -756,7 +786,8 @@ a:hover{color:var(--yellow-500)}
 <a href="/services/">Services</a>
 <a href="/physical-therapy-marketing/">For Physical Therapists</a>
 <a href="/chiropractic-marketing/">For Chiropractors</a>
-<a href="/resources/">Resources</a>
+<a href="/results/">Results</a>
+<a href="/pricing/">Pricing</a>
 <a href="/about/">About</a>
 <a href="/contact/">Contact</a>
 </div>
@@ -770,7 +801,7 @@ a:hover{color:var(--yellow-500)}
     <p class="ro-hero-sub">
       A new in-home physical therapy practice. <strong>No website yet.</strong> No rankings,
       no reviews, no traffic history. This page documents the seven-phase plan we&rsquo;re
-      implementing &mdash; the architecture, the page counts, the quality gates, and the
+      implementing, the architecture, the page counts, the quality gates, and the
       reasons we are <strong>not</strong> building the 200-page keyword matrix most agencies
       would sell.
     </p>
@@ -809,7 +840,7 @@ a:hover{color:var(--yellow-500)}
 
     <p class="ro-lede">
       Most agency case studies are written after the fact, once the numbers are flattering.
-      This one is published <strong>from the planning stage</strong> &mdash; before launch,
+      This one is published <strong>from the planning stage</strong>, before launch,
       before rankings, before a single lead. You can see the decisions as they are being made.
     </p>
 
@@ -866,7 +897,7 @@ a:hover{color:var(--yellow-500)}
       <p>
         Because the plan is the part you can actually evaluate. Anyone can show a traffic
         graph and claim credit for it. Far fewer can explain, in advance, why a site should
-        launch with 36 pages instead of 200 &mdash; and hold to it when the client asks for more.
+        launch with 36 pages instead of 200, and hold to it when the client asks for more.
       </p>
     </div>
   </div>
@@ -888,7 +919,7 @@ a:hover{color:var(--yellow-500)}
       <p>
         No existing site. No legacy URLs. No redirect map. No historical Search Console data
         to lean on. Every ranking, every review and every tracked lead has to be created from
-        zero &mdash; which means every architectural decision has to be right the first time,
+        zero, which means every architectural decision has to be right the first time,
         because there is no traffic data to correct it with.
       </p>
     </div>
@@ -899,8 +930,8 @@ a:hover{color:var(--yellow-500)}
       <tbody>
         <tr><td>Existing rankings</td><td>Protect them</td><td>None to protect</td></tr>
         <tr><td>Redirect map</td><td>Mandatory, high-risk</td><td>Not applicable</td></tr>
-        <tr><td>Keyword data</td><td>Historical Search Console available</td><td>Zero &mdash; research only</td></tr>
-        <tr><td>Page count decision</td><td>Constrained by what exists</td><td>Completely open &mdash; and that is the danger</td></tr>
+        <tr><td>Keyword data</td><td>Historical Search Console available</td><td>Zero, research only</td></tr>
+        <tr><td>Page count decision</td><td>Constrained by what exists</td><td>Completely open, and that is the danger</td></tr>
         <tr><td>Biggest risk</td><td>Losing traffic at cutover</td><td>Overbuilding before any evidence exists</td></tr>
       </tbody>
     </table></div>
@@ -932,8 +963,7 @@ a:hover{color:var(--yellow-500)}
     <h2>Local leads. Not pages, not rankings.</h2>
 
     <p class="ro-lede">
-      A practice that shows up when a patient in the service area searches for help
-      &mdash; and turns that search into a phone call.
+      A practice that shows up when a patient in the service area searches for help, and turns that search into a phone call.
     </p>
 
     <p>
@@ -948,7 +978,7 @@ a:hover{color:var(--yellow-500)}
     <p>
       <strong>Money pages first.</strong> Pages that answer &ldquo;what do you do,&rdquo;
       &ldquo;where do you do it,&rdquo; and &ldquo;how do I book&rdquo; come before anything
-      educational. Blog and resource content is not skipped &mdash; it is deliberately
+      educational. Blog and resource content is not skipped, it is deliberately
       delayed until the foundation is earning.
     </p>
 
@@ -975,7 +1005,7 @@ a:hover{color:var(--yellow-500)}
       <span class="ro-kicker">The Model</span>
       <h2>Five buckets that must never bleed into each other</h2>
       <p class="ro-lede">
-        Most local SEO failures come from collapsing two buckets into one &mdash; usually by
+        Most local SEO failures come from collapsing two buckets into one, usually by
         turning service-area pages into service pages, or by building &ldquo;location&rdquo;
         pages for a business with no locations.
       </p>
@@ -1025,7 +1055,7 @@ a:hover{color:var(--yellow-500)}
     <p class="ro-lede">
       This practice delivers care in patients&rsquo; homes. It has no clinic in Hicksville,
       no office in Garden City, no location in Plainview. The site must never suggest
-      otherwise &mdash; and that single distinction drives decisions on more than twenty pages.
+      otherwise, and that single distinction drives decisions on more than twenty pages.
     </p>
 
     <div class="ro-vs">
@@ -1049,10 +1079,10 @@ a:hover{color:var(--yellow-500)}
 
     <h3>Why it matters, in order of severity</h3>
     <ol>
-      <li><strong>Trust and compliance</strong> &mdash; claiming locations that do not exist is a misrepresentation, and this is healthcare.</li>
-      <li><strong>Google Business Profile alignment</strong> &mdash; GBP is configured as a service-area business. A site implying twenty storefronts contradicts it.</li>
-      <li><strong>Schema integrity</strong> &mdash; no per-town <code>LocalBusiness</code> entities, no fabricated addresses.</li>
-      <li><strong>User experience</strong> &mdash; a patient who drives to a nonexistent office is a lost patient and a bad review.</li>
+      <li><strong>Trust and compliance</strong>, claiming locations that do not exist is a misrepresentation, and this is healthcare.</li>
+      <li><strong>Google Business Profile alignment</strong>, GBP is configured as a service-area business. A site implying twenty storefronts contradicts it.</li>
+      <li><strong>Schema integrity</strong>, no per-town <code>LocalBusiness</code> entities, no fabricated addresses.</li>
+      <li><strong>User experience</strong>, a patient who drives to a nonexistent office is a lost patient and a bad review.</li>
     </ol>
   </div>
 </section>
@@ -1079,13 +1109,13 @@ a:hover{color:var(--yellow-500)}
       <div class="ro-tw"><table>
         <thead><tr><th>Phase</th><th>What it adds</th><th>Running total</th></tr></thead>
         <tbody>
-          <tr><td><strong>1</strong> &mdash; Launch Foundation</td><td>36</td><td><strong>36</strong></td></tr>
-          <tr><td><strong>2</strong> &mdash; Local Service Expansion</td><td>20</td><td><strong>56</strong></td></tr>
-          <tr><td><strong>3</strong> &mdash; Nested Subservice Pages</td><td>10</td><td><strong>66</strong></td></tr>
-          <tr><td><strong>4</strong> &mdash; Selective Local Expansion</td><td>12</td><td><strong>78</strong></td></tr>
-          <tr><td><strong>5</strong> &mdash; GBP / Reviews / Authority</td><td>0&ndash;2</td><td><strong>78&ndash;80</strong></td></tr>
-          <tr><td><strong>6</strong> &mdash; CRO / Ongoing Maintenance</td><td>flexible</td><td>flexible</td></tr>
-          <tr><td><strong>7</strong> &mdash; Resources <em>(optional)</em></td><td>3&ndash;6 articles</td><td>&mdash;</td></tr>
+          <tr><td><strong>1</strong>, Launch Foundation</td><td>36</td><td><strong>36</strong></td></tr>
+          <tr><td><strong>2</strong>, Local Service Expansion</td><td>20</td><td><strong>56</strong></td></tr>
+          <tr><td><strong>3</strong>, Nested Subservice Pages</td><td>10</td><td><strong>66</strong></td></tr>
+          <tr><td><strong>4</strong>, Selective Local Expansion</td><td>12</td><td><strong>78</strong></td></tr>
+          <tr><td><strong>5</strong>, GBP / Reviews / Authority</td><td>0&ndash;2</td><td><strong>78&ndash;80</strong></td></tr>
+          <tr><td><strong>6</strong>, CRO / Ongoing Maintenance</td><td>flexible</td><td>flexible</td></tr>
+          <tr><td><strong>7</strong>, Resources <em>(optional)</em></td><td>3&ndash;6 articles</td><td>, </td></tr>
         </tbody>
       </table></div>
 
@@ -1109,7 +1139,7 @@ a:hover{color:var(--yellow-500)}
       <span class="ro-kicker">The Framework</span>
       <h2>The seven phases, expanded</h2>
       <p class="ro-lede">
-        Each phase opens to its full work order &mdash; the goal, the individual steps, the
+        Each phase opens to its full work order: the goal, the individual steps, the
         templates, the quality gates, and the decision points that determine whether the next
         phase happens at all.
       </p>
@@ -1133,8 +1163,7 @@ a:hover{color:var(--yellow-500)}
         </div>
 
         <p>
-          Runs alongside Phase 1. Every page on this site is one of three layouts &mdash;
-          approve those three and the rest is production, not design.
+          Runs alongside Phase 1. Every page on this site is one of three layouts, approve those three and the rest is production, not design.
         </p>
 
 <pre><code>1. Homepage                        /
@@ -1143,30 +1172,30 @@ a:hover{color:var(--yellow-500)}
 
         <h4>Work order</h4>
         <ol class="ro-steps">
-          <li><b>Pre-design requirements</b> &mdash; confirm the SEO architecture, the content each page needs, and the platform stack before anyone opens a design tool</li>
-          <li><b>Design the three templates</b> &mdash; desktop and mobile, with a slot for every required section</li>
-          <li><b>Design QA and client approval</b> &mdash; internal review against the content checklist, then written sign-off</li>
-          <li><b>Development handoff and build</b> &mdash; built as reusable templates, not one-off pages</li>
-          <li><b>Build QA</b> &mdash; four separate passes: development, SEO/content, accessibility, performance</li>
-          <li><b>Client build approval</b> &mdash; written sign-off on the developed templates</li>
-          <li><b>Full-site rollout and change control</b> &mdash; the remaining 33 pages, with a formal change process</li>
+          <li><b>Pre-design requirements</b>, confirm the SEO architecture, the content each page needs, and the platform stack before anyone opens a design tool</li>
+          <li><b>Design the three templates</b>, desktop and mobile, with a slot for every required section</li>
+          <li><b>Design QA and client approval</b>, internal review against the content checklist, then written sign-off</li>
+          <li><b>Development handoff and build</b>, built as reusable templates, not one-off pages</li>
+          <li><b>Build QA</b>, four separate passes: development, SEO/content, accessibility, performance</li>
+          <li><b>Client build approval</b>, written sign-off on the developed templates</li>
+          <li><b>Full-site rollout and change control</b>, the remaining 33 pages, with a formal change process</li>
           <li><b>Acceptance criteria and quality control</b></li>
         </ol>
 
         <h4>Gates</h4>
         <ul class="ro-gates">
-          <li><strong>Gate 1 &mdash; Requirements locked.</strong> Architecture and content requirements confirmed.</li>
-          <li><strong>Gate 2 &mdash; Designs approved.</strong> Written sign-off on all three.</li>
-          <li><strong>Gate 3 &mdash; Templates built.</strong> Live on staging, passing all four QA checklists.</li>
-          <li><strong>Gate 4 &mdash; Build approved.</strong> Written sign-off on the developed templates.</li>
-          <li><strong>Gate 5 &mdash; Rollout.</strong> Remaining 33 pages built from approved templates.</li>
+          <li><strong>Gate 1, Requirements locked.</strong> Architecture and content requirements confirmed.</li>
+          <li><strong>Gate 2, Designs approved.</strong> Written sign-off on all three.</li>
+          <li><strong>Gate 3, Templates built.</strong> Live on staging, passing all four QA checklists.</li>
+          <li><strong>Gate 4, Build approved.</strong> Written sign-off on the developed templates.</li>
+          <li><strong>Gate 5, Rollout.</strong> Remaining 33 pages built from approved templates.</li>
         </ul>
 
         <div class="ro-note ro-note-warn">
           <h4>The modularity test</h4>
           <p>
             Could you produce the next town&rsquo;s page by duplicating and changing content
-            only &mdash; no layout work? If not, it is not a template. It is a page that
+            only, no layout work? If not, it is not a template. It is a page that
             happens to look like one.
           </p>
         </div>
@@ -1233,15 +1262,15 @@ a:hover{color:var(--yellow-500)}
 
         <h4>Work order</h4>
         <ol class="ro-steps">
-          <li><b>Scope and page inventory</b> &mdash; lock the business model, the town list, and the 36-page build</li>
-          <li><b>Keyword map and URL structure</b> &mdash; one primary keyword per page, no duplicates, clean URLs</li>
-          <li><b>Core page templates</b> &mdash; the 14 non-service-area pages</li>
-          <li><b>Service-area templates</b> &mdash; the 22 town and county pages</li>
-          <li><b>On-page SEO and internal linking</b> &mdash; title and meta patterns, link flow, no orphans</li>
-          <li><b>Trust, compliance and tracking</b> &mdash; credentials, disclaimers, GA4, GTM, call tracking</li>
-          <li><b>Technical SEO and pre-launch QA</b> &mdash; Core Web Vitals, sitemap, indexability, full crawl</li>
-          <li><b>Launch day runbook</b> &mdash; the step-by-step go-live sequence</li>
-          <li><b>Post-launch 30-day monitoring</b> &mdash; week-by-week checks</li>
+          <li><b>Scope and page inventory</b>, lock the business model, the town list, and the 36-page build</li>
+          <li><b>Keyword map and URL structure</b>, one primary keyword per page, no duplicates, clean URLs</li>
+          <li><b>Core page templates</b>, the 14 non-service-area pages</li>
+          <li><b>Service-area templates</b>, the 22 town and county pages</li>
+          <li><b>On-page SEO and internal linking</b>, title and meta patterns, link flow, no orphans</li>
+          <li><b>Trust, compliance and tracking</b>, credentials, disclaimers, GA4, GTM, call tracking</li>
+          <li><b>Technical SEO and pre-launch QA</b>, Core Web Vitals, sitemap, indexability, full crawl</li>
+          <li><b>Launch day runbook</b>, the step-by-step go-live sequence</li>
+          <li><b>Post-launch 30-day monitoring</b>, week-by-week checks</li>
           <li><b>Acceptance criteria and Phase 2 backlog</b></li>
         </ol>
 
@@ -1265,11 +1294,11 @@ a:hover{color:var(--yellow-500)}
 
         <h4>Phase gates</h4>
         <ul class="ro-gates">
-          <li><strong>Gate A &mdash; Scope locked.</strong> Page list and town list approved in writing.</li>
-          <li><strong>Gate B &mdash; Content complete.</strong> All 36 pages written, zero placeholder text.</li>
-          <li><strong>Gate C &mdash; Build QA passed.</strong> Staging crawl clean, compliance signed off.</li>
-          <li><strong>Gate D &mdash; Live.</strong> Site indexable, tracking firing, live crawl clean.</li>
-          <li><strong>Gate E &mdash; Phase 1 accepted.</strong> 30-day report delivered.</li>
+          <li><strong>Gate A, Scope locked.</strong> Page list and town list approved in writing.</li>
+          <li><strong>Gate B, Content complete.</strong> All 36 pages written, zero placeholder text.</li>
+          <li><strong>Gate C, Build QA passed.</strong> Staging crawl clean, compliance signed off.</li>
+          <li><strong>Gate D, Live.</strong> Site indexable, tracking firing, live crawl clean.</li>
+          <li><strong>Gate E, Phase 1 accepted.</strong> 30-day report delivered.</li>
         </ul>
 
         <h4>Ground rules</h4>
@@ -1285,7 +1314,7 @@ a:hover{color:var(--yellow-500)}
           <h4>The single most common launch failure</h4>
           <p>
             Shipping with a staging <code>noindex</code> or <code>Disallow: /</code> still in
-            place. It is a checkbox on the runbook for a reason &mdash; the site can look
+            place. It is a checkbox on the runbook for a reason, the site can look
             perfect and be invisible for weeks before anyone notices.
           </p>
         </div>
@@ -1310,9 +1339,8 @@ a:hover{color:var(--yellow-500)}
         </div>
 
         <p>
-          Phase 2 targets genuinely more specific intent &mdash;
-          <code>orthopedic physical therapy Hicksville NY</code>,
-          <code>chronic pain management Garden City NY</code> &mdash; while avoiding the trap.
+          Phase 2 targets genuinely more specific intent, <code>orthopedic physical therapy Hicksville NY</code>,
+          <code>chronic pain management Garden City NY</code>, while avoiding the trap.
           Building all 80 town-by-service combinations at once means most end up too similar to
           be useful, and the site starts to look like a doorway network.
         </p>
@@ -1323,9 +1351,9 @@ a:hover{color:var(--yellow-500)}
 
         <h4>Work order</h4>
         <ol class="ro-steps">
-          <li><b>Performance review and town selection</b> &mdash; the five towns come from Phase 1 data, not from opinion</li>
+          <li><b>Performance review and town selection</b>, the five towns come from Phase 1 data, not from opinion</li>
           <li><b>Page inventory, URLs and keyword map</b></li>
-          <li><b>Content production and quality rules</b> &mdash; including the three-way duplication test</li>
+          <li><b>Content production and quality rules</b>, including the three-way duplication test</li>
           <li><b>Internal linking, breadcrumbs and schema</b></li>
           <li><b>Technical and content QA</b></li>
           <li><b>Publishing and Search Console submission</b></li>
@@ -1338,8 +1366,7 @@ a:hover{color:var(--yellow-500)}
           <p>
             Every Phase 2 page must be meaningfully different from <strong>its parent service
             page</strong>, <strong>its parent town page</strong>, and <strong>its sibling
-            pages</strong>. If it cannot clear all three, the page gets merged or dropped
-            &mdash; not published thin.
+            pages</strong>. If it cannot clear all three, the page gets merged or dropped, not published thin.
           </p>
         </div>
 
@@ -1398,7 +1425,7 @@ Sports Physical Therapy
           <p>
             Google does not require nested URLs and does not reward them with a ranking boost.
             Nesting is chosen here because these services have a real clinical hierarchy and the
-            URL should reflect it &mdash; for hierarchy, user understanding, crawlable internal
+            URL should reflect it, for hierarchy, user understanding, crawlable internal
             linking, breadcrumbs, content organization and future scalability.
           </p>
         </div>
@@ -1416,9 +1443,9 @@ Sports Physical Therapy
         <ol class="ro-steps">
           <li><b>Performance review and page selection</b></li>
           <li><b>URL structure, keywords and breadcrumbs</b></li>
-          <li><b>Content requirements by page</b> &mdash; per-page required sections for all ten</li>
+          <li><b>Content requirements by page</b>, per-page required sections for all ten</li>
           <li><b>Internal linking and parent page updates</b></li>
-          <li><b>On-page SEO, schema and compliance</b> &mdash; including provider clinical sign-off</li>
+          <li><b>On-page SEO, schema and compliance</b>, including provider clinical sign-off</li>
           <li><b>Technical and content QA</b></li>
           <li><b>Publishing and Search Console</b></li>
           <li><b>Tracking and rank monitoring</b></li>
@@ -1477,10 +1504,10 @@ Patients from that town are calling about that problem.
         <div class="ro-tw"><table>
           <thead><tr><th>Option</th><th>Build</th><th>Total</th></tr></thead>
           <tbody>
-            <tr><td>A &mdash; Wider town coverage</td><td>5 towns x 4 core services = 20</td><td>86</td></tr>
-            <tr><td><strong>B &mdash; Deeper local intent</strong> (recommended)</td><td>3 towns x 4 top subservices = 12</td><td><strong>78</strong></td></tr>
-            <tr><td>C &mdash; Hybrid</td><td>12</td><td>78</td></tr>
-            <tr><td>D &mdash; Build nothing, optimize instead</td><td>0</td><td>66</td></tr>
+            <tr><td>A, Wider town coverage</td><td>5 towns x 4 core services = 20</td><td>86</td></tr>
+            <tr><td><strong>B, Deeper local intent</strong> (recommended)</td><td>3 towns x 4 top subservices = 12</td><td><strong>78</strong></td></tr>
+            <tr><td>C, Hybrid</td><td>12</td><td>78</td></tr>
+            <tr><td>D, Build nothing, optimize instead</td><td>0</td><td>66</td></tr>
           </tbody>
         </table></div>
 
@@ -1491,10 +1518,10 @@ Patients from that town are calling about that problem.
 
         <h4>Work order</h4>
         <ol class="ro-steps">
-          <li><b>Performance review and path selection</b> &mdash; choose A, B, C or D on evidence</li>
-          <li><b>Town and subservice selection</b> &mdash; scorecards, not preferences</li>
+          <li><b>Performance review and path selection</b>, choose A, B, C or D on evidence</li>
+          <li><b>Town and subservice selection</b>, scorecards, not preferences</li>
           <li><b>Page inventory and URL rules</b></li>
-          <li><b>Content production and quality rules</b> &mdash; must differ from both the global subservice page and the town page</li>
+          <li><b>Content production and quality rules</b>, must differ from both the global subservice page and the town page</li>
           <li><b>Internal linking and breadcrumbs</b></li>
           <li><b>On-page SEO, schema and compliance</b></li>
           <li><b>Technical and content QA</b></li>
@@ -1531,16 +1558,16 @@ Patients from that town are calling about that problem.
 
         <h4>Work order</h4>
         <ol class="ro-steps">
-          <li><b>GBP audit and category selection</b> &mdash; with competitor research</li>
-          <li><b>GBP services and service areas</b> &mdash; aligned to the website, no fabricated coverage</li>
+          <li><b>GBP audit and category selection</b>, with competitor research</li>
+          <li><b>GBP services and service areas</b>, aligned to the website, no fabricated coverage</li>
           <li><b>GBP description and photos</b></li>
-          <li><b>Review generation system</b> &mdash; no incentives, no gating, no fake reviews</li>
-          <li><b>Review response SOP</b> &mdash; including what can never be disclosed in a public reply</li>
+          <li><b>Review generation system</b>, no incentives, no gating, no fake reviews</li>
+          <li><b>Review response SOP</b>, including what can never be disclosed in a public reply</li>
           <li><b>Citations and NAP consistency</b></li>
           <li><b>Website trust and local authority</b></li>
-          <li><b>GBP posts</b> &mdash; minimum twice monthly, weekly is better</li>
-          <li><b>Automation and tracking</b> &mdash; missed-call text-back, form auto-response, UTM discipline</li>
-          <li><b>Map pack rank tracking</b> &mdash; proximity, county, town-plus-service</li>
+          <li><b>GBP posts</b>, minimum twice monthly, weekly is better</li>
+          <li><b>Automation and tracking</b>, missed-call text-back, form auto-response, UTM discipline</li>
+          <li><b>Map pack rank tracking</b>, proximity, county, town-plus-service</li>
           <li><b>Monthly and quarterly maintenance</b></li>
           <li><b>Acceptance criteria and quality control</b></li>
         </ol>
@@ -1549,7 +1576,7 @@ Patients from that town are calling about that problem.
           <h4>Healthcare review compliance</h4>
           <p>
             A review response can never confirm that someone was a patient or reference their
-            condition &mdash; even when the reviewer disclosed it themselves. The response
+            condition, even when the reviewer disclosed it themselves. The response
             templates in this phase exist specifically so that nobody has to improvise it in
             the moment.
           </p>
@@ -1576,21 +1603,21 @@ Patients from that town are calling about that problem.
 
         <p>
           Phase 6 never finishes. It is the monthly system that stops everything else from
-          decaying, and it shares one session with Phase 5 &mdash; the GBP checklist and the
+          decaying, and it shares one session with Phase 5, the GBP checklist and the
           site checklist are the same meeting, not two.
         </p>
 
         <h4>Work order</h4>
         <ol class="ro-steps">
-          <li><b>Reporting cadence and data review</b> &mdash; monthly, quarterly, annual</li>
-          <li><b>Conversion path audit</b> &mdash; quarterly, by template</li>
-          <li><b>CTR optimization</b> &mdash; high-impression, low-CTR pages first</li>
-          <li><b>Conversion rate optimization</b> &mdash; high-traffic, low-conversion pages first</li>
+          <li><b>Reporting cadence and data review</b>, monthly, quarterly, annual</li>
+          <li><b>Conversion path audit</b>, quarterly, by template</li>
+          <li><b>CTR optimization</b>, high-impression, low-CTR pages first</li>
+          <li><b>Conversion rate optimization</b>, high-traffic, low-conversion pages first</li>
           <li><b>Content refresh and internal linking</b></li>
           <li><b>Technical SEO and mobile maintenance</b></li>
-          <li><b>Tracking accuracy QA</b> &mdash; a real test form and a real test call, every month</li>
+          <li><b>Tracking accuracy QA</b>, a real test form and a real test call, every month</li>
           <li><b>GBP and local authority upkeep</b></li>
-          <li><b>Monthly action plan and new-page decisions</b> &mdash; nine questions that must all be true before a new page is approved</li>
+          <li><b>Monthly action plan and new-page decisions</b>, nine questions that must all be true before a new page is approved</li>
           <li><b>Quarterly and annual reviews</b></li>
           <li><b>Acceptance criteria and quality control</b></li>
         </ol>
@@ -1630,7 +1657,7 @@ Patients from that town are calling about that problem.
         </p>
 
         <p>
-          A <strong>Resources section</strong>, not a generic blog &mdash; the framing matters.
+          A <strong>Resources section</strong>, not a generic blog, the framing matters.
           &ldquo;Resources&rdquo; signals patient education tied to the practice&rsquo;s
           services. A blog invites unfocused posting.
         </p>
@@ -1645,7 +1672,7 @@ How Physical Therapy Helps Back Pain</code></pre>
 
         <p>
           Each article maps to an existing service or subservice page and links to it. None of
-          them exist to rank on their own &mdash; they exist to answer the questions that stop
+          them exist to rank on their own, they exist to answer the questions that stop
           a patient from calling, and to pass authority to the page that converts.
         </p>
 
@@ -1686,8 +1713,7 @@ How Physical Therapy Helps Back Pain</code></pre>
       <h4>The test that matters</h4>
       <p>
         Every page must answer a question a real patient actually asks, in a way that no other
-        page on the site already answers. If it cannot, it does not get built &mdash;
-        regardless of search volume.
+        page on the site already answers. If it cannot, it does not get built, regardless of search volume.
       </p>
     </div>
   </div>
@@ -1699,8 +1725,8 @@ How Physical Therapy Helps Back Pain</code></pre>
     <div class="ro-close">
       <h2>Planning a new website for a local service business?</h2>
       <p>
-        This is the framework we use. If you are launching from zero &mdash; or inheriting a
-        site that was built as a keyword matrix &mdash; we can walk you through what the
+        This is the framework we use. If you are launching from zero, or inheriting a
+        site that was built as a keyword matrix, we can walk you through what the
         first ninety days should look like.
       </p>
       <a href="/contact/" class="ro-btn">Talk to Us</a>
@@ -1714,7 +1740,7 @@ How Physical Therapy Helps Back Pain</code></pre>
 <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:48px">
 <div><a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="27" height="26" style="height:26px;display:block" role="img" aria-label="Ranking Out"><g fill="#FFFFFF"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1.4px;color:#FFFFFF">Ranking<span style="color:#F7C600"> Out</span></span></a><p style="margin:14px 0 0;max-width:34ch;font-size:14px;line-height:21px;color:#8A90A8">We reactivate the leads you already gave up on and book appointments straight into your calendar. Arlington, Virginia.</p></div>
 <div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Services</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/services/" style="font-size:14px;color:#8A90A8;text-decoration:none">All Services</a></li><li><a href="/services/local-seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">Local SEO</a></li><li><a href="/services/seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">SEO + GEO</a></li><li><a href="/services/google-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Google Ads</a></li><li><a href="/services/facebook-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Meta Ads</a></li><li><a href="/services/reviews/" style="font-size:14px;color:#8A90A8;text-decoration:none">Reviews &amp; Reputation</a></li><li><a href="/services/web-design/" style="font-size:14px;color:#8A90A8;text-decoration:none">Web Design</a></li><li><a href="/services/front-desk-conversion/" style="font-size:14px;color:#8A90A8;text-decoration:none">Front Desk Conversion</a></li><li><a href="/services/patient-reactivation/" style="font-size:14px;color:#8A90A8;text-decoration:none">Patient Reactivation</a></li></ul></div>
-<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Resources</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
+<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/results/" style="font-size:14px;color:#8A90A8;text-decoration:none">Results</a></li><li><a href="/pricing/" style="font-size:14px;color:#8A90A8;text-decoration:none">What It Costs</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Guides</a></li><li><a href="/compare/" style="font-size:14px;color:#8A90A8;text-decoration:none">How To Decide</a></li><li><a href="/arlington-va/" style="font-size:14px;color:#8A90A8;text-decoration:none">Arlington &amp; DC Metro</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
 </div>
 <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8"><span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#8A90A8;text-decoration:none">Privacy Policy</a></span><span><a href="tel:+17033895362" style="color:#8A90A8;text-decoration:none">(703) 389-5362</a> &middot; <a href="mailto:info@rankingout.com" style="color:#8A90A8;text-decoration:none">info@rankingout.com</a></span></div>
 </div>
@@ -1788,8 +1814,30 @@ How Physical Therapy Helps Back Pain</code></pre>
     if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}
   });
   window.addEventListener('resize',function(){
-    if(window.innerWidth>1160&&b.getAttribute('aria-expanded')==='true') set(false);
+    if(window.innerWidth>1280&&b.getAttribute('aria-expanded')==='true') set(false);
   });
+})();
+</script>
+<script>
+/* GA4 conversion events. Fails silently if gtag is blocked or absent. */
+(function(){
+  function ev(name, params){
+    try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0){
+      ev('phone_click', {link_url: href, link_text: (a.innerText||'').trim().slice(0,80),
+                         page_path: location.pathname});
+    } else if (href.indexOf('mailto:') === 0){
+      ev('email_click', {link_url: href, page_path: location.pathname});
+    } else if (href.indexOf('/contact/') !== -1){
+      ev('book_cta_click', {link_text: (a.innerText||'').trim().slice(0,80),
+                            page_path: location.pathname});
+    }
+  }, true);
 })();
 </script>
 </body>

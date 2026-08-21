@@ -3,6 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+/* Analytics opt-out for this browser. Survives IP and network changes. */
+(function(){
+  var KEY = 'ro_ga_optout', ID = 'G-LGS7VMSNGR';
+  try {
+    var q = window.location.search || '';
+    if (q.indexOf('ga_optout=1') > -1) { localStorage.setItem(KEY, '1'); }
+    else if (q.indexOf('ga_optout=0') > -1) { localStorage.removeItem(KEY); }
+    if (localStorage.getItem(KEY) === '1') { window['ga-disable-' + ID] = true; }
+  } catch (e) {
+    /* private mode, blocked storage: fall through and just measure normally */
+  }
+})();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGS7VMSNGR"></script>
 <script>
@@ -12,9 +26,20 @@ gtag('js', new Date());
 gtag('config', 'G-LGS7VMSNGR');
 </script>
 <title>Local SEO for PT &amp; Chiropractic Clinics | Ranking Out</title>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B0E1A">
 <meta name="description" content="Rank in the Google Maps Pack when patients search for a physical therapist or chiropractor near them. A 4-pillar Local SEO system built for clinics.">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Ranking Out">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://rankingout.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ranking Out. Local search for physical therapy and chiropractic practices.">
 <meta property="og:title" content="The Maps Pack: Your Clinic's Most Powerful Patient Source">
 <meta property="og:description" content="Those top three map listings take the majority of the calls. We build physical therapy and chiropractic practices into them.">
 <meta property="og:url" content="https://rankingout.com/services/local-seo/">
@@ -536,7 +561,7 @@ a:hover{color:var(--yellow-500)}
 
 
 /* ---------- MOBILE NAVIGATION ---------- */
-@media (max-width:1160px){header nav{display:none!important}}
+@media (max-width:1280px){header nav{display:none!important}}
 .ro-navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;
   width:46px;height:46px;padding:0 11px;margin-left:6px;flex-shrink:0;
   background:transparent;border:1px solid var(--border-field);border-radius:var(--radius-1);
@@ -551,7 +576,7 @@ a:hover{color:var(--yellow-500)}
 .ro-mnav{display:none}
 .ro-mnav[hidden]{display:none}
 
-@media (max-width:1160px){
+@media (max-width:1280px){
   .ro-navtoggle{display:flex}
   .ro-mnav:not([hidden]){display:flex;flex-direction:column;
     background:var(--white);border-bottom:1px solid var(--border-card);
@@ -583,7 +608,47 @@ a:hover{color:var(--yellow-500)}
   .ro-btn--lg,.ro-btn--md{padding-left:var(--space-5);padding-right:var(--space-5);
     white-space:normal;text-align:center;max-width:100%}
 }
+
+/* ---------- FAQ (shared, unscoped) ---------- */
+.ro-faq{padding:var(--section-y) var(--gutter);background:var(--surface-alt);
+  border-top:1px solid var(--border-card)}
+.ro-faq-wrap{max-width:var(--container-prose);margin:0 auto}
+.ro-faq-kicker{margin:0 0 14px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+.ro-faq h2{margin:0 0 26px;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:clamp(1.9rem,4vw,2.9rem);
+  line-height:1.04;letter-spacing:.6px;color:var(--text-display)}
+.ro-faq-item{border-top:1px solid var(--border-card)}
+.ro-faq-item:last-child{border-bottom:1px solid var(--border-card)}
+.ro-faq-item summary{list-style:none;cursor:pointer;display:flex;
+  justify-content:space-between;align-items:flex-start;gap:20px;padding:19px 0;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:1.14rem;line-height:1.35;letter-spacing:.2px;color:var(--text-display)}
+.ro-faq-item summary::-webkit-details-marker{display:none}
+.ro-faq-item summary::marker{content:""}
+.ro-faq-item summary:after{content:"+";flex-shrink:0;line-height:1.1;
+  font-family:var(--font-condensed);font-size:1.5rem;color:var(--action)}
+.ro-faq-item[open] summary:after{content:"\2212"}
+.ro-faq-a{padding:0 0 24px;max-width:66ch}
+.ro-faq-a p{margin:0 0 15px;font-size:var(--body-prose-size);
+  line-height:var(--body-prose-line);color:var(--text-body)}
+.ro-faq-a p:last-child{margin-bottom:0}
+.ro-faq-a strong{color:var(--text-display)}
+.ro-faq-foot{margin:32px 0 0;font-size:var(--body-mid-size);
+  line-height:var(--body-mid-line);color:var(--text-muted)}
+.ro-faq-foot a{color:var(--navy-400);text-decoration:underline}
+.ro-faq-foot a:hover{color:var(--yellow-600)}
+@media (max-width:640px){
+  .ro-faq{padding:56px var(--gutter)}
+  .ro-faq-item summary{font-size:1.05rem;padding:17px 0}
+}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long before this shows up in the schedule?","acceptedAnswer":{"@type":"Answer","text":"Profile and listing work moves inside the first month. Grid position around your address usually starts shifting between weeks six and twelve. New evaluations traceable to local search normally show up in the second quarter, not the first. Anybody who promises you page one in thirty days is either working on a term nobody searches or is about to take your money and hope. Ask them to write the timeline down and put something behind it. That single question ends most agency conversations quickly."}},{"@type":"Question","name":"We already rank first for our clinic name. Isn't that enough?","acceptedAnswer":{"@type":"Answer","text":"Ranking for your own name means people who already know you can find you. That is a phone book. It is not a marketing channel. The patients worth having are the ones typing physical therapy near me or chiropractor open saturday, who do not know your name and never will unless you appear. Those are two entirely different searches with two entirely different values, and almost every practice we look at is winning the worthless one and losing the valuable one."}},{"@type":"Question","name":"How is this different from the SEO our web guy sells?","acceptedAnswer":{"@type":"Answer","text":"Most web developers treat local search as a checkbox: claim the listing, stuff some keywords, send a PDF. That is not the work. The work is grid position around your actual address, category selection, proximity, review velocity, listing consistency across the platforms patients and insurers check, and pages that answer what somebody in your town is actually searching for. It is closer to bookkeeping than to art. It is tedious, it compounds, and it is why most practices never do it properly."}},{"@type":"Question","name":"Do we have to sign a long contract?","acceptedAnswer":{"@type":"Answer","text":"Yes, and you should be suspicious of anyone who says otherwise. Local SEO on a month to month basis is a promise nobody can keep, because the work does not produce anything for the first sixty days and then produces for years. An agency willing to go month to month is either planning to do shallow work that shows early and dies, or has priced in your leaving. We would rather agree a term, tell you what happens in each phase of it, and be judged on whether that happened."}},{"@type":"Question","name":"We hired an SEO company before and got nothing. Why would this be different?","acceptedAnswer":{"@type":"Answer","text":"That is the most reasonable objection on this page, and the honest answer is that you cannot know from a sales conversation. Everybody says they are different. So do not take our word for it. Ask us to show you your own grid before you pay anything: where you actually rank at ten points around your clinic, who owns the streets you are losing, and what it would take to take them back. If that picture does not persuade you, no paragraph on a website should."}},{"@type":"Question","name":"Could we just do this in house?","acceptedAnswer":{"@type":"Answer","text":"Genuinely, yes. None of it is secret. If you have somebody on staff who will own it every week for a year, the guides on this site are enough to run most of it yourself. The question is not whether it can be done in house. It is what an hour of your time is worth and what else it could be doing. Most owners who try it get eight weeks in, get busy treating patients, and the work stops. Stopping is worse than never starting, because the ground you gained goes back to whoever kept going."}}]}</script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Maps Pack: Your Clinic's Most Powerful Patient Source">
+<meta name="twitter:description" content="Those top three map listings take the majority of the calls. We build physical therapy and chiropractic practices into them.">
+<meta name="twitter:image" content="https://rankingout.com/og.jpg">
 </head>
 <body>
 <div style="font-family:Figtree,-apple-system,sans-serif;background:#FFFFFF">
@@ -593,12 +658,13 @@ a:hover{color:var(--yellow-500)}
 <div style="width:100%;max-width:1200px;display:flex;align-items:stretch;padding:0 32px;box-sizing:border-box">
 <a href="/" style="display:flex;align-items:center;gap:14px;padding-right:32px;text-decoration:none;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="30" height="29" style="height:30px;display:block" role="img" aria-label="Ranking Out"><g fill="#1E3A5F"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1.6px;color:#0B0E1A">Ranking<span style="color:#F7C600"> Out</span></span></a>
 <nav style="flex-grow:1;display:flex;justify-content:center;align-items:stretch;gap:2px">
-<a href="/services/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
-<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
-<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
-<a href="/resources/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Resources</a>
-<a href="/about/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
-<a href="/contact/" style="display:flex;align-items:center;padding:0 11px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
+<a href="/services/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
+<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
+<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
+<a href="/results/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Results</a>
+<a href="/pricing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Pricing</a>
+<a href="/about/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
+<a href="/contact/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
 </nav>
 <div style="display:flex;align-items:center;flex-shrink:0;gap:4px">
 <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--sm">Book a call</a>
@@ -612,7 +678,8 @@ a:hover{color:var(--yellow-500)}
 <a href="/services/">Services</a>
 <a href="/physical-therapy-marketing/">For Physical Therapists</a>
 <a href="/chiropractic-marketing/">For Chiropractors</a>
-<a href="/resources/">Resources</a>
+<a href="/results/">Results</a>
+<a href="/pricing/">Pricing</a>
 <a href="/about/">About</a>
 <a href="/contact/">Contact</a>
 </div>
@@ -632,10 +699,10 @@ a:hover{color:var(--yellow-500)}
 <!-- ============================ INTRO ============================ -->
 <section class="ls-section ls-intro">
   <div class="ls-wrap">
-    <p>Competition in local healthcare markets is fierce. Your practice has probably tried everything &mdash; direct mail, radio spots, pay-per-click campaigns, maybe even a previous SEO agency. But nothing drives ready-to-book patients quite like the Google Maps Pack.</p>
+    <p>Competition in local healthcare markets is fierce. Your practice has probably tried everything, direct mail, radio spots, pay-per-click campaigns, maybe even a previous SEO agency. But nothing drives ready-to-book patients quite like the Google Maps Pack.</p>
     <p>When someone searches "chiropractor near me" or "physical therapy for sciatica near me," those top three map listings capture the overwhelming majority of clicks, phone calls, and ultimately booked evaluations. Everyone else gets left behind.</p>
-    <p>Traditional SEO and PPC fall short here. Organic rankings push you below the map. PPC puts you above it, but at a premium cost-per-click that eats into a margin already squeezed by insurance reimbursement. <strong>The Maps Pack sits right in the sweet spot &mdash; highly visible, highly trusted, and completely free per click.</strong></p>
-    <p>Done right, a strong Maps Pack presence alone can transform your new patient volume. The problem is that most agencies don't know how to get you there. They treat Local SEO as an afterthought &mdash; a few citations here, an optimized listing there &mdash; and wonder why nothing moves.</p>
+    <p>Traditional SEO and PPC fall short here. Organic rankings push you below the map. PPC puts you above it, but at a premium cost-per-click that eats into a margin already squeezed by insurance reimbursement. <strong>The Maps Pack sits right in the sweet spot, highly visible, highly trusted, and completely free per click.</strong></p>
+    <p>Done right, a strong Maps Pack presence alone can transform your new patient volume. The problem is that most agencies don't know how to get you there. They treat Local SEO as an afterthought, a few citations here, an optimized listing there, and wonder why nothing moves.</p>
     <p>We take a completely different approach. Local SEO is our specialty, and we've built a proven system specifically for physical therapy and chiropractic practices competing in the toughest local markets in the country.</p>
   </div>
 </section>
@@ -653,7 +720,7 @@ a:hover{color:var(--yellow-500)}
       <div class="ls-card">
         <span class="ls-card-num">01</span>
         <h3>Local Profile Optimization</h3>
-        <p>We optimize your presence across every platform that matters &mdash; Google Business Profile, Healthgrades, Vitals, Zocdoc, Yelp, and dozens more. Complete, consistent profiles are the price of admission for Maps Pack visibility.</p>
+        <p>We optimize your presence across every platform that matters: Google Business Profile, Healthgrades, Vitals, Zocdoc, Yelp, and dozens more. Complete, consistent profiles are the price of admission for Maps Pack visibility.</p>
       </div>
       <div class="ls-card">
         <span class="ls-card-num">02</span>
@@ -663,7 +730,7 @@ a:hover{color:var(--yellow-500)}
       <div class="ls-card">
         <span class="ls-card-num">03</span>
         <h3>Local Content Development</h3>
-        <p>Content that speaks to local patients &mdash; location pages, condition topics, and community news. This establishes your clinic as part of the neighborhood and strengthens local relevance signals.</p>
+        <p>Content that speaks to local patients: location pages, condition topics, and community news. This establishes your clinic as part of the neighborhood and strengthens local relevance signals.</p>
       </div>
       <div class="ls-card">
         <span class="ls-card-num">04</span>
@@ -681,11 +748,11 @@ a:hover{color:var(--yellow-500)}
       <div>
         <span class="ls-pillar-tag">Pillar 1</span>
         <h2>Local Profile Optimization</h2>
-        <p class="ls-pillar-copy">Your Google Business Profile is the foundation, but it is not the only profile that matters. We optimize your presence across every platform &mdash; GBP, Healthgrades, Vitals, WebMD Care, Zocdoc, Yelp, Apple Business Connect, and dozens of other directories &mdash; to maximize visibility, consistency, and trust signals.</p>
+        <p class="ls-pillar-copy">Your Google Business Profile is the foundation, but it is not the only profile that matters. We optimize your presence across every platform: GBP, Healthgrades, Vitals, WebMD Care, Zocdoc, Yelp, Apple Business Connect, and dozens of other directories, to maximize visibility, consistency, and trust signals.</p>
       </div>
       <ul class="ls-checks">
         <li><span class="ls-tick">&#10003;</span>Complete profile setup and verification management</li>
-        <li><span class="ls-tick">&#10003;</span>Primary and secondary category optimization &mdash; Chiropractor, Physical Therapist, Sports Medicine Clinic</li>
+        <li><span class="ls-tick">&#10003;</span>Primary and secondary category optimization, Chiropractor, Physical Therapist, Sports Medicine Clinic</li>
         <li><span class="ls-tick">&#10003;</span>Geo-tagged photo uploads of your clinic, staff, and equipment</li>
         <li><span class="ls-tick">&#10003;</span>Weekly Google Business posts built around the conditions you treat</li>
         <li><span class="ls-tick">&#10003;</span>Q&amp;A seeding and monitoring for prospective patients</li>
@@ -702,8 +769,8 @@ a:hover{color:var(--yellow-500)}
       <div>
         <span class="ls-pillar-tag">Pillar 2</span>
         <h2>Online Reviews &amp; Ratings</h2>
-        <p class="ls-pillar-copy">Patients read your reviews before they ever pick up the phone, and Google reads them too &mdash; volume, recency, and rating all feed the local algorithm. We build a systematic review engine that generates a steady flow of 5-star reviews and protects your reputation when a negative one lands.</p>
-        <a href="/services/reviews/" class="ls-xref">Reviews run as a standalone program too &mdash; see Reviews &amp; Reputation &rarr;</a>
+        <p class="ls-pillar-copy">Patients read your reviews before they ever pick up the phone, and Google reads them too, volume, recency, and rating all feed the local algorithm. We build a systematic review engine that generates a steady flow of 5-star reviews and protects your reputation when a negative one lands.</p>
+        <a href="/services/reviews/" class="ls-xref">Reviews run as a standalone program too, see Reviews &amp; Reputation &rarr;</a>
       </div>
       <ul class="ls-checks">
         <li><span class="ls-tick">&#10003;</span>Automated review request system for current and discharged patients</li>
@@ -725,12 +792,12 @@ a:hover{color:var(--yellow-500)}
         <span class="ls-pillar-tag">Pillar 3</span>
         <h2>Local Content Development</h2>
         <p class="ls-pillar-copy">Content that speaks directly to local patients strengthens your relevance signals and builds topical authority in your market. We create location-specific pages, condition content, and supporting articles that Google rewards with higher local rankings.</p>
-        <a href="/services/seo/" class="ls-xref">For organic and AI search beyond the map &mdash; see SEO + GEO &rarr;</a>
+        <a href="/services/seo/" class="ls-xref">For organic and AI search beyond the map, see SEO + GEO &rarr;</a>
       </div>
       <ul class="ls-checks">
         <li><span class="ls-tick">&#10003;</span>Location-specific landing pages for every town you draw patients from</li>
         <li><span class="ls-tick">&#10003;</span>Condition and treatment pages tied to the neighborhoods you serve</li>
-        <li><span class="ls-tick">&#10003;</span>Local event coverage &mdash; road races, youth leagues, gym and studio partnerships</li>
+        <li><span class="ls-tick">&#10003;</span>Local event coverage, road races, youth leagues, gym and studio partnerships</li>
         <li><span class="ls-tick">&#10003;</span>Local FAQ content on parking, insurance accepted, and direct access rules in your state</li>
         <li><span class="ls-tick">&#10003;</span>Internal linking between location pages and condition pages</li>
         <li><span class="ls-tick">&#10003;</span>Content gap analysis against locally-ranking competitors</li>
@@ -750,7 +817,7 @@ a:hover{color:var(--yellow-500)}
       </div>
       <ul class="ls-checks">
         <li><span class="ls-tick">&#10003;</span>Local chamber of commerce and business association links</li>
-        <li><span class="ls-tick">&#10003;</span>Community event sponsorships &mdash; road races, youth leagues, health fairs</li>
+        <li><span class="ls-tick">&#10003;</span>Community event sponsorships, road races, youth leagues, health fairs</li>
         <li><span class="ls-tick">&#10003;</span>Healthcare directory submissions across Healthgrades, Vitals, Zocdoc, and specialty listings</li>
         <li><span class="ls-tick">&#10003;</span>Referral partner pages with local physicians, gyms, and trainers</li>
         <li><span class="ls-tick">&#10003;</span>Competitor backlink gap analysis for local opportunities</li>
@@ -803,12 +870,43 @@ a:hover{color:var(--yellow-500)}
 
 </div>
 
+<section class="ro-faq">
+<div class="ro-faq-wrap">
+<p class="ro-faq-kicker">Straight answers</p>
+<h2>Local Search, Answered Plainly</h2>
+<details class="ro-faq-item">
+<summary>How long before this shows up in the schedule?</summary>
+<div class="ro-faq-a"><p>Profile and listing work moves inside the first month. Grid position around your address usually starts shifting between weeks six and twelve. New evaluations traceable to local search normally show up in the second quarter, not the first.</p><p>Anybody who promises you page one in thirty days is either working on a term nobody searches or is about to take your money and hope. <strong>Ask them to write the timeline down and put something behind it.</strong> That single question ends most agency conversations quickly.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>We already rank first for our clinic name. Isn't that enough?</summary>
+<div class="ro-faq-a"><p>Ranking for your own name means people who already know you can find you. That is a phone book. It is not a marketing channel.</p><p>The patients worth having are the ones typing <strong>physical therapy near me</strong> or <strong>chiropractor open saturday</strong>, who do not know your name and never will unless you appear. Those are two entirely different searches with two entirely different values, and almost every practice we look at is winning the worthless one and losing the valuable one.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>How is this different from the SEO our web guy sells?</summary>
+<div class="ro-faq-a"><p>Most web developers treat local search as a checkbox: claim the listing, stuff some keywords, send a PDF. That is not the work.</p><p>The work is grid position around your actual address, category selection, proximity, review velocity, listing consistency across the platforms patients and insurers check, and pages that answer what somebody in your town is actually searching for. <strong>It is closer to bookkeeping than to art.</strong> It is tedious, it compounds, and it is why most practices never do it properly.</p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Do we have to sign a long contract?</summary>
+<div class="ro-faq-a"><p>Yes, and you should be suspicious of anyone who says otherwise. Local SEO on a month to month basis is a promise nobody can keep, because the work does not produce anything for the first sixty days and then produces for years.</p><p>An agency willing to go month to month is either planning to do shallow work that shows early and dies, or has priced in your leaving. <strong>We would rather agree a term, tell you what happens in each phase of it, and be judged on whether that happened.</strong></p></div>
+</details>
+<details class="ro-faq-item">
+<summary>We hired an SEO company before and got nothing. Why would this be different?</summary>
+<div class="ro-faq-a"><p>That is the most reasonable objection on this page, and the honest answer is that you cannot know from a sales conversation. Everybody says they are different.</p><p>So do not take our word for it. Ask us to show you your own grid before you pay anything: where you actually rank at ten points around your clinic, who owns the streets you are losing, and what it would take to take them back. <strong>If that picture does not persuade you, no paragraph on a website should.</strong></p></div>
+</details>
+<details class="ro-faq-item">
+<summary>Could we just do this in house?</summary>
+<div class="ro-faq-a"><p>Genuinely, yes. None of it is secret. If you have somebody on staff who will own it every week for a year, the guides on this site are enough to run most of it yourself.</p><p>The question is not whether it can be done in house. It is what an hour of your time is worth and what else it could be doing. <strong>Most owners who try it get eight weeks in, get busy treating patients, and the work stops.</strong> Stopping is worse than never starting, because the ground you gained goes back to whoever kept going.</p></div>
+</details>
+<p class="ro-faq-foot">Question that is not here? <a href="/contact/">Ask it on a call</a> and we will answer it straight, including when the answer is that you should not buy this from us.</p>
+</div>
+</section>
 <footer style="background:#0B0E1A;border-top:1px solid rgba(247,198,0,0.15);padding:60px 24px 32px">
 <div style="max-width:1100px;margin:0 auto">
 <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:48px">
 <div><a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="27" height="26" style="height:26px;display:block" role="img" aria-label="Ranking Out"><g fill="#FFFFFF"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1.4px;color:#FFFFFF">Ranking<span style="color:#F7C600"> Out</span></span></a><p style="margin:14px 0 0;max-width:34ch;font-size:14px;line-height:21px;color:#8A90A8">We reactivate the leads you already gave up on and book appointments straight into your calendar. Arlington, Virginia.</p></div>
 <div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Services</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/services/" style="font-size:14px;color:#8A90A8;text-decoration:none">All Services</a></li><li><a href="/services/local-seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">Local SEO</a></li><li><a href="/services/seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">SEO + GEO</a></li><li><a href="/services/google-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Google Ads</a></li><li><a href="/services/facebook-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Meta Ads</a></li><li><a href="/services/reviews/" style="font-size:14px;color:#8A90A8;text-decoration:none">Reviews &amp; Reputation</a></li><li><a href="/services/web-design/" style="font-size:14px;color:#8A90A8;text-decoration:none">Web Design</a></li><li><a href="/services/front-desk-conversion/" style="font-size:14px;color:#8A90A8;text-decoration:none">Front Desk Conversion</a></li><li><a href="/services/patient-reactivation/" style="font-size:14px;color:#8A90A8;text-decoration:none">Patient Reactivation</a></li></ul></div>
-<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Resources</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
+<div><h5 style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</h5><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/results/" style="font-size:14px;color:#8A90A8;text-decoration:none">Results</a></li><li><a href="/pricing/" style="font-size:14px;color:#8A90A8;text-decoration:none">What It Costs</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">Guides</a></li><li><a href="/compare/" style="font-size:14px;color:#8A90A8;text-decoration:none">How To Decide</a></li><li><a href="/arlington-va/" style="font-size:14px;color:#8A90A8;text-decoration:none">Arlington &amp; DC Metro</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
 </div>
 <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8"><span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#8A90A8;text-decoration:none">Privacy Policy</a></span><span><a href="tel:+17033895362" style="color:#8A90A8;text-decoration:none">(703) 389-5362</a> &middot; <a href="mailto:info@rankingout.com" style="color:#8A90A8;text-decoration:none">info@rankingout.com</a></span></div>
 </div>
@@ -834,8 +932,30 @@ a:hover{color:var(--yellow-500)}
     if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}
   });
   window.addEventListener('resize',function(){
-    if(window.innerWidth>1160&&b.getAttribute('aria-expanded')==='true') set(false);
+    if(window.innerWidth>1280&&b.getAttribute('aria-expanded')==='true') set(false);
   });
+})();
+</script>
+<script>
+/* GA4 conversion events. Fails silently if gtag is blocked or absent. */
+(function(){
+  function ev(name, params){
+    try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0){
+      ev('phone_click', {link_url: href, link_text: (a.innerText||'').trim().slice(0,80),
+                         page_path: location.pathname});
+    } else if (href.indexOf('mailto:') === 0){
+      ev('email_click', {link_url: href, page_path: location.pathname});
+    } else if (href.indexOf('/contact/') !== -1){
+      ev('book_cta_click', {link_text: (a.innerText||'').trim().slice(0,80),
+                            page_path: location.pathname});
+    }
+  }, true);
 })();
 </script>
 </body>
