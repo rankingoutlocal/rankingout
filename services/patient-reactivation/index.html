@@ -599,7 +599,7 @@ a:hover{color:var(--yellow-500)}
 
 
 /* ---------- MOBILE NAVIGATION ---------- */
-@media (max-width:1280px){header nav{display:none!important}}
+@media (max-width:1040px){header nav{display:none!important}}
 .ro-navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;
   width:46px;height:46px;padding:0 11px;margin-left:6px;flex-shrink:0;
   background:transparent;border:1px solid var(--border-field);border-radius:var(--radius-1);
@@ -614,7 +614,7 @@ a:hover{color:var(--yellow-500)}
 .ro-mnav{display:none}
 .ro-mnav[hidden]{display:none}
 
-@media (max-width:1280px){
+@media (max-width:1040px){
   .ro-navtoggle{display:flex}
   .ro-mnav:not([hidden]){display:flex;flex-direction:column;
     background:var(--white);border-bottom:1px solid var(--border-card);
@@ -681,6 +681,59 @@ a:hover{color:var(--yellow-500)}
   .ro-faq{padding:56px var(--gutter)}
   .ro-faq-item summary{font-size:1.05rem;padding:17px 0}
 }
+
+/* ---------- SERVICES DROPDOWN ---------- */
+header{position:relative;z-index:120}
+.ro-dd{position:relative;display:flex;align-items:stretch}
+.ro-dd-t:after{content:"";margin-left:7px;width:0;height:0;
+  border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:5px solid currentColor;opacity:.6;
+  transition:transform var(--duration-fast,.15s) var(--ease-out,ease)}
+.ro-dd[data-open="true"] .ro-dd-t:after{transform:rotate(180deg)}
+.ro-dd-p{display:none;position:absolute;top:100%;left:-14px;z-index:130;
+  min-width:560px;padding:18px 16px 14px;
+  grid-template-columns:1fr 1fr;gap:1px 14px;
+  background:var(--white,#fff);border:1px solid var(--border-card);
+  border-top:3px solid var(--action);box-shadow:0 14px 40px rgba(11,14,26,.16)}
+.ro-dd[data-open="true"] .ro-dd-p{display:grid}
+.ro-dd-p a{display:block;padding:10px 12px;text-decoration:none;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:1rem;letter-spacing:.4px;color:var(--navy-700,#1E3A5F);
+  border-left:2px solid transparent}
+.ro-dd-p a:hover{background:var(--grey-100,#F1F3F7);border-left-color:var(--action)}
+.ro-dd-h{grid-column:1/-1;margin:0 0 6px;padding:0 12px;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:11px;letter-spacing:1.7px;text-transform:uppercase;
+  color:var(--text-muted,#6B7186)}
+.ro-dd-h2{margin-top:14px;padding-top:14px;border-top:1px solid var(--border-card)}
+.ro-dd-all{grid-column:1/-1;margin-top:10px;padding-top:12px!important;
+  border-top:1px solid var(--border-card);color:var(--navy-400,#3A5C8F)!important}
+
+/* The header phone number does not fit once the bar gets narrow. Below 900 the
+   mobile menu carries it instead, as a full-width call button. */
+@media (max-width:900px){header a[href^="tel:"]{display:none!important}}
+
+/* ---------- MOBILE SERVICES ACCORDION ---------- */
+.ro-mnav-acc{display:none}
+.ro-mnav-sub{display:none}
+@media (max-width:1040px){
+  .ro-mnav:not([hidden]) .ro-mnav-acc{display:flex;align-items:center;
+    justify-content:space-between;width:100%;min-height:52px;padding:0 8px;
+    background:none;border:0;border-bottom:1px solid var(--hairline-dark-soft);
+    font-family:var(--font-display);font-weight:var(--weight-regular);
+    font-size:var(--display-nav-size);letter-spacing:var(--display-nav-track);
+    color:var(--navy-700);text-align:left;cursor:pointer;
+    -webkit-tap-highlight-color:transparent}
+  .ro-mnav-acc:after{content:"+";font-family:var(--font-condensed);
+    font-size:1.4rem;color:var(--action)}
+  .ro-mnav-acc[aria-expanded="true"]:after{content:"\2212"}
+  .ro-mnav-sub:not([hidden]){display:flex;flex-direction:column;
+    padding:4px 0 8px 14px;border-left:2px solid var(--action);
+    margin:8px 0 10px}
+  .ro-mnav-sub a{min-height:46px;font-family:var(--font-condensed)!important;
+    font-weight:var(--weight-bold)!important;font-size:1.02rem!important;
+    letter-spacing:.4px!important;border-bottom:0!important}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many past patients do we need for this to work?","acceptedAnswer":{"@type":"Answer","text":"Three hundred contactable records, minimum. Below that the arithmetic does not hold and we will tell you so on the call rather than take the work. We would rather turn the engagement away than run a campaign that cannot produce. Ask how many other agencies have ever disqualified you from something they were trying to sell you. That answer is worth more than anything else on this page."}},{"@type":"Question","name":"Isn't texting former patients a compliance problem?","acceptedAnswer":{"@type":"Answer","text":"It is entirely manageable, and only if the person running it understands the rules rather than discovering them afterwards. Healthcare communications have real latitude for appointment reminders, follow up after discharge, and messages about care. That latitude is not unlimited and it is not the same as marketing consent. The first thing we do is reconcile your list against what you actually have on file: who consented, on which channel, and when. That step is not optional and it is where most campaigns should stop and do not."}},{"@type":"Question","name":"Will this annoy people and burn our list?","acceptedAnswer":{"@type":"Answer","text":"It can, and the way it happens is always the same. A single generic message to everybody, sent all at once, apologising for the intrusion. A note to someone who finished a shoulder programme two years ago should not read like the note to someone who cancelled a course of care in March. Segment it, pace it, write like a human being who remembers them, and route replies to a person fast. Done that way it reads as care, because it is."}},{"@type":"Question","name":"What sort of response is realistic?","acceptedAnswer":{"@type":"Answer","text":"We will give you a range on the call once we know the list size, how old it is, and what they were treated for, and that range will be narrower and lower than what you have been promised elsewhere. Be sceptical of anybody quoting a response rate before they have seen your list. They are quoting an average from somebody else's business, and averages have hidden more bad campaigns than any other number in marketing."}},{"@type":"Question","name":"Why start here instead of running ads?","acceptedAnswer":{"@type":"Answer","text":"Because there are only three ways to grow a practice: more patients, higher value per patient, or more frequent visits. Most owners only ever pull the first lever, which is also the most expensive one. These people already chose you once. They are not a cold audience, they cost nothing to reach, and the trust is already built. Spending to acquire strangers while a thousand former patients sit untouched in your system is the most common and most expensive error in this industry."}},{"@type":"Question","name":"What if it does not work?","acceptedAnswer":{"@type":"Answer","text":"Then we agreed the wrong number, or the list was not what we thought, and you should not be paying for it either way. We set a specific target before starting, in appointments rather than in impressions or replies, so there is something concrete to judge. The obligation runs both ways: we need the list within a few days, a working calendar, and somebody who actually attends the appointments we book. Hold up your end and if the number does not arrive, that is on us."}}]}</script>
 <meta name="twitter:card" content="summary_large_image">
@@ -696,15 +749,14 @@ a:hover{color:var(--yellow-500)}
 <div style="width:100%;max-width:1200px;display:flex;align-items:stretch;padding:0 32px;box-sizing:border-box">
 <a href="/" style="display:flex;align-items:center;gap:14px;padding-right:32px;text-decoration:none;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="30" height="29" style="height:30px;display:block" role="img" aria-label="Ranking Out"><g fill="#1E3A5F"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1.6px;color:#0B0E1A">Ranking<span style="color:#F7C600"> Out</span></span></a>
 <nav style="flex-grow:1;display:flex;justify-content:center;align-items:stretch;gap:2px">
-<a href="/services/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
-<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
-<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
+<div class="ro-dd"><a href="/services/" class="ro-dd-t" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0" aria-haspopup="true" aria-expanded="false">Services</a><div class="ro-dd-p"><p class="ro-dd-h">What we do</p><a href="/services/local-seo/">Local SEO</a><a href="/services/seo/">SEO + GEO</a><a href="/services/google-ads/">Google Ads</a><a href="/services/facebook-ads/">Meta Ads</a><a href="/services/reviews/">Reviews &amp; Reputation</a><a href="/services/web-design/">Web Design</a><a href="/services/front-desk-conversion/">Front Desk Conversion</a><a href="/services/patient-reactivation/">Patient Reactivation</a><p class="ro-dd-h ro-dd-h2">Who we work with</p><a href="/physical-therapy-marketing/">For Physical Therapists</a><a href="/chiropractic-marketing/">For Chiropractors</a><a class="ro-dd-all" href="/services/">See all services &rarr;</a></div></div>
 <a href="/results/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Results</a>
 <a href="/pricing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Pricing</a>
 <a href="/about/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
 <a href="/contact/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
 </nav>
 <div style="display:flex;align-items:center;flex-shrink:0;gap:4px">
+<a href="tel:+17033895362" style="display:flex;align-items:center;padding:0 14px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">(703) 389-5362</a>
 <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--sm">Book a call</a>
 <button class="ro-navtoggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="ro-mnav"><span></span><span></span><span></span></button>
 </div>
@@ -713,7 +765,8 @@ a:hover{color:var(--yellow-500)}
 <div class="ro-mnav" id="ro-mnav" hidden>
 <a class="ro-mnav-cta" href="/contact/">Book a call</a>
 <a class="ro-mnav-call" href="tel:+17033895362">Call (703) 389-5362</a>
-<a href="/services/">Services</a>
+<button class="ro-mnav-acc" type="button" aria-expanded="false" aria-controls="ro-msub">Services</button>
+<div class="ro-mnav-sub" id="ro-msub" hidden><a href="/services/local-seo/">Local SEO</a><a href="/services/seo/">SEO + GEO</a><a href="/services/google-ads/">Google Ads</a><a href="/services/facebook-ads/">Meta Ads</a><a href="/services/reviews/">Reviews &amp; Reputation</a><a href="/services/web-design/">Web Design</a><a href="/services/front-desk-conversion/">Front Desk Conversion</a><a href="/services/patient-reactivation/">Patient Reactivation</a><a href="/services/">All services</a></div>
 <a href="/physical-therapy-marketing/">For Physical Therapists</a>
 <a href="/chiropractic-marketing/">For Chiropractors</a>
 <a href="/results/">Results</a>
@@ -929,7 +982,7 @@ a:hover{color:var(--yellow-500)}
     if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}
   });
   window.addEventListener('resize',function(){
-    if(window.innerWidth>1280&&b.getAttribute('aria-expanded')==='true') set(false);
+    if(window.innerWidth>1040&&b.getAttribute('aria-expanded')==='true') set(false);
   });
 })();
 </script>
@@ -953,6 +1006,41 @@ a:hover{color:var(--yellow-500)}
                             page_path: location.pathname});
     }
   }, true);
+})();
+</script>
+<script>
+(function(){
+  /* Services dropdown: hover, keyboard focus and touch all open it, and the
+     label itself still navigates to /services/ on click. */
+  var dd=document.querySelector('.ro-dd');
+  if(dd){
+    var t=dd.querySelector('.ro-dd-t'), touched=false;
+    function set(o){dd.setAttribute('data-open',o?'true':'false');
+      t.setAttribute('aria-expanded',o?'true':'false');}
+    dd.addEventListener('mouseenter',function(){if(window.innerWidth>1040)set(true);});
+    dd.addEventListener('mouseleave',function(){set(false);});
+    dd.addEventListener('focusin',function(){if(window.innerWidth>1040)set(true);});
+    dd.addEventListener('focusout',function(e){
+      if(!dd.contains(e.relatedTarget)) set(false);});
+    t.addEventListener('touchstart',function(){touched=true;},{passive:true});
+    t.addEventListener('click',function(e){
+      if(touched && dd.getAttribute('data-open')!=='true'){e.preventDefault();set(true);}
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&dd.getAttribute('data-open')==='true'){set(false);t.focus();}});
+    document.addEventListener('click',function(e){
+      if(!dd.contains(e.target)) set(false);});
+  }
+  /* Mobile services accordion */
+  var ab=document.querySelector('.ro-mnav-acc'), sub=document.getElementById('ro-msub');
+  if(ab&&sub){
+    ab.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=ab.getAttribute('aria-expanded')==='true';
+      ab.setAttribute('aria-expanded',open?'false':'true');
+      if(open){sub.setAttribute('hidden','');}else{sub.removeAttribute('hidden');}
+    });
+  }
 })();
 </script>
 </body>

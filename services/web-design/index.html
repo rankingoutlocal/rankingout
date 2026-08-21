@@ -587,7 +587,7 @@ a:hover{color:var(--yellow-500)}
 
 
 /* ---------- MOBILE NAVIGATION ---------- */
-@media (max-width:1280px){header nav{display:none!important}}
+@media (max-width:1040px){header nav{display:none!important}}
 .ro-navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;
   width:46px;height:46px;padding:0 11px;margin-left:6px;flex-shrink:0;
   background:transparent;border:1px solid var(--border-field);border-radius:var(--radius-1);
@@ -602,7 +602,7 @@ a:hover{color:var(--yellow-500)}
 .ro-mnav{display:none}
 .ro-mnav[hidden]{display:none}
 
-@media (max-width:1280px){
+@media (max-width:1040px){
   .ro-navtoggle{display:flex}
   .ro-mnav:not([hidden]){display:flex;flex-direction:column;
     background:var(--white);border-bottom:1px solid var(--border-card);
@@ -669,6 +669,59 @@ a:hover{color:var(--yellow-500)}
   .ro-faq{padding:56px var(--gutter)}
   .ro-faq-item summary{font-size:1.05rem;padding:17px 0}
 }
+
+/* ---------- SERVICES DROPDOWN ---------- */
+header{position:relative;z-index:120}
+.ro-dd{position:relative;display:flex;align-items:stretch}
+.ro-dd-t:after{content:"";margin-left:7px;width:0;height:0;
+  border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:5px solid currentColor;opacity:.6;
+  transition:transform var(--duration-fast,.15s) var(--ease-out,ease)}
+.ro-dd[data-open="true"] .ro-dd-t:after{transform:rotate(180deg)}
+.ro-dd-p{display:none;position:absolute;top:100%;left:-14px;z-index:130;
+  min-width:560px;padding:18px 16px 14px;
+  grid-template-columns:1fr 1fr;gap:1px 14px;
+  background:var(--white,#fff);border:1px solid var(--border-card);
+  border-top:3px solid var(--action);box-shadow:0 14px 40px rgba(11,14,26,.16)}
+.ro-dd[data-open="true"] .ro-dd-p{display:grid}
+.ro-dd-p a{display:block;padding:10px 12px;text-decoration:none;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:1rem;letter-spacing:.4px;color:var(--navy-700,#1E3A5F);
+  border-left:2px solid transparent}
+.ro-dd-p a:hover{background:var(--grey-100,#F1F3F7);border-left-color:var(--action)}
+.ro-dd-h{grid-column:1/-1;margin:0 0 6px;padding:0 12px;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:11px;letter-spacing:1.7px;text-transform:uppercase;
+  color:var(--text-muted,#6B7186)}
+.ro-dd-h2{margin-top:14px;padding-top:14px;border-top:1px solid var(--border-card)}
+.ro-dd-all{grid-column:1/-1;margin-top:10px;padding-top:12px!important;
+  border-top:1px solid var(--border-card);color:var(--navy-400,#3A5C8F)!important}
+
+/* The header phone number does not fit once the bar gets narrow. Below 900 the
+   mobile menu carries it instead, as a full-width call button. */
+@media (max-width:900px){header a[href^="tel:"]{display:none!important}}
+
+/* ---------- MOBILE SERVICES ACCORDION ---------- */
+.ro-mnav-acc{display:none}
+.ro-mnav-sub{display:none}
+@media (max-width:1040px){
+  .ro-mnav:not([hidden]) .ro-mnav-acc{display:flex;align-items:center;
+    justify-content:space-between;width:100%;min-height:52px;padding:0 8px;
+    background:none;border:0;border-bottom:1px solid var(--hairline-dark-soft);
+    font-family:var(--font-display);font-weight:var(--weight-regular);
+    font-size:var(--display-nav-size);letter-spacing:var(--display-nav-track);
+    color:var(--navy-700);text-align:left;cursor:pointer;
+    -webkit-tap-highlight-color:transparent}
+  .ro-mnav-acc:after{content:"+";font-family:var(--font-condensed);
+    font-size:1.4rem;color:var(--action)}
+  .ro-mnav-acc[aria-expanded="true"]:after{content:"\2212"}
+  .ro-mnav-sub:not([hidden]){display:flex;flex-direction:column;
+    padding:4px 0 8px 14px;border-left:2px solid var(--action);
+    margin:8px 0 10px}
+  .ro-mnav-sub a{min-height:46px;font-family:var(--font-condensed)!important;
+    font-weight:var(--weight-bold)!important;font-size:1.02rem!important;
+    letter-spacing:.4px!important;border-bottom:0!important}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Our site looks fine. Why would we rebuild it?","acceptedAnswer":{"@type":"Answer","text":"Looking fine and working are different questions, and the second one is measurable. How many people who land on your site call you? If you do not know, that is the finding. A practice sending a hundred visitors a week to a site converting at one percent is buying one patient. At four percent it is buying four, from the same traffic and the same spend. That is the cheapest growth available to most clinics and it requires no new marketing at all."}},{"@type":"Question","name":"Who owns the site when it is finished?","acceptedAnswer":{"@type":"Answer","text":"You do. The domain, the hosting, the content, all of it, and it is transferable the day you ask. Be careful here with anyone who builds on their own proprietary platform and rents it back to you. It looks cheaper monthly and it means leaving costs you the entire asset. Ask any web company one question before signing: if we part company, what exactly do we walk away with?"}},{"@type":"Question","name":"How long does a build take?","acceptedAnswer":{"@type":"Answer","text":"Six to ten weeks for a practice site, and most of that is not the building. It is deciding what the site has to accomplish, writing pages that say something, and getting photography that does not look bought. The projects that overrun are almost always waiting on content from the practice, which is worth knowing before you start so you can put somebody in charge of it."}},{"@type":"Question","name":"Do we need a blog?","acceptedAnswer":{"@type":"Answer","text":"Not the kind you are picturing. An abandoned blog with three posts from 2023 actively damages you, because it is the clearest possible signal that nobody is home. What earns its place is a small number of pages answering what patients ask before they book. Write six of those properly and stop. That is better than forty thin posts and considerably better than a blog you will not maintain."}},{"@type":"Question","name":"What about ADA and accessibility?","acceptedAnswer":{"@type":"Answer","text":"It should be built in rather than bolted on, and for practices taking federal healthcare funding it is not optional. Accessible sites also happen to be faster, cleaner and easier for search engines to read, which is a rare case of the ethical choice and the commercial one being identical. Overlay widgets that promise instant compliance do not deliver it, and have themselves been the subject of litigation."}},{"@type":"Question","name":"Can you work with our existing site instead?","acceptedAnswer":{"@type":"Answer","text":"Often, yes, and we will say so if that is the better answer. If the foundation is sound, fixing conversion, speed and structure costs a fraction of a rebuild and produces most of the gain. If the platform is fighting you, we will tell you that too, even though it is the smaller invoice. Recommending a rebuild that is not needed is how agencies lose the client that would have stayed for five years."}}]}</script>
 <meta name="twitter:card" content="summary_large_image">
@@ -684,15 +737,14 @@ a:hover{color:var(--yellow-500)}
 <div style="width:100%;max-width:1200px;display:flex;align-items:stretch;padding:0 32px;box-sizing:border-box">
 <a href="/" style="display:flex;align-items:center;gap:14px;padding-right:32px;text-decoration:none;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="30" height="29" style="height:30px;display:block" role="img" aria-label="Ranking Out"><g fill="#1E3A5F"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1.6px;color:#0B0E1A">Ranking<span style="color:#F7C600"> Out</span></span></a>
 <nav style="flex-grow:1;display:flex;justify-content:center;align-items:stretch;gap:2px">
-<a href="/services/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Services</a>
-<a href="/physical-therapy-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Physical Therapists</a>
-<a href="/chiropractic-marketing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">For Chiropractors</a>
+<div class="ro-dd"><a href="/services/" class="ro-dd-t" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0" aria-haspopup="true" aria-expanded="false">Services</a><div class="ro-dd-p"><p class="ro-dd-h">What we do</p><a href="/services/local-seo/">Local SEO</a><a href="/services/seo/">SEO + GEO</a><a href="/services/google-ads/">Google Ads</a><a href="/services/facebook-ads/">Meta Ads</a><a href="/services/reviews/">Reviews &amp; Reputation</a><a href="/services/web-design/">Web Design</a><a href="/services/front-desk-conversion/">Front Desk Conversion</a><a href="/services/patient-reactivation/">Patient Reactivation</a><p class="ro-dd-h ro-dd-h2">Who we work with</p><a href="/physical-therapy-marketing/">For Physical Therapists</a><a href="/chiropractic-marketing/">For Chiropractors</a><a class="ro-dd-all" href="/services/">See all services &rarr;</a></div></div>
 <a href="/results/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Results</a>
 <a href="/pricing/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Pricing</a>
 <a href="/about/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">About</a>
 <a href="/contact/" style="display:flex;align-items:center;padding:0 10px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">Contact</a>
 </nav>
 <div style="display:flex;align-items:center;flex-shrink:0;gap:4px">
+<a href="tel:+17033895362" style="display:flex;align-items:center;padding:0 14px;text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1.2px;color:#1E3A5F;white-space:nowrap;flex-shrink:0">(703) 389-5362</a>
 <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--sm">Book a call</a>
 <button class="ro-navtoggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="ro-mnav"><span></span><span></span><span></span></button>
 </div>
@@ -701,7 +753,8 @@ a:hover{color:var(--yellow-500)}
 <div class="ro-mnav" id="ro-mnav" hidden>
 <a class="ro-mnav-cta" href="/contact/">Book a call</a>
 <a class="ro-mnav-call" href="tel:+17033895362">Call (703) 389-5362</a>
-<a href="/services/">Services</a>
+<button class="ro-mnav-acc" type="button" aria-expanded="false" aria-controls="ro-msub">Services</button>
+<div class="ro-mnav-sub" id="ro-msub" hidden><a href="/services/local-seo/">Local SEO</a><a href="/services/seo/">SEO + GEO</a><a href="/services/google-ads/">Google Ads</a><a href="/services/facebook-ads/">Meta Ads</a><a href="/services/reviews/">Reviews &amp; Reputation</a><a href="/services/web-design/">Web Design</a><a href="/services/front-desk-conversion/">Front Desk Conversion</a><a href="/services/patient-reactivation/">Patient Reactivation</a><a href="/services/">All services</a></div>
 <a href="/physical-therapy-marketing/">For Physical Therapists</a>
 <a href="/chiropractic-marketing/">For Chiropractors</a>
 <a href="/results/">Results</a>
@@ -928,7 +981,7 @@ a:hover{color:var(--yellow-500)}
     if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}
   });
   window.addEventListener('resize',function(){
-    if(window.innerWidth>1280&&b.getAttribute('aria-expanded')==='true') set(false);
+    if(window.innerWidth>1040&&b.getAttribute('aria-expanded')==='true') set(false);
   });
 })();
 </script>
@@ -952,6 +1005,41 @@ a:hover{color:var(--yellow-500)}
                             page_path: location.pathname});
     }
   }, true);
+})();
+</script>
+<script>
+(function(){
+  /* Services dropdown: hover, keyboard focus and touch all open it, and the
+     label itself still navigates to /services/ on click. */
+  var dd=document.querySelector('.ro-dd');
+  if(dd){
+    var t=dd.querySelector('.ro-dd-t'), touched=false;
+    function set(o){dd.setAttribute('data-open',o?'true':'false');
+      t.setAttribute('aria-expanded',o?'true':'false');}
+    dd.addEventListener('mouseenter',function(){if(window.innerWidth>1040)set(true);});
+    dd.addEventListener('mouseleave',function(){set(false);});
+    dd.addEventListener('focusin',function(){if(window.innerWidth>1040)set(true);});
+    dd.addEventListener('focusout',function(e){
+      if(!dd.contains(e.relatedTarget)) set(false);});
+    t.addEventListener('touchstart',function(){touched=true;},{passive:true});
+    t.addEventListener('click',function(e){
+      if(touched && dd.getAttribute('data-open')!=='true'){e.preventDefault();set(true);}
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&dd.getAttribute('data-open')==='true'){set(false);t.focus();}});
+    document.addEventListener('click',function(e){
+      if(!dd.contains(e.target)) set(false);});
+  }
+  /* Mobile services accordion */
+  var ab=document.querySelector('.ro-mnav-acc'), sub=document.getElementById('ro-msub');
+  if(ab&&sub){
+    ab.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=ab.getAttribute('aria-expanded')==='true';
+      ab.setAttribute('aria-expanded',open?'false':'true');
+      if(open){sub.setAttribute('hidden','');}else{sub.removeAttribute('hidden');}
+    });
+  }
 })();
 </script>
 </body>
