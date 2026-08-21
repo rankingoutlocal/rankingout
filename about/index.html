@@ -661,11 +661,42 @@ header{position:relative;z-index:120}
 }
 
 .ro-dd-start{grid-column:1/-1;margin-bottom:10px;padding-bottom:12px!important;border-bottom:1px solid var(--border-card);color:var(--navy-700)!important}
+
+/* ---------- FOUNDER ---------- */
+#ro-ab .au-founder{display:grid;gap:34px;align-items:start;margin-top:8px;
+  grid-template-columns:minmax(0,1fr) minmax(0,0.9fr)}
+#ro-ab .au-shot{margin:0;background:var(--surface-card);
+  border:1px solid var(--border-card);border-top:3px solid var(--action);
+  box-shadow:var(--shadow-card-sm);overflow:hidden}
+#ro-ab .au-shot img{display:block;width:100%;height:auto;
+  border-bottom:1px solid var(--border-card)}
+#ro-ab .au-shot figcaption{padding:18px 22px;font-size:var(--body-mid-size);
+  line-height:var(--body-mid-line);color:var(--text-muted)}
+#ro-ab .au-name{margin:0 0 6px;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:2rem;line-height:1.04;
+  letter-spacing:.4px;color:var(--text-display)}
+#ro-ab .au-role{margin:0 0 20px;padding-bottom:18px;
+  border-bottom:1px solid var(--border-card);
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:var(--label-kicker-size);letter-spacing:var(--label-kicker-track);
+  text-transform:uppercase;color:var(--yellow-600)}
+#ro-ab .au-bio > p:not([class]){font-size:var(--body-prose-size);
+  line-height:var(--body-prose-line);color:var(--text-body)}
+#ro-ab .au-founder p + p{margin-top:15px}
+#ro-ab .au-pull{margin-top:22px!important;padding:20px 24px;
+  background:var(--surface-alt);border-left:3px solid var(--action);
+  font-size:1.06rem!important;line-height:1.55!important;color:var(--text-display)!important}
+@media (max-width:900px){
+  #ro-ab .au-founder{grid-template-columns:1fr;gap:26px}
+  #ro-ab .au-shot{order:1}
+  #ro-ab .au-bio{order:2}
+}
 </style>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How We Actually Work">
 <meta name="twitter:description" content="A local search agency working only with physical therapy and chiropractic practices. Based in Arlington, Virginia. How we work and what we commit to.">
 <meta name="twitter:image" content="https://rankingout.com/og.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://rankingout.com/about/#farhat-muruwat","name":"Farhat Muruwat","jobTitle":"Founder","worksFor":{"@id":"https://rankingout.com/#business"},"knowsAbout":["Local SEO","Google Business Profile optimization","Search engine optimization","Web development","Physical therapy marketing","Chiropractic marketing","Patient reactivation"],"image":"https://rankingout.com/images/farhat-muruwat-workshop.webp","url":"https://rankingout.com/about/"}</script>
 </head>
 <body>
 <div style="font-family:Figtree,-apple-system,sans-serif;background:#FFFFFF">
@@ -719,6 +750,39 @@ header{position:relative;z-index:120}
     <p>Most marketing agencies will take any client who pays. That sounds like flexibility and it is actually the problem, because an agency serving roofers, restaurants and clinics at the same time is running the same playbook on all three and learning nothing specific about any of them.</p>
     <p><strong>We only work with physical therapy and chiropractic practices.</strong> That is a commercial constraint we chose on purpose. It means we already know what a plan of care is worth, why a discharged patient is an asset rather than a closed file, what happens to your phone at lunchtime, and which rules apply when you want to text a patient list.</p>
     <p>It also means we say no fairly often, including to clinics we like.</p>
+  </div>
+</section>
+
+<!-- ============================ FOUNDER ============================ -->
+<section class="au-section au-soft" id="founder">
+  <div class="au-wrap">
+    <p class="au-kicker" style="justify-content:flex-start">Who you will be dealing with</p>
+    <h2 style="margin-bottom:26px">There Is One Person Behind This, And This Is Him</h2>
+    <div class="au-founder">
+      <div class="au-bio">
+        <p class="au-name">Farhat Muruwat</p>
+        <p class="au-role">Founder, Ranking Out</p>
+        <p>I have spent ten years doing SEO and web development, most of it for local
+        businesses across Virginia and Washington, DC. Practices, shops and service
+        businesses whose next month depended on whether somebody within a few miles could
+        find them.</p>
+        <p>For most of those ten years I took whatever work came. You learn a great deal
+        that way, and you get properly good at none of it, because what moves a clinic is
+        not what moves a restaurant. The words are different, the timing is different, the
+        rules about contacting people are completely different.</p>
+        <p><strong>So I stopped.</strong> Ranking Out only works with physical therapy and
+        chiropractic practices, and I would rather be the person who already knows what a
+        plan of care is worth than the person who has to ask.</p>
+        <p class="au-pull">If you hire us, I am the one who reads your grid, sits on the
+        call and tells you when the honest answer is that you do not need us yet.</p>
+      </div>
+      <figure class="au-shot">
+        <img src="/images/farhat-muruwat-workshop.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Farhat Muruwat presenting to a full room of practice teams, in front of a slide showing what an unfilled day costs a practice.">
+        <figcaption>Teaching practice teams what an unfilled day actually costs. Most of
+        this work is not a dashboard emailed once a month. It is sitting with the people
+        who answer your phone.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
