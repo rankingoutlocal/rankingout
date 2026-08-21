@@ -25,7 +25,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-LGS7VMSNGR');
 </script>
-<title>Resources for PT &amp; Chiropractic Practices | Ranking Out</title>
+<title>How To Grow A PT Or Chiropractic Practice | Ranking Out</title>
 <link rel="preload" href="/fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -34,7 +34,7 @@ gtag('config', 'G-LGS7VMSNGR');
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0B0E1A">
-<meta name="description" content="Practical guides for practice owners on patient reactivation and local SEO. Detailed enough to run yourself. No email required, nothing gated.">
+<meta name="description" content="There are only three ways to grow a practice and most owners only pull the most expensive one. An inventory of the revenue already sitting in your clinic.">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ranking Out">
@@ -43,18 +43,10 @@ gtag('config', 'G-LGS7VMSNGR');
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Ranking Out. Local search for physical therapy and chiropractic practices.">
-<meta property="og:title" content="Guides Worth Your Time">
-<meta property="og:description" content="Practical guides for physical therapy and chiropractic practice owners. Nothing gated, no email required.">
-<meta property="og:url" content="https://rankingout.com/resources/">
-<link rel="canonical" href="https://rankingout.com/resources/">
-
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Resources for Physical Therapy and Chiropractic Practices","url":"https://rankingout.com/resources/","about":{"@type":"ProfessionalService","name":"Ranking Out","url":"https://rankingout.com","sameAs":["https://www.facebook.com/RankingOut"]},"hasPart":[{"@type":"Article","name":"How to Run a Database Reactivation Campaign","url":"https://rankingout.com/reactivation/"},{"@type":"Article","name":"The Local SEO Plan Behind a New Practice Website","url":"https://rankingout.com/physical-therapy-sw/"}]}</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-{"@type":"ListItem","position":1,"name":"Home","item":"https://rankingout.com/"},
-{"@type":"ListItem","position":2,"name":"Resources","item":"https://rankingout.com/resources/"}
-]}
-</script>
+<meta property="og:title" content="The Hidden Money Already In Your Practice">
+<meta property="og:description" content="Most practices are sitting on more unbooked revenue than their entire annual marketing budget, and none of it appears in the accounts.">
+<meta property="og:url" content="https://rankingout.com/grow-your-practice/">
+<link rel="canonical" href="https://rankingout.com/grow-your-practice/">
 
 <style>
 
@@ -385,150 +377,88 @@ a:hover{color:var(--yellow-500)}
 
 
 /* ==========================================================================
-   Audience page pattern (physical therapy / chiropractic).
-   Scoped to #ro-rs so nothing leaks.
+   /services -- built on the shared Ranking Out design system.
+   Scoped to #ro-sv so nothing leaks.
    ========================================================================== */
-#ro-rs{font-family:var(--font-body);color:var(--text-body)}
-#ro-rs *{box-sizing:border-box}
-#ro-rs .au-wrap{max-width:var(--container-wide);margin:0 auto;padding:0 var(--gutter)}
-#ro-rs .au-section{padding:var(--section-y) var(--gutter);border-bottom:1px solid var(--border-card)}
-#ro-rs .au-soft{background:var(--surface-alt)}
-#ro-rs h2{
+#ro-sv{font-family:var(--font-body);color:var(--text-body)}
+#ro-sv *{box-sizing:border-box}
+#ro-sv .sv-wrap{max-width:var(--container-wide);margin:0 auto;padding:0 var(--gutter)}
+#ro-sv .sv-section{padding:var(--section-y) var(--gutter);border-bottom:1px solid var(--border-card)}
+#ro-sv .sv-soft{background:var(--surface-alt)}
+#ro-sv h2{
   font-family:var(--font-display);font-weight:var(--weight-regular);
   font-size:clamp(2rem,4.4vw,3.4rem);line-height:1;letter-spacing:.9px;
   color:var(--text-display);margin:16px 0 0}
-#ro-rs h3{
+#ro-sv h3{
   font-family:var(--font-display);font-weight:var(--weight-regular);
-  font-size:1.45rem;line-height:1;letter-spacing:.5px;
+  font-size:1.6rem;line-height:1;letter-spacing:.5px;
   color:var(--text-display);margin:0}
-#ro-rs p{margin:0}
-
-#ro-rs .au-crumb{
-  display:flex;align-items:center;gap:10px;margin:0 0 24px;
-  font-family:var(--font-condensed);font-weight:var(--weight-bold);
-  font-size:var(--label-tick-size);letter-spacing:var(--label-tick-track);
-  text-transform:uppercase;color:var(--text-on-inverse-muted)}
-#ro-rs .au-crumb a{color:var(--text-on-inverse-muted);text-decoration:none}
-#ro-rs .au-crumb a:hover{color:var(--action)}
-#ro-rs .au-eyebrow{
-  font-family:var(--font-condensed);font-weight:var(--weight-bold);
-  font-size:var(--label-eyebrow-size);letter-spacing:var(--label-eyebrow-track);
-  text-transform:uppercase;color:var(--action)}
+#ro-sv p{margin:0}
 
 /* ---------- HERO ---------- */
-#ro-rs .au-hero{
+#ro-sv .sv-hero{
   background-color:var(--surface-inverse);
   background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
                    linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
   background-size:var(--blueprint-pitch) var(--blueprint-pitch);
-  padding:120px var(--gutter) 96px;text-align:center}
-#ro-rs .au-hero .au-wrap{display:flex;flex-direction:column;align-items:center}
-#ro-rs .au-hero h1{
-  margin:16px 0 0;font-family:var(--font-display);font-weight:var(--weight-regular);
-  font-size:clamp(2.5rem,6vw,5rem);line-height:.98;letter-spacing:-1px;
-  color:var(--text-on-inverse);max-width:17ch}
-#ro-rs .au-hero-lede{
-  margin-top:28px;max-width:650px;
+  padding:140px var(--gutter) 96px;text-align:center}
+#ro-sv .sv-hero .sv-wrap{display:flex;flex-direction:column;align-items:center}
+#ro-sv .sv-hero h1{
+  font-family:var(--font-display);font-weight:var(--weight-regular);
+  font-size:clamp(2.6rem,6.4vw,5.4rem);line-height:.98;letter-spacing:-1px;
+  color:var(--text-on-inverse);margin:0;max-width:20ch}
+#ro-sv .sv-hero-lede{
+  margin-top:28px;max-width:620px;
   font-size:var(--body-lede-size);line-height:var(--body-lede-line);
   color:var(--text-on-inverse-body)}
-#ro-rs .au-hero .ro-btn{margin-top:36px}
+#ro-sv .sv-hero .ro-btn{margin-top:36px}
 
-/* ---------- PROSE ---------- */
-#ro-rs .au-intro .au-wrap{max-width:var(--container-prose)}
-#ro-rs .au-intro p{
-  font-size:var(--body-prose-size);line-height:var(--body-prose-line);color:var(--text-body)}
-#ro-rs .au-intro p + p{margin-top:22px}
-#ro-rs .au-intro strong{color:var(--text-display)}
+/* ---------- INTRO ---------- */
+#ro-sv .sv-intro{text-align:center}
+#ro-sv .sv-intro .sv-wrap{max-width:720px}
+#ro-sv .sv-intro p{font-size:var(--body-prose-size);line-height:var(--body-prose-line);color:var(--text-body)}
+#ro-sv .sv-intro p + p{margin-top:20px}
 
-/* ---------- SECTION HEAD ---------- */
-#ro-rs .au-head{max-width:690px;margin:0 auto;text-align:center}
-#ro-rs .au-kicker{
+/* ---------- SECTION HEAD (kicker / h2 / lede) ---------- */
+#ro-sv .sv-head{max-width:640px;margin:0 auto;text-align:center}
+#ro-sv .sv-kicker{
   display:inline-flex;align-items:center;justify-content:center;gap:12px;
   font-family:var(--font-condensed);font-weight:var(--weight-bold);
   font-size:var(--label-kicker-size);letter-spacing:var(--label-kicker-track);
   text-transform:uppercase;color:var(--action)}
-#ro-rs .au-kicker:before{content:"";width:32px;height:2px;background:var(--action);flex-shrink:0}
-#ro-rs .au-head-lede{
-  margin-top:20px;
+#ro-sv .sv-kicker:before{content:"";width:32px;height:2px;background:var(--action);flex-shrink:0}
+#ro-sv .sv-head-lede{
+  margin-top:12px;font-style:italic;
   font-size:var(--body-prose-size);line-height:var(--body-prose-line);color:var(--text-muted)}
 
-/* ---------- REALITY CARDS ---------- */
-#ro-rs .au-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
-#ro-rs .au-card{
+/* ---------- CARD GRIDS ---------- */
+#ro-sv .sv-grid{display:grid;gap:22px;margin-top:48px}
+#ro-sv .sv-grid--4{grid-template-columns:repeat(4,1fr)}
+#ro-sv .sv-grid--2{
+  grid-template-columns:repeat(2,1fr);
+  max-width:820px;margin-left:auto;margin-right:auto}
+
+#ro-sv .sv-card{
   background:var(--surface-card);border:1px solid var(--border-card);
-  border-radius:var(--radius-5);padding:30px;
+  border-radius:var(--radius-5);padding:32px;
   display:flex;flex-direction:column;gap:12px;
   transition:box-shadow var(--duration-base) var(--ease-out),
              transform var(--duration-base) var(--ease-out)}
-#ro-rs .au-card:hover{box-shadow:var(--shadow-card-sm);transform:translateY(-2px)}
-#ro-rs .au-card-num{
-  display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;
-  min-width:36px;height:36px;padding:0 10px;
-  background:var(--action);color:var(--action-label);
-  font-family:var(--font-condensed);font-weight:var(--weight-extrabold);
-  font-size:var(--label-micro-size);letter-spacing:var(--label-micro-track)}
-#ro-rs .au-card p{
-  font-size:var(--body-mid-size);line-height:var(--body-mid-line);color:var(--text-muted)}
-
-/* ---------- SEARCH EXAMPLES ---------- */
-#ro-rs .au-queries{
-  display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;justify-content:center}
-#ro-rs .au-q{
-  display:inline-flex;align-items:center;gap:9px;padding:11px 18px;
-  background:var(--surface-card);border:1px solid var(--border-card);
-  border-radius:var(--radius-pill);
-  font-size:var(--body-mid-size);color:var(--text-body)}
-#ro-rs .au-q span{color:var(--text-muted);font-size:.9em}
-
-/* ---------- PRIORITY STACK ---------- */
-#ro-rs .au-stack{
-  list-style:none;margin:48px auto 0;padding:0;max-width:var(--container-media);
-  display:flex;flex-direction:column;gap:2px}
-#ro-rs .au-step{
-  display:flex;align-items:flex-start;gap:20px;padding:26px 28px;
-  background:var(--surface-card);border:1px solid var(--border-card)}
-#ro-rs .au-step-n{
-  flex-shrink:0;width:38px;height:38px;
-  display:inline-flex;align-items:center;justify-content:center;
-  background:var(--action);color:var(--action-label);
-  font-family:var(--font-condensed);font-weight:var(--weight-extrabold);
-  font-size:var(--label-micro-size);letter-spacing:var(--label-micro-track)}
-#ro-rs .au-step-body{flex:1}
-#ro-rs .au-step-body h3{font-size:1.3rem}
-#ro-rs .au-step-body p{
-  margin-top:9px;font-size:var(--body-mid-size);line-height:var(--body-mid-line);
-  color:var(--text-muted)}
-#ro-rs .au-step-link{
-  display:inline-block;margin-top:12px;
+#ro-sv .sv-card:hover{box-shadow:var(--shadow-card-sm);transform:translateY(-2px)}
+#ro-sv .sv-card p{
+  font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-muted);flex-grow:1}
+#ro-sv .sv-learn{
+  display:inline-flex;align-items:center;gap:8px;margin-top:4px;
   font-family:var(--font-condensed);font-weight:var(--weight-bold);
   font-size:var(--label-tick-size);letter-spacing:var(--label-tick-track);
   text-transform:uppercase;color:var(--navy-400);text-decoration:none}
-#ro-rs .au-step-link:hover{color:var(--yellow-600)}
-
-/* ---------- CALLOUT ---------- */
-#ro-rs .au-callout{
-  margin:48px auto 0;max-width:var(--container-media);
-  background-color:var(--surface-inverse-deep);
-  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
-                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
-  background-size:var(--blueprint-pitch) var(--blueprint-pitch);
-  border:2px solid var(--border-emphasis);padding:40px 36px}
-#ro-rs .au-callout .au-co-tag{
-  margin:0;font-family:var(--font-condensed);font-weight:var(--weight-bold);
-  font-size:var(--label-kicker-size);letter-spacing:var(--label-kicker-track);
-  text-transform:uppercase;color:var(--action)}
-#ro-rs .au-callout .au-co-h{
-  margin-top:12px;font-family:var(--font-display);font-weight:var(--weight-regular);
-  font-size:1.9rem;line-height:1.04;letter-spacing:.4px;color:var(--text-on-inverse)}
-#ro-rs .au-callout .au-co-p{
-  margin-top:16px;font-size:var(--body-mid-size);line-height:var(--body-mid-line);
-  color:var(--text-on-inverse-body)}
-#ro-rs .au-callout .au-co-p + .au-co-p{margin-top:14px}
-#ro-rs .au-callout .au-co-p strong{color:var(--text-on-inverse)}
+#ro-sv .sv-learn:hover{color:var(--yellow-600)}
+#ro-sv .sv-arrow{font-size:1.1em;transition:transform var(--duration-fast) var(--ease-out)}
+#ro-sv .sv-learn:hover .sv-arrow{transform:translateX(3px)}
 
 /* ---------- CLOSE ---------- */
-#ro-rs .au-close{
+#ro-sv .sv-close{
   background-color:var(--surface-inverse-deep);
   background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
                    linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
@@ -536,23 +466,24 @@ a:hover{color:var(--yellow-500)}
   border:2px solid var(--border-emphasis);
   padding:64px 44px;text-align:center;
   display:flex;flex-direction:column;align-items:center}
-#ro-rs .au-close h2{color:var(--text-on-inverse);margin:0}
-#ro-rs .au-close p{
+#ro-sv .sv-close h2{color:var(--text-on-inverse);margin:0}
+#ro-sv .sv-close p{
   margin-top:20px;max-width:56ch;
   font-size:var(--body-prose-size);line-height:var(--body-prose-line);
   color:var(--text-on-inverse-body)}
-#ro-rs .au-close .ro-btn{margin-top:32px}
-#ro-rs .au-section:last-of-type{border-bottom:0}
+#ro-sv .sv-close p + p{margin-top:14px}
+#ro-sv .sv-close .ro-btn{margin-top:32px}
+#ro-sv .sv-section:last-of-type{border-bottom:0}
 
-@media (max-width:900px){
-  #ro-rs .au-grid{grid-template-columns:1fr}
+@media (max-width:820px){
+  #ro-sv .sv-grid--4{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:640px){
-  #ro-rs .au-hero{padding:88px var(--gutter) 64px}
-  #ro-rs .au-section{padding:64px var(--gutter)}
-  #ro-rs .au-step{flex-direction:column;gap:14px}
-  #ro-rs .au-callout{padding:30px 24px}
-  #ro-rs .au-close{padding:44px 24px}
+  #ro-sv .sv-hero{padding:96px var(--gutter) 64px}
+  #ro-sv .sv-section{padding:64px var(--gutter)}
+  #ro-sv .sv-grid--4{grid-template-columns:1fr}
+  #ro-sv .sv-grid--2{grid-template-columns:1fr}
+  #ro-sv .sv-close{padding:44px 24px}
 }
 
 
@@ -658,12 +589,152 @@ header{position:relative;z-index:120}
     letter-spacing:.4px!important;border-bottom:0!important}
 }
 
+#ro-sv .sv-aud-line{margin-top:20px!important;padding-top:16px;border-top:1px solid var(--border-card);
+  font-size:var(--body-mid-size)!important;color:var(--text-muted)!important}
+#ro-sv .sv-aud-line a{color:var(--navy-400);text-decoration:underline}
+#ro-sv .sv-intro a{color:var(--navy-400);text-decoration:underline}
+#ro-sv .sv-diag{list-style:none;margin:20px 0 24px;padding:0;display:flex;flex-direction:column;gap:14px}
+#ro-sv .sv-diag li{position:relative;padding-left:27px;max-width:66ch;
+  font-size:var(--body-mid-size);line-height:var(--body-mid-line);color:var(--text-body)}
+#ro-sv .sv-diag li:before{content:"\2192";position:absolute;left:0;top:0;
+  color:var(--action);font-weight:var(--weight-bold)}
+#ro-sv .sv-diag a{color:var(--navy-400);text-decoration:underline}
+#ro-sv .sv-close-alt{margin-top:22px!important;font-size:var(--body-mid-size)!important;
+  color:var(--text-muted)!important}
+#ro-sv .sv-close-alt a{color:var(--navy-400);text-decoration:underline}
+#ro-sv .sv-grid--5{grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
+
+#ro-sv .sv-close .sv-diag li{color:var(--text-on-inverse-body)}
+#ro-sv .sv-close .sv-diag strong{color:var(--text-on-inverse)}
+#ro-sv .sv-close .sv-diag a{color:var(--action)!important;text-decoration:underline}
+#ro-sv .sv-close .sv-close-alt{color:var(--text-on-inverse-muted)!important}
+#ro-sv .sv-close .sv-close-alt a{color:var(--action)!important;text-decoration:underline}
+#ro-sv .sv-close p{color:var(--text-on-inverse-body)}
+#ro-sv .sv-grid--4{grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr))}
+
+/* ==========================================================================
+   /grow-your-practice/ -- pillar page. Scoped to #ro-gp.
+   ========================================================================== */
+#ro-gp{font-family:var(--font-body);color:var(--text-body)}
+#ro-gp *{box-sizing:border-box}
+#ro-gp .gp-wrap{max-width:var(--container-prose);margin:0 auto}
+#ro-gp .gp-section{padding:var(--section-y) var(--gutter)}
+#ro-gp .gp-soft{background:var(--surface-alt);
+  border-top:1px solid var(--border-card);border-bottom:1px solid var(--border-card)}
+#ro-gp p{margin:0}
+#ro-gp strong{color:var(--text-display)}
+#ro-gp a{color:var(--navy-400);text-decoration:underline}
+#ro-gp a:hover{color:var(--yellow-600)}
+
+#ro-gp .gp-crumb{display:flex;align-items:center;gap:10px;margin:0 0 24px;flex-wrap:wrap;
+  font-family:var(--font-condensed);font-weight:var(--weight-bold);
+  font-size:var(--label-tick-size);letter-spacing:var(--label-tick-track);
+  text-transform:uppercase;color:var(--text-on-inverse-muted)}
+#ro-gp .gp-crumb a{color:var(--text-on-inverse-muted);text-decoration:none}
+#ro-gp .gp-crumb a:hover{color:var(--action)}
+
+#ro-gp .gp-hero{
+  background-color:var(--surface-inverse);
+  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
+                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
+  background-size:var(--blueprint-pitch) var(--blueprint-pitch);
+  padding:110px var(--gutter) 88px}
+#ro-gp .gp-eyebrow{margin:0 0 16px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+#ro-gp .gp-hero h1{margin:0;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:clamp(2.4rem,6vw,4.4rem);
+  line-height:1;letter-spacing:-.4px;color:var(--text-on-inverse);max-width:17ch}
+#ro-gp .gp-lede{margin:24px 0 34px;max-width:60ch;font-size:1.14rem;line-height:1.62;
+  color:var(--text-on-inverse-body)}
+
+#ro-gp h2{margin:0 0 14px;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:clamp(1.9rem,4vw,2.9rem);
+  line-height:1.04;letter-spacing:.6px;color:var(--text-display);max-width:20ch}
+#ro-gp .gp-kicker{margin:0 0 12px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+#ro-gp .gp-sub{margin-bottom:34px!important;color:var(--text-muted)!important;
+  font-size:var(--body-mid-size)!important}
+#ro-gp .gp-section > .gp-wrap > p{font-size:var(--body-prose-size);
+  line-height:var(--body-prose-line);color:var(--text-body)}
+#ro-gp .gp-section > .gp-wrap > p + p{margin-top:17px}
+#ro-gp .gp-lead{font-size:clamp(1.3rem,2.6vw,1.75rem)!important;line-height:1.4!important;
+  color:var(--text-display)!important;margin-bottom:10px;max-width:22ch!important}
+
+#ro-gp .gp-note{margin-top:28px;padding:22px 24px;background:var(--surface-alt);
+  border-left:3px solid var(--action)}
+#ro-gp .gp-soft .gp-note{background:var(--surface-card)}
+#ro-gp .gp-note p{font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-muted)}
+
+/* ---------- ASSET BLOCKS ---------- */
+#ro-gp .gp-asset{padding:30px 30px;margin-bottom:18px;background:var(--surface-card);
+  border:1px solid var(--border-card);border-left:3px solid var(--action)}
+#ro-gp .gp-soft .gp-asset{background:var(--white,#fff)}
+#ro-gp .gp-asset:last-child{margin-bottom:0}
+#ro-gp .gp-asset-h{display:flex;align-items:flex-start;gap:18px;margin-bottom:14px}
+#ro-gp .gp-n{flex-shrink:0;width:40px;height:40px;display:flex;align-items:center;
+  justify-content:center;background:var(--surface-inverse);color:var(--action);
+  font-family:var(--font-display);font-size:19px;line-height:1;letter-spacing:.5px}
+#ro-gp .gp-asset h3{margin:0;font-family:var(--font-display);
+  font-weight:var(--weight-regular);font-size:1.55rem;line-height:1.12;
+  letter-spacing:.3px;color:var(--text-display)}
+#ro-gp .gp-asset p{font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-body)}
+#ro-gp .gp-asset p + p{margin-top:13px}
+#ro-gp .gp-go{margin-top:16px!important;padding-top:14px;
+  border-top:1px solid var(--border-card);color:var(--text-muted)!important}
+
+/* ---------- INVENTORY ---------- */
+#ro-gp .gp-inventory{margin-top:34px;padding:36px 34px;
+  background-color:var(--surface-inverse-deep);
+  background-image:linear-gradient(90deg,var(--blueprint-line) 1px,transparent 1px),
+                   linear-gradient(180deg,var(--blueprint-line) 1px,transparent 1px);
+  background-size:var(--blueprint-pitch) var(--blueprint-pitch);
+  border:2px solid var(--action)}
+#ro-gp .gp-inv-tag{margin:0 0 14px;font-family:var(--font-condensed);
+  font-weight:var(--weight-bold);font-size:var(--label-kicker-size);
+  letter-spacing:var(--label-kicker-track);text-transform:uppercase;color:var(--action)}
+#ro-gp .gp-inventory p{font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-on-inverse-body)}
+#ro-gp .gp-inventory strong{color:var(--text-on-inverse)}
+#ro-gp .gp-inventory ol{margin:20px 0 0;padding-left:22px;
+  display:flex;flex-direction:column;gap:12px}
+#ro-gp .gp-inventory li{font-size:var(--body-mid-size);line-height:var(--body-mid-line);
+  color:var(--text-on-inverse-body)}
+#ro-gp .gp-inventory li::marker{color:var(--action);font-weight:700}
+#ro-gp .gp-inv-close{margin-top:24px!important;padding-top:18px;
+  border-top:1px solid var(--border-emphasis)}
+
+/* ---------- CLOSE ---------- */
+#ro-gp .gp-close{padding:44px 40px;background:var(--surface-card);
+  border:1px solid var(--border-card);border-left:3px solid var(--action)}
+#ro-gp .gp-close h2{margin-bottom:16px}
+#ro-gp .gp-close p{font-size:var(--body-prose-size);
+  line-height:var(--body-prose-line);color:var(--text-body)}
+#ro-gp .gp-close .ro-btn{margin-top:26px}
+#ro-gp .gp-close-alt{margin-top:22px!important;color:var(--text-muted)!important;
+  font-size:var(--body-mid-size)!important}
+
+@media (max-width:640px){
+  #ro-gp .gp-hero{padding:82px var(--gutter) 62px}
+  #ro-gp .gp-section{padding:58px var(--gutter)}
+  #ro-gp .gp-asset{padding:24px 22px}
+  #ro-gp .gp-asset-h{gap:14px}
+  #ro-gp .gp-inventory{padding:26px 22px}
+  #ro-gp .gp-close{padding:30px 24px}
+}
+
 .ro-dd-start{grid-column:1/-1;margin-bottom:10px;padding-bottom:12px!important;border-bottom:1px solid var(--border-card);color:var(--navy-700)!important}
+#ro-gp a.ro-btn,#ro-gp .ro-btn{text-decoration:none!important}
 </style>
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Guides Worth Your Time">
-<meta name="twitter:description" content="Practical guides for physical therapy and chiropractic practice owners. Nothing gated, no email required.">
+<meta name="twitter:title" content="The Hidden Money Already In Your Practice">
+<meta name="twitter:description" content="Most practices are sitting on more unbooked revenue than their entire annual marketing budget, and none of it appears in the accounts.">
 <meta name="twitter:image" content="https://rankingout.com/og.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://rankingout.com/grow-your-practice/","url":"https://rankingout.com/grow-your-practice/","name":"The Hidden Money Already In Your Practice","description":"An inventory of the revenue already sitting inside a physical therapy or chiropractic practice: the dormant patient list, the unanswered calls, the reviews nobody asked for, and the capacity you pay for either way.","isPartOf":{"@type":"WebSite","name":"Ranking Out","url":"https://rankingout.com/"},"publisher":{"@id":"https://rankingout.com/#business"},"about":{"@type":"Thing","name":"Practice growth"},"audience":{"@type":"BusinessAudience","audienceType":"Physical therapy and chiropractic practice owners"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rankingout.com/"},{"@type":"ListItem","position":2,"name":"Grow Your Practice","item":"https://rankingout.com/grow-your-practice/"}]}</script>
 </head>
 <body>
 <div style="font-family:Figtree,-apple-system,sans-serif;background:#FFFFFF">
@@ -700,68 +771,178 @@ header{position:relative;z-index:120}
 <a href="/contact/">Contact</a>
 </div>
 
-<div id="ro-rs">
+<div id="ro-gp">
 
-<section class="au-hero">
-  <div class="au-wrap">
-    <p class="au-crumb"><a href="/">Home</a><span>/</span><span>Resources</span></p>
-    <p class="au-eyebrow">Resources</p>
-    <h1>Guides Worth Your Time</h1>
-    <p class="au-hero-lede">Written for practice owners, not for other marketers. Enough detail that you could run the work yourself if you wanted to.</p>
+
+<section class="gp-hero">
+  <div class="gp-wrap">
+    <p class="gp-crumb"><a href="/">Home</a><span>/</span><span>Grow Your Practice</span></p>
+    <p class="gp-eyebrow">Where to start</p>
+    <h1>The Hidden Money Already In Your Practice</h1>
+    <p class="gp-lede">Before you spend another dollar acquiring a stranger, it is worth counting what you already own. Most practices are sitting on more unbooked revenue than their entire annual marketing budget, and none of it appears anywhere in the accounts.</p>
     <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow">Book A Call<span class="ro-btn__arrow">&rarr;</span></a>
   </div>
 </section>
 
-<section class="au-section au-intro">
-  <div class="au-wrap">
-    <p>Most agency content exists to make you feel like the work is too complicated to attempt. <strong>These are written the other way round.</strong> If you have the time and someone on staff who can own it, everything below is genuinely runnable in-house.</p>
-    <p>Plenty of owners read them, decide they would rather spend those hours treating patients, and call us. That is a fair trade either way.</p>
-  </div>
-</section>
-
-<section class="au-section au-soft">
-  <div class="au-wrap">
-    <ul class="au-stack">
-      <li class="au-step">
-        <span class="au-step-n">01</span>
-        <div class="au-step-body">
-          <h3>How To Run A Database Reactivation Campaign</h3>
-          <p>The complete nine-step process for turning a dormant patient list into booked visits. Auditing the list before you send anything, segmenting by age and last engagement, writing the re-opener, building the sequence, choosing the channel mix, pacing it so you do not torch your list, routing replies fast, and measuring against a benchmark that is actually realistic.</p>
-          <p><strong>Read this one first if your schedule has gaps next month.</strong> It is the fastest money in most practices and the thing owners are most likely to have never tried.</p>
-          <a href="/reactivation/" class="au-step-link">Read the guide &rarr;</a>
-        </div>
-      </li>
-      <li class="au-step">
-        <span class="au-step-n">02</span>
-        <div class="au-step-body">
-          <h3>The Local SEO Plan Behind A New Practice Website</h3>
-          <p>A working document rather than a theory piece. The seven-phase plan we are implementing for a new in-home physical therapy practice with no website, no rankings, no reviews and no traffic history. Page architecture, what gets built at launch versus at maturity, the quality gates, and the reasoning behind the pages we deliberately do not build.</p>
-          <p><strong>Useful if you are starting from zero,</strong> opening an additional location, or trying to work out why a two hundred page keyword matrix is the wrong answer.</p>
-          <a href="/physical-therapy-sw/" class="au-step-link">Read the plan &rarr;</a>
-        </div>
-      </li>
-    </ul>
-
-    <div class="au-callout">
-      <p class="au-co-tag">A note on these</p>
-      <p class="au-co-h">Nothing here is gated.</p>
-      <p class="au-co-p">No email required, no form in front of the content, no drip sequence waiting for you afterwards. If a guide is useful, it should be useful without you having to trade for it.</p>
-      <p class="au-co-p"><strong>If you would rather we ran it,</strong> that is what the rest of the site is about.</p>
+<section class="gp-section">
+  <div class="gp-wrap">
+    <p class="gp-lead">There are only three ways to grow a practice.</p>
+    <p>Treat more patients. Get more from each one. Get them back more often. That is the whole list, and it has been the whole list for as long as anyone has been selling anything.</p>
+    <p>Almost every clinic owner spends the entire budget on the first. It is the loudest, it is what every agency sells, and it is <strong>the slowest and most expensive patient you will ever buy.</strong> The other two levers cost close to nothing, work faster, and get ignored because nobody makes money selling them to you.</p>
+    <p>This page is about what is already sitting inside your practice. Not a pitch. An inventory you can run yourself this afternoon, and most owners have never run once.</p>
+    <div class="gp-note">
+      <p>Everything below points at a service we sell, and we are not going to pretend otherwise. But the arithmetic works whether you hire anybody or not, and several of these you should simply go and fix yourself.</p>
     </div>
   </div>
 </section>
 
-<section class="au-section">
-  <div class="au-wrap">
-    <div class="au-close">
-      <h2>Rather Have Us Run It?</h2>
-      <p>Tell us where your schedule is soft and what you have already tried. We will tell you which of these is worth your time and which one we would run for you.</p>
+<section class="gp-section gp-soft">
+  <div class="gp-wrap">
+    <p class="gp-kicker">Vein one</p>
+    <h2>The People Who Already Chose You</h2>
+    <p class="gp-sub">The largest asset in almost every practice, and the one nobody touches.</p>
+
+    <div class="gp-asset">
+      <div class="gp-asset-h">
+        <span class="gp-n">01</span>
+        <h3>Everyone you discharged and never spoke to again</h3>
+      </div>
+      <p>Export the list. Count the people you treated who finished a plan of care two, three, four years ago and have not been back. In a practice of any age it is hundreds. Frequently thousands.</p>
+      <p><strong>Every one of them already trusts you.</strong> They know where you are, they know what it is like in your treatment room, and they chose you once when they had every other option. You paid to acquire each of them exactly once, years ago, and that cost is already sunk.</p>
+      <p>Reaching them costs almost nothing. No ad spend, no ranking, no waiting. And a meaningful share of them are in pain again right now and simply have not thought of you.</p>
+      <p class="gp-go">This is <a href="/services/patient-reactivation/">patient reactivation</a>, and the entire nine-step process is <a href="/reactivation/">written up for free</a> if you would rather run it yourself.</p>
+    </div>
+
+    <div class="gp-asset">
+      <div class="gp-asset-h">
+        <span class="gp-n">02</span>
+        <h3>The referrers who quietly stopped</h3>
+      </div>
+      <p>Somewhere on your list is a physician, a trainer, a coach or a gym owner who used to send you two patients a month and now sends none. Nobody fell out. It just stopped, and nobody noticed because a referral that does not arrive leaves no trace.</p>
+      <p><strong>Relationships are an asset even when they have gone quiet</strong>, and a single conversation frequently restarts one. This is the cheapest lever on this page and it does not require an agency at all. It requires a list and an afternoon.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gp-section">
+  <div class="gp-wrap">
+    <p class="gp-kicker">Vein two</p>
+    <h2>Demand You Are Already Paying For And Losing</h2>
+    <p class="gp-sub">Not potential patients. People who actively tried to reach you.</p>
+
+    <div class="gp-asset">
+      <div class="gp-asset-h">
+        <span class="gp-n">03</span>
+        <h3>The calls nobody answered</h3>
+      </div>
+      <p>You do not know how many there were. That is the finding, and it is almost universal. A missed call leaves no record, generates no complaint, and produces no line item. The patient simply rings the next clinic and you never learn it happened.</p>
+      <p>After five, at lunch, during a treatment, on a Saturday. <strong>Every one of those was somebody in enough pain to pick up a phone</strong>, which is the highest-intent signal a person can send you.</p>
+      <p class="gp-go">Get the number before you buy anything. If it is two a week, ignore this. If it is twenty, see <a href="/services/front-desk-conversion/">front desk conversion</a>.</p>
+    </div>
+
+    <div class="gp-asset">
+      <div class="gp-asset-h">
+        <span class="gp-n">04</span>
+        <h3>The visitors who read your website and left</h3>
+      </div>
+      <p>A site converting at one percent turns a hundred visitors into one patient. At four percent it turns the same hundred into four. <strong>Same traffic, same spend, four times the schedule.</strong></p>
+      <p>Most practice websites have never been measured this way, so the owner has no idea whether the problem is that nobody visits or that everybody leaves. Those are completely different problems with completely different price tags.</p>
+      <p class="gp-go">If the answer is that they arrive and leave, that is <a href="/services/web-design/">a conversion problem</a>, not a traffic problem, and it is the cheaper of the two to fix.</p>
+    </div>
+
+    <div class="gp-asset">
+      <div class="gp-asset-h">
+        <span class="gp-n">05</span>
+        <h3>Four hundred happy patients nobody asked</h3>
+      </div>
+      <p>The reason your grateful patients have not left reviews is not that they are unwilling. <strong>It is that nobody asked them in the ten minutes when they felt grateful.</strong></p>
+      <p>Reviews are unusual because they compound in two directions at once: volume and recency feed local ranking, and the average decides whether the person who finds you actually calls. Ranking first with a 3.9 next to a competitor on 4.8 is an expensive way to be seen losing.</p>
+      <p class="gp-go">See <a href="/services/reviews/">reviews and reputation</a>, and note that in healthcare the risk is in <em>responding</em>, not asking.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gp-section gp-soft">
+  <div class="gp-wrap">
+    <p class="gp-kicker">Vein three</p>
+    <h2>What You Know, And Never Sell</h2>
+    <p class="gp-sub">The expertise sitting in your head, doing nothing commercially.</p>
+
+    <div class="gp-asset">
+      <div class="gp-asset-h">
+        <span class="gp-n">06</span>
+        <h3>The condition you treat better than anyone locally</h3>
+      </div>
+      <p>Every practice has one. The thing the whole team is quietly excellent at, that no page on your website mentions and no patient in your town knows about.</p>
+      <p>An hour in a room teaching forty people about the condition keeping them awake does something no advertisement can. <strong>You are not claiming expertise. You are demonstrating it while they watch.</strong> One sciatica workshop we ran produced 43 attendees, 22 booked appointments and $22,000.</p>
+      <p class="gp-go">See <a href="/services/workshops/">patient workshops</a> and <a href="/results/">what that one produced</a>.</p>
+    </div>
+
+    <div class="gp-asset">
+      <div class="gp-asset-h">
+        <span class="gp-n">07</span>
+        <h3>The questions patients ask before they call</h3>
+      </div>
+      <p>Do I need a referral. What does the first visit cost. How long does this take to fix. Do you take my plan. Your front desk answers these fifty times a week and your website answers none of them.</p>
+      <p>Those are the searches with a decision underneath them, and they are worth more than any amount of general traffic. <strong>Answer them properly and you get found by people who are one question away from booking.</strong></p>
+      <p class="gp-go">That is what <a href="/services/local-seo/">local search</a> and <a href="/services/seo/">the organic and AI side</a> are actually for.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gp-section">
+  <div class="gp-wrap">
+    <p class="gp-kicker">Vein four</p>
+    <h2>Capacity You Are Paying For Either Way</h2>
+
+    <div class="gp-asset">
+      <div class="gp-asset-h">
+        <span class="gp-n">08</span>
+        <h3>The gaps in next week's schedule</h3>
+      </div>
+      <p>Rent, staff and equipment cost the same whether the ten o'clock slot is filled or empty. An unfilled appointment is not a neutral event. <strong>It is a cost you have already incurred, converted into nothing.</strong></p>
+      <p>This is why the sequence matters more than the tactic. A campaign that fills February when February was always going to be quiet is worth more than the same campaign run in a month you were busy anyway.</p>
+    </div>
+
+    <div class="gp-inventory">
+      <p class="gp-inv-tag">Run the inventory yourself</p>
+      <p>Eight questions. An afternoon. No agency required, and the answers are yours whatever you do next.</p>
+      <ol>
+        <li>How many contactable past patients are in your system right now?</li>
+        <li>How many calls went unanswered last week, including after hours?</li>
+        <li>What share of website visitors contact you?</li>
+        <li>How many patients did you treat last year? How many reviews did you receive?</li>
+        <li>Which referrer sent you patients two years ago and sends none now?</li>
+        <li>What condition is your team best at, and where does your website say so?</li>
+        <li>What is a patient worth across a full plan of care?</li>
+        <li>What share of enquiries become paying patients?</li>
+      </ol>
+      <p class="gp-inv-close"><strong>Multiply the last two together</strong> and you have the number that makes every other decision on this page obvious. Most owners have never calculated it, which is why marketing feels like a cost rather than an investment.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gp-section gp-soft">
+  <div class="gp-wrap">
+    <h2>Why It Stays Buried</h2>
+    <p>Two things have to be true before anybody harvests any of this, and for most practice owners neither one is.</p>
+    <p><strong>The first is believing the wealth is there at all.</strong> It does not feel like an asset. A dormant list feels like a closed file. A missed call feels like nothing happened. None of it shows up on a statement, so none of it feels real.</p>
+    <p><strong>The second is believing you are entitled to go and get it.</strong> There is a real reluctance among clinicians to contact a former patient in case it seems like selling. But a note to somebody you treated, asking how their back is holding up, is not selling. It is the thing a good clinician would do anyway if there were time.</p>
+    <p>The practices that pull ahead are almost never the ones with the biggest budget. <strong>They are the ones that stopped buying strangers long enough to look at what they already had.</strong></p>
+  </div>
+</section>
+
+<section class="gp-section">
+  <div class="gp-wrap">
+    <div class="gp-close">
+      <h2>Want Us To Count It For You?</h2>
+      <p>Tell us the size of the practice and roughly how long you have been open. We will tell you which of these is likely to be the largest number in your case, what it would take to harvest it, and which ones you should simply go and do yourself without paying anybody.</p>
       <a href="/contact/" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow">Book A Call<span class="ro-btn__arrow">&rarr;</span></a>
+      <p class="gp-close-alt">Not sure where you stand? <a href="/grid-audit/">See the grid first</a>, free and with no call attached. Or read the rest in your own time: <a href="/services/">all nine services grouped by which lever they pull</a>, <a href="/pricing/">what they cost</a>, and <a href="/compare/">whether an agency is the right structure at all</a>.</p>
     </div>
   </div>
 </section>
 
-</div>
 
 <footer style="background:#0B0E1A;border-top:1px solid rgba(247,198,0,0.15);padding:60px 24px 32px">
 <div style="max-width:1100px;margin:0 auto">
