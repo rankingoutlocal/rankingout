@@ -833,6 +833,14 @@ header{position:relative;z-index:120}
 @media (max-width:1080px) and (min-width:641px){
   footer > div > div:first-child{grid-template-columns:1fr 1fr!important}
 }
+
+/* ---------- HERO ALIGNMENT ---------- */
+/* Centred to match the rest of the site. The crumb is a flex row, so it needs
+   its own justification; the button is a block child, so the wrap has to be a
+   flex column rather than relying on text-align. */
+#ro-pr2 .pr-hero{text-align:center}
+#ro-pr2 .pr-hero .pr-wrap{display:flex;flex-direction:column;align-items:center}
+#ro-pr2 .pr-hero .pr-crumb{justify-content:center;flex-wrap:wrap}
 </style>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Numbers, Before You Have To Ask For Them">

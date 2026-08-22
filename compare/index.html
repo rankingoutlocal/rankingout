@@ -769,6 +769,14 @@ header{position:relative;z-index:120}
 @media (max-width:1080px) and (min-width:641px){
   footer > div > div:first-child{grid-template-columns:1fr 1fr!important}
 }
+
+/* ---------- HERO ALIGNMENT ---------- */
+/* Centred to match the rest of the site. The crumb is a flex row, so it needs
+   its own justification; the button is a block child, so the wrap has to be a
+   flex column rather than relying on text-align. */
+#ro-cp .cp-hero{text-align:center}
+#ro-cp .cp-hero .cp-wrap{display:flex;flex-direction:column;align-items:center}
+#ro-cp .cp-hero .cp-crumb{justify-content:center;flex-wrap:wrap}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://rankingout.com/compare/","url":"https://rankingout.com/compare/","name":"Hire Someone, Hire An Agency, Or Leave It Alone","description":"An honest comparison of the three ways a physical therapy or chiropractic practice can solve its marketing problem, including when a specialist agency is the wrong answer.","isPartOf":{"@type":"WebSite","name":"Ranking Out","url":"https://rankingout.com/"},"publisher":{"@type":"ProfessionalService","name":"Ranking Out","url":"https://rankingout.com/","telephone":"+1-703-389-5362","address":{"@type":"PostalAddress","addressLocality":"Arlington","addressRegion":"VA","addressCountry":"US"},"sameAs":["https://www.facebook.com/RankingOut"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rankingout.com/"},{"@type":"ListItem","position":2,"name":"How To Decide","item":"https://rankingout.com/compare/"}]}</script>

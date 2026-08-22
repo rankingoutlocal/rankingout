@@ -736,6 +736,14 @@ header{position:relative;z-index:120}
 @media (max-width:1080px) and (min-width:641px){
   footer > div > div:first-child{grid-template-columns:1fr 1fr!important}
 }
+
+/* ---------- HERO ALIGNMENT ---------- */
+/* Centred to match the rest of the site. The crumb is a flex row, so it needs
+   its own justification; the button is a block child, so the wrap has to be a
+   flex column rather than relying on text-align. */
+#ro-gp .gp-hero{text-align:center}
+#ro-gp .gp-hero .gp-wrap{display:flex;flex-direction:column;align-items:center}
+#ro-gp .gp-hero .gp-crumb{justify-content:center;flex-wrap:wrap}
 </style>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Hidden Money Already In Your Practice">

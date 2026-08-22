@@ -848,6 +848,14 @@ header{position:relative;z-index:120}
 @media (max-width:1080px) and (min-width:641px){
   footer > div > div:first-child{grid-template-columns:1fr 1fr!important}
 }
+
+/* ---------- HERO ALIGNMENT ---------- */
+/* Centred to match the rest of the site. The crumb is a flex row, so it needs
+   its own justification; the button is a block child, so the wrap has to be a
+   flex column rather than relying on text-align. */
+#ro-ga2 .ga2-hero{text-align:center}
+#ro-ga2 .ga2-hero .ga2-wrap{display:flex;flex-direction:column;align-items:center}
+#ro-ga2 .ga2-hero .ga2-crumb{justify-content:center;flex-wrap:wrap}
 </style>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="See Exactly Where You Rank, Street By Street">
