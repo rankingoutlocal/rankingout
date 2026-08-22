@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://rankingout.com/</loc>
-    <lastmod>2026-08-21</lastmod><priority>1.0</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>1.0</priority></url>
   <url><loc>https://rankingout.com/services/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.9</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.9</priority></url>
   <url><loc>https://rankingout.com/physical-therapy-marketing/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.9</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.9</priority></url>
   <url><loc>https://rankingout.com/chiropractic-marketing/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.9</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.9</priority></url>
   <url><loc>https://rankingout.com/about/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/resources/</loc>
     <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url>
@@ -21,41 +21,47 @@
   <url><loc>https://rankingout.com/services/local-seo/</loc>
     <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/services/seo/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/services/google-ads/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/services/facebook-ads/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/services/reviews/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/services/web-design/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/services/front-desk-conversion/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/services/patient-reactivation/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/reactivation/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.7</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://rankingout.com/physical-therapy-sw/</loc>
     <lastmod>2026-08-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://rankingout.com/contact/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.7</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://rankingout.com/privacy/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.3</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.3</priority></url>
+  <url>
+    <loc>https://rankingout.com/terms/</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
   <url><loc>https://rankingout.com/compare/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/arlington-va/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/results/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.9</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.9</priority></url>
   <url><loc>https://rankingout.com/pricing/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.9</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.9</priority></url>
   <url><loc>https://rankingout.com/services/workshops/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/grow-your-practice/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.9</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.9</priority></url>
   <url><loc>https://rankingout.com/guarantee/</loc>
-    <lastmod>2026-08-21</lastmod><priority>0.8</priority></url>
+    <lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://rankingout.com/grid-audit/</loc>
     <lastmod>2026-08-22</lastmod><priority>0.9</priority></url>
 </urlset>
