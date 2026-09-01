@@ -109,14 +109,14 @@ img,svg{max-width:100%}
   --grey-400:#94A3B8;
   --grey-450:#94A0B3;
   --grey-500:#9AA1AD;
-  --grey-600:#6B7280;
+  --grey-600:#4C5362;
   --grey-700:#4C5362;
   --grey-800:#374151;
   --grey-900:#2D3444;
 
   /* --- Slate: type on navy --- */
   --slate-200:#C8CEDF;
-  --slate-400:#8A90A8;
+  --slate-400:#BFC5D8;
 
   /* --- Signals --- */
   --blue-600:#2563EB;
@@ -486,6 +486,26 @@ header{position:relative;z-index:120}
 @media (max-width:1080px) and (min-width:641px){
   footer > div > div:first-child{grid-template-columns:1fr 1fr!important}
 }
+
+/* ============================================================
+   CONTRAST FIXES -- every value verified against WCAG 2.1 AA.
+   ============================================================ */
+
+/* Brand gold on a light ground is 1.5:1 -- unreadable. On light sections the
+   kicker keeps the exact brand gold and sits on a navy pill instead. 8.6:1. */
+.au-kicker,.fd-kicker,.rv-kicker,.ct-kicker,.sv-kicker,.wd-kicker,.sg-kicker,.ls-kicker,.ro-faq-kicker,.rz-case-tag,.ws-case-tag,.pr-tag,.pr-why-tag,.pr-math-tag,.wd-panel-tag,.ws-col-tag,.lg-kwtag,.ro-figure-tag,.av-n,.ga2-n,.ro-eyebrow-chip{display:inline-flex!important;align-items:center;gap:8px;width:auto!important;padding:7px 13px!important;border-radius:2px;line-height:1!important;background:#132C54!important;color:#F7C600!important}
+
+/* Role line carries a bottom rule, so it darkens rather than becoming a chip. */
+.au-role{color:#4C5362!important}
+
+/* Negative signal was 1.54:1 on navy. */
+.rv-quote-tag{color:#F5A3A3!important}
+
+/* Links inherit a dark blue that is right on white but ~2.2:1 on navy. */
+.ro-navtoggle a:not([class*="btn"]){color:#8FC5E8!important}
+
+/* Primary button ink, stated explicitly rather than inherited. 11.9:1 on gold. */
+a.ro-btn--primary,a.ct-btn,.ro-btn--primary{color:#0B0E1A!important}
 </style>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Local SEO for Physical Therapy and Chiropractic Clinics">
@@ -530,23 +550,23 @@ header{position:relative;z-index:120}
 
 <section id="top" style="background-color:#132C54;background-image:linear-gradient(90deg,rgba(245,200,0,0.04) 1px,transparent 1px),linear-gradient(180deg,rgba(245,200,0,0.04) 1px,transparent 1px);background-size:40px 40px;padding:158px 24px 80px;display:flex;flex-direction:column;align-items:center;text-align:center">
 <span class="ro-badge ro-badge--inverse"><span class="ro-badge__dot"></span>For physical therapy &amp; chiropractic practices</span>
-<h1 style="margin:32px 0 0;max-width:1000px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6.2vw,86px);line-height:0.96;letter-spacing:-1.2px;color:#FFFFFF">If every patient you treated last year came back on their own, <span style="color:#2A6496;text-shadow:0 0 20px rgba(74,159,213,0.4)">please don't call us.</span></h1>
+<h1 style="margin:32px 0 0;max-width:1000px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(38px,6.2vw,86px);line-height:0.96;letter-spacing:-1.2px;color:#FFFFFF">If every patient you treated last year came back on their own, <span style="color:#4A9FD5;text-shadow:0 0 20px rgba(74,159,213,0.4)">please don't call us.</span></h1>
 <p style="margin:32px 0 0;max-width:660px;font-size:18px;line-height:30.6px;color:#FFFFFF"><strong>They didn't. And that is revenue you already paid to acquire, sitting in your practice management system.</strong> We start by <a href="/services/patient-reactivation/" style="color:#F7C600;text-decoration:underline;text-underline-offset:3px">getting it back</a>. Then we make you <a href="/services/local-seo/" style="color:#F7C600;text-decoration:underline;text-underline-offset:3px">the clinic patients find first</a>.</p>
 <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;justify-content:center">
 <a href="#offer" class="ro-btn ro-btn--primary ro-btn--lg ro-btn--glow">Reactivate my past patients<span class="ro-btn__arrow">&rarr;</span></a>
 <a href="#tiers" class="ro-btn ro-btn--ghost-inverse ro-btn--lg">See how it works</a>
 </div>
-<p style="margin:16px 0 0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.7px;text-transform:uppercase;color:#8A90A8">$997 to start. 10 appointments in 30 days or your money back</p>
+<p style="margin:16px 0 0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.7px;text-transform:uppercase;color:#BFC5D8">$997 to start. 10 appointments in 30 days or your money back</p>
 <p style="margin:18px 0 0;max-width:620px;font-size:15px;line-height:26px;color:#C8CEDF">We work with two kinds of practice and nothing else. <a href="/physical-therapy-marketing/" style="color:#F7C600;text-decoration:underline;text-underline-offset:3px">How this runs for a physical therapy clinic</a>, or <a href="/chiropractic-marketing/" style="color:#F7C600;text-decoration:underline;text-underline-offset:3px">for a chiropractic practice</a>. <a href="/pricing/" style="color:#F7C600;text-decoration:underline;text-underline-offset:3px">What it costs</a> is published, and <a href="/grid-audit/" style="color:#F7C600;text-decoration:underline;text-underline-offset:3px">the grid audit is free</a>.</p>
 </section>
 <section id="leaks" style="background:#FFFFFF;padding:100px 24px;border-bottom:1px solid rgba(0,0,0,0.08)">
 <div style="max-width:1100px;margin:0 auto">
-<p style="display:flex;align-items:center;gap:12px;margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#F7C600"><span style="width:32px;height:2px;background:#F7C600;flex-shrink:0"></span>Three ways to grow a practice</p>
+<p style="margin:0"><span class="ro-eyebrow-chip">Three ways to grow a practice</span></p>
 <h2 style="margin:16px 0 0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:80px;line-height:76px;letter-spacing:1.6px;color:#0B0E1A">Your agency only sells you the expensive one.</h2>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px">
-<div style="border-left:3px solid #B91C1C;padding:4px 0 4px 20px"><strong style="display:block;margin-bottom:4px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:0.96px;text-transform:uppercase;color:#0B0E1A">New patients</strong><span style="font-size:14px;line-height:21px;color:#6B7280">The lever every agency sells. It works. It is just the slowest and most expensive place to begin. <a href="/grow-your-practice/" style="color:#1E3A5F;text-decoration:underline;text-underline-offset:3px">Start by counting what you already own</a>, or see <a href="/services/" style="color:#1E3A5F;text-decoration:underline;text-underline-offset:3px">all nine services by lever</a>.</span></div>
-<div style="border-left:3px solid #B91C1C;padding:4px 0 4px 20px"><strong style="display:block;margin-bottom:4px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:0.96px;text-transform:uppercase;color:#0B0E1A">The patients you already treated</strong><span style="font-size:14px;line-height:21px;color:#6B7280">Sitting in your system right now. They already trust you. <a href="/services/patient-reactivation/" style="color:#1E3A5F;text-decoration:underline;text-underline-offset:3px">Reaching them costs almost nothing</a>.</span></div>
-<div style="border-left:3px solid #B91C1C;padding:4px 0 4px 20px"><strong style="display:block;margin-bottom:4px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:0.96px;text-transform:uppercase;color:#0B0E1A">The calls already coming in</strong><span style="font-size:14px;line-height:21px;color:#6B7280">You paid for that phone to ring. <a href="/services/front-desk-conversion/" style="color:#1E3A5F;text-decoration:underline;text-underline-offset:3px">After 5pm and mid-treatment, nobody picks it up</a>.</span></div>
+<div style="border-left:3px solid #B91C1C;padding:4px 0 4px 20px"><strong style="display:block;margin-bottom:4px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:0.96px;text-transform:uppercase;color:#0B0E1A">New patients</strong><span style="font-size:14px;line-height:21px;color:#4C5362">The lever every agency sells. It works. It is just the slowest and most expensive place to begin. <a href="/grow-your-practice/" style="color:#1E3A5F;text-decoration:underline;text-underline-offset:3px">Start by counting what you already own</a>, or see <a href="/services/" style="color:#1E3A5F;text-decoration:underline;text-underline-offset:3px">all nine services by lever</a>.</span></div>
+<div style="border-left:3px solid #B91C1C;padding:4px 0 4px 20px"><strong style="display:block;margin-bottom:4px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:0.96px;text-transform:uppercase;color:#0B0E1A">The patients you already treated</strong><span style="font-size:14px;line-height:21px;color:#4C5362">Sitting in your system right now. They already trust you. <a href="/services/patient-reactivation/" style="color:#1E3A5F;text-decoration:underline;text-underline-offset:3px">Reaching them costs almost nothing</a>.</span></div>
+<div style="border-left:3px solid #B91C1C;padding:4px 0 4px 20px"><strong style="display:block;margin-bottom:4px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:0.96px;text-transform:uppercase;color:#0B0E1A">The calls already coming in</strong><span style="font-size:14px;line-height:21px;color:#4C5362">You paid for that phone to ring. <a href="/services/front-desk-conversion/" style="color:#1E3A5F;text-decoration:underline;text-underline-offset:3px">After 5pm and mid-treatment, nobody picks it up</a>.</span></div>
 </div>
 </div>
 </section>
@@ -558,22 +578,22 @@ header{position:relative;z-index:120}
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px">
 <div style="border-left:3px solid #F7C600;padding:4px 0 4px 20px">
 <strong style="display:block;margin-bottom:6px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:0.96px;text-transform:uppercase;color:#FFFFFF">It is the fastest money you have</strong>
-<span style="font-size:14px;line-height:21px;color:#8A90A8">No new traffic, no ad spend, no waiting on rankings. The patients are already in your system and they already know your name.</span>
+<span style="font-size:14px;line-height:21px;color:#BFC5D8">No new traffic, no ad spend, no waiting on rankings. The patients are already in your system and they already know your name.</span>
 </div>
 <div style="border-left:3px solid #F7C600;padding:4px 0 4px 20px">
 <strong style="display:block;margin-bottom:6px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:0.96px;text-transform:uppercase;color:#FFFFFF">It proves we can execute</strong>
-<span style="font-size:14px;line-height:21px;color:#8A90A8">You see booked appointments in 30 days, not a ranking report in six months. Judge us on that before you commit to anything longer.</span>
+<span style="font-size:14px;line-height:21px;color:#BFC5D8">You see booked appointments in 30 days, not a ranking report in six months. Judge us on that before you commit to anything longer.</span>
 </div>
 <div style="border-left:3px solid #F7C600;padding:4px 0 4px 20px">
 <strong style="display:block;margin-bottom:6px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:0.96px;text-transform:uppercase;color:#FFFFFF">It often pays for the SEO</strong>
-<span style="font-size:14px;line-height:21px;color:#8A90A8">Practices routinely fund the search work out of what the first campaign brings back. The compounding asset gets built with money you did not have to find.</span>
+<span style="font-size:14px;line-height:21px;color:#BFC5D8">Practices routinely fund the search work out of what the first campaign brings back. The compounding asset gets built with money you did not have to find.</span>
 </div>
 </div>
 </div>
 </section>
 <section id="proof" style="background:#FFFFFF;padding:100px 24px;border-bottom:1px solid rgba(0,0,0,0.08)">
 <div style="max-width:1100px;margin:0 auto">
-<p style="margin:0 0 14px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#C8A200">Proof</p>
+<p style="margin:0 0 14px"><span class="ro-eyebrow-chip">Proof</span></p>
 <h2 style="margin:0 0 18px;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.04;letter-spacing:.6px;color:#0B0E1A;max-width:22ch">This Is What The Work Has Produced</h2>
 <p style="margin:0 0 40px;max-width:62ch;font-size:17px;line-height:28px;color:#4A5068">Campaigns run by the people who run Ranking Out, for physical therapy practices. Read the method behind them rather than the headline figure. A number without a mechanism is decoration.</p>
 
@@ -601,12 +621,12 @@ header{position:relative;z-index:120}
 </section>
 <section id="tiers" style="background:#F7F8FA;padding:100px 24px;border-bottom:1px solid rgba(0,0,0,0.08)">
 <div style="max-width:1100px;margin:0 auto">
-<p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#F7C600">How this works</p>
+<p style="margin:0"><span class="ro-eyebrow-chip">How this works</span></p>
 <h2 style="margin:16px 0 0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:80px;line-height:76px;letter-spacing:1.6px;color:#0B0E1A">Fast money first. Then the compounding.</h2>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;align-items:stretch">
 <div style="position:relative;display:flex;flex-direction:column;background:#FFFCF2;border:2px solid #F7C600;border-radius:14px;padding:32px;box-shadow:0 24px 64px -30px rgba(15,23,42,0.35);box-sizing:border-box">
 <span style="position:absolute;top:-11px;left:26px;background:#F7C600;color:#0B0E1A;padding:5px 12px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;letter-spacing:2.4px;text-transform:uppercase">Start here</span>
-<p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#6B7280">Step 1 &middot; Fastest money</p>
+<p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#4C5362">Step 1 &middot; Fastest money</p>
 <h3 style="margin:12px 0 0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:36px;line-height:1;letter-spacing:0.7px;color:#0B0E1A">Patient Reactivation</h3>
 <p style="margin:12px 0 0;font-weight:700;font-size:14.5px;line-height:22px;color:#374151">$997 to start, $497/month. Appointments in 30 days or you don't pay.</p>
 <ul style="display:flex;flex-direction:column;gap:9px;margin:20px 0 0;padding:0">
@@ -617,7 +637,7 @@ header{position:relative;z-index:120}
 <div style="margin-top:auto;padding-top:24px"><a href="#offer" class="ro-btn ro-btn--primary ro-btn--md ro-btn--block">Start my campaign</a></div>
 </div>
 <div style="display:flex;flex-direction:column;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:32px;box-sizing:border-box">
-<p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#6B7280">Step 2 &middot; Stop the leak</p>
+<p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#4C5362">Step 2 &middot; Stop the leak</p>
 <h3 style="margin:12px 0 0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:36px;line-height:1;letter-spacing:0.7px;color:#0B0E1A">Front Desk Conversion</h3>
 <p style="margin:12px 0 0;font-weight:700;font-size:14.5px;line-height:22px;color:#374151">Answer every call you already paid for.</p>
 <ul style="display:flex;flex-direction:column;gap:9px;margin:20px 0 0;padding:0">
@@ -628,7 +648,7 @@ header{position:relative;z-index:120}
 <div style="margin-top:auto;padding-top:24px"><a href="#offer" class="ro-btn ro-btn--ghost ro-btn--md ro-btn--block">See how it answers</a></div>
 </div>
 <div style="display:flex;flex-direction:column;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:32px;box-sizing:border-box">
-<p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#6B7280">Step 3 &middot; The main event</p>
+<p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#4C5362">Step 3 &middot; The main event</p>
 <h3 style="margin:12px 0 0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:36px;line-height:1;letter-spacing:0.7px;color:#0B0E1A">Local SEO</h3>
 <p style="margin:12px 0 0;font-weight:700;font-size:14.5px;line-height:22px;color:#374151">Own the map pack. This is what we actually do.</p>
 <ul style="display:flex;flex-direction:column;gap:9px;margin:20px 0 0;padding:0">
@@ -645,8 +665,8 @@ header{position:relative;z-index:120}
 <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:457px 1fr;gap:48px;align-items:start">
 <div style="display:flex;flex-direction:column;background:#2A4F7A;border:2px solid rgba(247,198,0,0.3);padding:48px;box-sizing:border-box">
 <p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:2.8px;text-transform:uppercase;color:#F7C600">Patient Reactivation</p>
-<div style="display:flex;align-items:baseline;gap:8px;padding-top:24px"><span style="font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:0.9;letter-spacing:1.6px;color:#FFFFFF">$997</span><span style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1.2px;color:#8A90A8">to start</span></div>
-<p style="margin:12px 0 0;font-size:14px;color:#8A90A8">Then $497/mo.</p>
+<div style="display:flex;align-items:baseline;gap:8px;padding-top:24px"><span style="font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:0.9;letter-spacing:1.6px;color:#FFFFFF">$997</span><span style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1.2px;color:#BFC5D8">to start</span></div>
+<p style="margin:12px 0 0;font-size:14px;color:#BFC5D8">Then $497/mo.</p>
 <ul style="display:flex;flex-direction:column;gap:14px;margin:36px 0;padding:0">
 <li style="display:flex;gap:12px;list-style:none"><span style="color:#F7C600;font-weight:700;font-size:16px;line-height:24px">&#10003;</span><span style="font-size:16px;line-height:24px;color:#C8CEDF">We audit and clean your patient list, then run a multi-touch campaign</span></li>
 <li style="display:flex;gap:12px;list-style:none"><span style="color:#F7C600;font-weight:700;font-size:16px;line-height:24px">&#10003;</span><span style="font-size:16px;line-height:24px;color:#C8CEDF">We handle the replies and book re-evaluations into your calendar</span></li>
@@ -654,13 +674,13 @@ header{position:relative;z-index:120}
 <li style="display:flex;gap:12px;list-style:none"><span style="color:#F7C600;font-weight:700;font-size:16px;line-height:24px">&#10003;</span><span style="font-size:16px;line-height:24px;color:#C8CEDF">A monthly report showing what came back, in your dollars</span></li>
 </ul>
 <a href="/resources/" class="ro-btn ro-btn--primary ro-btn--md ro-btn--block">Get instant access<span class="ro-btn__arrow">&rarr;</span></a>
-<p style="margin:16px 0 0;text-align:center;font-size:13px;line-height:20.8px;color:#8A90A8">10 appointments in your first 30 days, or you get your money back.</p>
+<p style="margin:16px 0 0;text-align:center;font-size:13px;line-height:20.8px;color:#BFC5D8">10 appointments in your first 30 days, or you get your money back.</p>
 </div>
 <div>
-<p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#8A90A8">One requirement</p>
+<p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#BFC5D8">One requirement</p>
 <h2 style="margin:16px 0 0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:80px;line-height:76px;letter-spacing:1.6px;color:#FFFFFF">You need at least 300 past patients.</h2>
 <p style="margin:24px 0 0;max-width:560px;font-size:17px;line-height:30.6px;color:#C8CEDF">Fewer than that and the campaign can't hit the number. We'll tell you straight rather than take your money, and we'll audit the export before you pay anything.</p>
-<p style="margin:16px 0 0;max-width:560px;font-size:15px;line-height:26px;color:#8A90A8">Not sure an agency is even the right structure for a practice your size? <a href="/compare/" style="color:#F7C600;text-decoration:underline;text-underline-offset:3px">Read this before you call anyone</a>.</p>
+<p style="margin:16px 0 0;max-width:560px;font-size:15px;line-height:26px;color:#BFC5D8">Not sure an agency is even the right structure for a practice your size? <a href="/compare/" style="color:#F7C600;text-decoration:underline;text-underline-offset:3px">Read this before you call anyone</a>.</p>
 <div style="margin-top:32px;display:flex;gap:16px;flex-wrap:wrap">
 <a href="/contact/" class="ro-btn ro-btn--ghost-inverse ro-btn--md">Audit my list</a>
 </div>
@@ -670,11 +690,11 @@ header{position:relative;z-index:120}
 <footer style="background:#0B0E1A;border-top:1px solid rgba(247,198,0,0.15);padding:60px 24px 32px">
 <div style="max-width:1100px;margin:0 auto">
 <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:36px;padding-bottom:48px">
-<div><a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="27" height="26" style="height:26px;display:block" role="img" aria-label="Ranking Out"><g fill="#FFFFFF"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1.4px;color:#FFFFFF">Ranking<span style="color:#F7C600"> Out</span></span></a><p style="margin:14px 0 0;max-width:34ch;font-size:14px;line-height:21px;color:#8A90A8">Local search for physical therapy and chiropractic practices. Arlington, Virginia.</p><a href="https://www.facebook.com/RankingOut" target="_blank" rel="noopener" aria-label="Ranking Out on Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;margin-top:18px;border:1px solid rgba(255,255,255,0.16);text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="#8A90A8" role="img" aria-hidden="true" focusable="false"><path d="M14 8.5V6.8c0-.8.2-1.2 1.4-1.2H17V2.6c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.2H8.6V12h2.5v9h3v-9h2.5l.4-3.5H14z"/></svg></a></div>
-<div><p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Services</p><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/services/" style="font-size:14px;color:#8A90A8;text-decoration:none">All Services</a></li><li><a href="/services/local-seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">Local SEO</a></li><li><a href="/services/seo/" style="font-size:14px;color:#8A90A8;text-decoration:none">SEO + GEO</a></li><li><a href="/services/google-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Google Ads</a></li><li><a href="/services/facebook-ads/" style="font-size:14px;color:#8A90A8;text-decoration:none">Meta Ads</a></li><li><a href="/services/reviews/" style="font-size:14px;color:#8A90A8;text-decoration:none">Reviews &amp; Reputation</a></li><li><a href="/services/web-design/" style="font-size:14px;color:#8A90A8;text-decoration:none">Web Design</a></li><li><a href="/services/front-desk-conversion/" style="font-size:14px;color:#8A90A8;text-decoration:none">Front Desk Conversion</a></li><li><a href="/services/patient-reactivation/" style="font-size:14px;color:#8A90A8;text-decoration:none">Patient Reactivation</a></li><li><a href="/services/workshops/" style="font-size:14px;color:#8A90A8;text-decoration:none">Patient Workshops</a></li></ul></div>
-<div><p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</p><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#8A90A8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#8A90A8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#8A90A8;text-decoration:none">For Chiropractors</a></li><li><a href="/grow-your-practice/" style="font-size:14px;color:#8A90A8;text-decoration:none">Grow Your Practice</a></li><li><a href="/grid-audit/" style="font-size:14px;color:#8A90A8;text-decoration:none">Free Grid Audit</a></li><li><a href="/results/" style="font-size:14px;color:#8A90A8;text-decoration:none">Results</a></li><li><a href="/pricing/" style="font-size:14px;color:#8A90A8;text-decoration:none">What It Costs</a></li><li><a href="/guarantee/" style="font-size:14px;color:#8A90A8;text-decoration:none">The Guarantee</a></li><li><a href="/compare/" style="font-size:14px;color:#8A90A8;text-decoration:none">How To Decide</a></li><li><a href="/arlington-va/" style="font-size:14px;color:#8A90A8;text-decoration:none">Arlington &amp; DC Metro</a></li><li><a href="/contact/" style="font-size:14px;color:#8A90A8;text-decoration:none">Contact</a></li></ul></div>
-<div><p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Guides</p><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/local-seo-guide/" style="font-size:14px;color:#8A90A8;text-decoration:none">Local Search Guide</a></li><li><a href="/reactivation/" style="font-size:14px;color:#8A90A8;text-decoration:none">Patient Reactivation Guide</a></li><li><a href="/physical-therapy-sw/" style="font-size:14px;color:#8A90A8;text-decoration:none">Practice Website Plan</a></li><li><a href="/resources/" style="font-size:14px;color:#8A90A8;text-decoration:none">All Guides</a></li></ul></div></div>
-<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8"><span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#8A90A8;text-decoration:none">Privacy Policy</a> &middot; <a href="/terms/" style="color:#8A90A8;text-decoration:none">Terms</a></span><span><a href="tel:+17033895362" style="color:#8A90A8;text-decoration:none">(703) 389-5362</a> &middot; <a href="mailto:info@rankingout.com" style="color:#8A90A8;text-decoration:none">info@rankingout.com</a></span></div>
+<div><a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="27" height="26" style="height:26px;display:block" role="img" aria-label="Ranking Out"><g fill="#FFFFFF"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1.4px;color:#FFFFFF">Ranking<span style="color:#F7C600"> Out</span></span></a><p style="margin:14px 0 0;max-width:34ch;font-size:14px;line-height:21px;color:#BFC5D8">Local search for physical therapy and chiropractic practices. Arlington, Virginia.</p><a href="https://www.facebook.com/RankingOut" target="_blank" rel="noopener" aria-label="Ranking Out on Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;margin-top:18px;border:1px solid rgba(255,255,255,0.16);text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="#BFC5D8" role="img" aria-hidden="true" focusable="false"><path d="M14 8.5V6.8c0-.8.2-1.2 1.4-1.2H17V2.6c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.2H8.6V12h2.5v9h3v-9h2.5l.4-3.5H14z"/></svg></a></div>
+<div><p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Services</p><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/services/" style="font-size:14px;color:#BFC5D8;text-decoration:none">All Services</a></li><li><a href="/services/local-seo/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Local SEO</a></li><li><a href="/services/seo/" style="font-size:14px;color:#BFC5D8;text-decoration:none">SEO + GEO</a></li><li><a href="/services/google-ads/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Google Ads</a></li><li><a href="/services/facebook-ads/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Meta Ads</a></li><li><a href="/services/reviews/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Reviews &amp; Reputation</a></li><li><a href="/services/web-design/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Web Design</a></li><li><a href="/services/front-desk-conversion/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Front Desk Conversion</a></li><li><a href="/services/patient-reactivation/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Patient Reactivation</a></li><li><a href="/services/workshops/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Patient Workshops</a></li></ul></div>
+<div><p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Company</p><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Home</a></li><li><a href="/about/" style="font-size:14px;color:#BFC5D8;text-decoration:none">About</a></li><li><a href="/physical-therapy-marketing/" style="font-size:14px;color:#BFC5D8;text-decoration:none">For Physical Therapists</a></li><li><a href="/chiropractic-marketing/" style="font-size:14px;color:#BFC5D8;text-decoration:none">For Chiropractors</a></li><li><a href="/grow-your-practice/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Grow Your Practice</a></li><li><a href="/grid-audit/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Free Grid Audit</a></li><li><a href="/results/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Results</a></li><li><a href="/pricing/" style="font-size:14px;color:#BFC5D8;text-decoration:none">What It Costs</a></li><li><a href="/guarantee/" style="font-size:14px;color:#BFC5D8;text-decoration:none">The Guarantee</a></li><li><a href="/compare/" style="font-size:14px;color:#BFC5D8;text-decoration:none">How To Decide</a></li><li><a href="/arlington-va/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Arlington &amp; DC Metro</a></li><li><a href="/contact/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Contact</a></li></ul></div>
+<div><p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.95px;text-transform:uppercase;color:#FFFFFF">Guides</p><ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none"><li><a href="/local-seo-guide/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Local Search Guide</a></li><li><a href="/reactivation/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Patient Reactivation Guide</a></li><li><a href="/physical-therapy-sw/" style="font-size:14px;color:#BFC5D8;text-decoration:none">Practice Website Plan</a></li><li><a href="/resources/" style="font-size:14px;color:#BFC5D8;text-decoration:none">All Guides</a></li></ul></div></div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#BFC5D8"><span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#BFC5D8;text-decoration:none">Privacy Policy</a> &middot; <a href="/terms/" style="color:#BFC5D8;text-decoration:none">Terms</a></span><span><a href="tel:+17033895362" style="color:#BFC5D8;text-decoration:none">(703) 389-5362</a> &middot; <a href="mailto:info@rankingout.com" style="color:#BFC5D8;text-decoration:none">info@rankingout.com</a></span></div>
 </div>
 </footer>
 </div>

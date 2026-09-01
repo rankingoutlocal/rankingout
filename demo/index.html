@@ -110,14 +110,14 @@ img,svg{max-width:100%}
   --grey-400:#94A3B8;
   --grey-450:#94A0B3;
   --grey-500:#9AA1AD;
-  --grey-600:#6B7280;
+  --grey-600:#4C5362;
   --grey-700:#4C5362;
   --grey-800:#374151;
   --grey-900:#2D3444;
 
   /* --- Slate: type on navy --- */
   --slate-200:#C8CEDF;
-  --slate-400:#8A90A8;
+  --slate-400:#BFC5D8;
 
   /* --- Signals --- */
   --blue-600:#2563EB;
@@ -1017,6 +1017,26 @@ header{position:relative;z-index:120}
   header a[href="/"]{padding-right:8px!important;gap:8px!important}
   header a[href="/"] span{font-size:24px!important}
 }
+
+/* ============================================================
+   CONTRAST FIXES -- every value verified against WCAG 2.1 AA.
+   ============================================================ */
+
+/* Brand gold on a light ground is 1.5:1 -- unreadable. On light sections the
+   kicker keeps the exact brand gold and sits on a navy pill instead. 8.6:1. */
+.au-kicker,.fd-kicker,.rv-kicker,.ct-kicker,.sv-kicker,.wd-kicker,.sg-kicker,.ls-kicker,.ro-faq-kicker,.rz-case-tag,.ws-case-tag,.pr-tag,.pr-why-tag,.pr-math-tag,.wd-panel-tag,.ws-col-tag,.lg-kwtag,.ro-figure-tag,.av-n,.ga2-n,.ro-eyebrow-chip{display:inline-flex!important;align-items:center;gap:8px;width:auto!important;padding:7px 13px!important;border-radius:2px;line-height:1!important;background:#132C54!important;color:#F7C600!important}
+
+/* Role line carries a bottom rule, so it darkens rather than becoming a chip. */
+.au-role{color:#4C5362!important}
+
+/* Negative signal was 1.54:1 on navy. */
+.rv-quote-tag{color:#F5A3A3!important}
+
+/* Links inherit a dark blue that is right on white but ~2.2:1 on navy. */
+.gp-hero a:not([class*="btn"]),.gp-inventory a:not([class*="btn"]),.gp-n a:not([class*="btn"]),.lp-booked a:not([class*="btn"]),.lp-chat-bar a:not([class*="btn"]),.lp-dark a:not([class*="btn"]),.lp-hero a:not([class*="btn"]),.lp-never a:not([class*="btn"]),.ro-navtoggle a:not([class*="btn"]),.sv-close a:not([class*="btn"]),.sv-hero a:not([class*="btn"]){color:#8FC5E8!important}
+
+/* Primary button ink, stated explicitly rather than inherited. 11.9:1 on gold. */
+a.ro-btn--primary,a.ct-btn,.ro-btn--primary{color:#0B0E1A!important}
 </style>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Cheapest Appointment You Will Ever Book Is With Someone You Have Already Treated">
@@ -1253,9 +1273,9 @@ header{position:relative;z-index:120}
 
 </div>
 <footer style="background:#0B0E1A;padding:34px 24px;border-top:1px solid rgba(247,198,0,0.15)">
-<div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#8A90A8">
-<span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#8A90A8;text-decoration:none">Privacy Policy</a> &middot; <a href="/terms/" style="color:#8A90A8;text-decoration:none">Terms</a></span>
-<span><a href="mailto:info@rankingout.com" style="color:#8A90A8;text-decoration:none">info@rankingout.com</a></span>
+<div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:1.3px;text-transform:uppercase;color:#BFC5D8">
+<span>&copy; 2026 Ranking Out. All rights reserved. &middot; <a href="/privacy/" style="color:#BFC5D8;text-decoration:none">Privacy Policy</a> &middot; <a href="/terms/" style="color:#BFC5D8;text-decoration:none">Terms</a></span>
+<span><a href="mailto:info@rankingout.com" style="color:#BFC5D8;text-decoration:none">info@rankingout.com</a></span>
 </div>
 </footer>
 </div>
