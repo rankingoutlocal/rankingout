@@ -33,7 +33,9 @@
   })();
 </script>
 
+<link rel="preload" href="/fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/bebas-neue-400.woff2) format('woff2');}
 #ro-gap {
   --navy-900:#0A1733; --navy:#0F224A; --navy-700:#1A3163; --navy-line:#2B4378;
   --gold:#F7C600; --gold-soft:#FFF6CC;
@@ -66,8 +68,11 @@ body { margin:0; background:#fff; }
 
 /* Brand strip (no nav, no exits) */
 #ro-gap .brand { position:absolute; top:0; left:0; right:0; z-index:2; padding:22px 0; }
-#ro-gap .brand span { color:#fff; font-weight:800; letter-spacing:-.01em; font-size:20px; }
-#ro-gap .brand span b { color:var(--gold); }
+#ro-gap .brand .logo { display:inline-flex; align-items:center; gap:14px; }
+#ro-gap .brand .logo svg { display:block; height:30px; width:auto; }
+#ro-gap .brand .wordmark { font-family:'Bebas Neue', "Arial Narrow", sans-serif; font-size:32px; line-height:1; letter-spacing:1.6px; color:#fff; }
+#ro-gap .brand .wordmark span { color:var(--gold); }
+@media (max-width:640px){ #ro-gap .brand .wordmark { font-size:27px; } #ro-gap .brand .logo svg { height:26px; } }
 
 /* HERO */
 #ro-gap .hero { position:relative; background:var(--navy); color:var(--on-navy); padding:120px 0 96px;
@@ -282,7 +287,7 @@ body { margin:0; background:#fff; }
 
   <!-- HERO -->
   <header class="hero">
-    <div class="brand"><div class="wrap"><span>Ranking<b>Out</b></span></div></div>
+    <div class="brand"><div class="wrap"><span class="logo" role="img" aria-label="Ranking Out"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="31" height="30" aria-hidden="true"><g fill="#BFC5D8"><rect x="0" y="44" width="12" height="20"></rect><rect x="18" y="30" width="12" height="34"></rect><rect x="36" y="16" width="12" height="48"></rect></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"></rect></svg><span class="wordmark">Ranking<span> Out</span></span></span></div></div>
     <div class="wrap hero-grid">
       <div>
         <span class="eyebrow">For multi-location physical therapy and chiropractic groups</span>
