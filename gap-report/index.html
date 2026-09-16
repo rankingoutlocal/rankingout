@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Competitor Gap Report | Ranking Out</title>
+<meta name="description" content="One location, three named competitors, eight measures, side by side. A free Competitor Gap Report for multi-location physical therapy and chiropractic groups, emailed within 48 hours.">
+<!-- Paid-traffic page: never index, never add to sitemap.xml, never link from nav. -->
+<meta name="robots" content="noindex,follow">
+<meta property="og:title" content="How do you actually compare to the three clinics closest to you?">
+<meta property="og:description" content="One location. Three named competitors. Eight measures. Free, in 48 hours.">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LGS7VMSNGR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LGS7VMSNGR');
+</script>
+<!-- Meta Pixel (guarded: only runs on a plain numeric ID) -->
+<script>
+  (function(){
+    var PIXEL_ID = '946704693191227';
+    if (!/^\d{10,20}$/.test(PIXEL_ID)) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID);
+    fbq('track', 'PageView');
+  })();
+</script>
+
+<style>
+#ro-gap {
+  --navy-900:#0A1733; --navy:#0F224A; --navy-700:#1A3163; --navy-line:#2B4378;
+  --gold:#F7C600; --gold-soft:#FFF6CC;
+  --ink:#141A26; --body:#3A4150; --muted:#4C5362; --on-navy:#FFFFFF; --on-navy-muted:#BFC5D8;
+  --paper:#FFFFFF; --wash:#F4F6FA; --line:#DDE2EC;
+  --good:#1F7A4D; --bad:#B42318;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(10,23,51,.06), 0 8px 24px rgba(10,23,51,.08);
+  --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+#ro-gap *, #ro-gap *::before, #ro-gap *::after { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:#fff; }
+#ro-gap { font-family:var(--font); color:var(--body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+#ro-gap h1, #ro-gap h2, #ro-gap h3 { color:var(--ink); line-height:1.15; margin:0; letter-spacing:-.015em; }
+#ro-gap p { margin:0 0 1em; }
+#ro-gap .wrap { max-width:1160px; margin:0 auto; padding:0 24px; }
+#ro-gap section { padding:88px 0; }
+#ro-gap .kicker { display:inline-flex; align-items:center; gap:10px; font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--navy); margin-bottom:14px; }
+#ro-gap .kicker::before { content:""; width:22px; height:2px; background:var(--gold); }
+#ro-gap h2 { font-size:clamp(28px, 3.6vw, 40px); margin-bottom:18px; max-width:22ch; }
+#ro-gap .lede { font-size:19px; max-width:62ch; }
+
+/* Buttons */
+#ro-gap .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--gold); color:var(--navy-900); font-weight:800; font-size:17px; text-decoration:none; border:0; border-radius:10px; padding:16px 26px; cursor:pointer; box-shadow:0 2px 0 #C79F00; transition:transform .12s, box-shadow .12s; font-family:inherit; }
+#ro-gap .btn:hover { transform:translateY(-1px); box-shadow:0 4px 0 #C79F00; }
+#ro-gap .btn:focus-visible { outline:3px solid var(--navy); outline-offset:3px; }
+#ro-gap .btn[disabled] { opacity:.6; cursor:wait; transform:none; }
+#ro-gap .micro { font-size:14px; color:var(--muted); margin-top:12px; }
+
+/* Brand strip (no nav, no exits) */
+#ro-gap .brand { position:absolute; top:0; left:0; right:0; z-index:2; padding:22px 0; }
+#ro-gap .brand span { color:#fff; font-weight:800; letter-spacing:-.01em; font-size:20px; }
+#ro-gap .brand span b { color:var(--gold); }
+
+/* HERO */
+#ro-gap .hero { position:relative; background:var(--navy); color:var(--on-navy); padding:120px 0 96px;
+  background-image:
+    radial-gradient(900px 500px at 85% 20%, rgba(247,198,0,.12), transparent 60%),
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:auto, 32px 32px, 32px 32px; }
+#ro-gap .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:start; }
+#ro-gap .hero .eyebrow { display:inline-block; background:rgba(247,198,0,.14); color:var(--gold); border:1px solid rgba(247,198,0,.35); padding:6px 12px; border-radius:999px; font-size:14px; font-weight:700; margin-bottom:22px; }
+#ro-gap .hero h1 { color:#fff; font-size:clamp(34px, 4.8vw, 56px); margin-bottom:22px; }
+#ro-gap .hero .sub { font-size:20px; color:var(--on-navy-muted); max-width:34ch; margin-bottom:30px; }
+#ro-gap .hero .sub strong { color:#fff; }
+#ro-gap .hero .micro { color:var(--on-navy-muted); }
+#ro-gap .chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:34px; padding:0; list-style:none; }
+#ro-gap .chips li { border:1px solid var(--navy-line); background:rgba(255,255,255,.04); border-radius:999px; padding:7px 14px; font-size:14px; color:#fff; }
+#ro-gap .chips li b { color:var(--gold); }
+
+/* FORM CARD */
+#ro-gap .form-card { background:#fff; color:var(--body); border-radius:18px; padding:30px 28px 26px; box-shadow:0 20px 60px rgba(0,0,0,.35); position:relative; }
+#ro-gap .form-card::before { content:""; position:absolute; left:28px; right:28px; top:0; height:4px; background:var(--gold); border-radius:0 0 4px 4px; }
+#ro-gap .form-card h2, #ro-gap .close .form-card h2 { color:var(--ink); font-size:25px; margin-bottom:6px; max-width:none; }
+#ro-gap .form-card .form-intro { font-size:15px; color:var(--muted); margin-bottom:20px; }
+#ro-gap .field { margin-bottom:14px; }
+#ro-gap .row2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+#ro-gap label, #ro-gap .legend { display:block; font-size:14px; font-weight:700; color:var(--ink); margin-bottom:6px; }
+#ro-gap input[type=text], #ro-gap input[type=email], #ro-gap input[type=tel] { width:100%; font:inherit; font-size:16px; color:var(--ink); padding:12px 14px; border:1.5px solid var(--line); border-radius:10px; background:#fff; transition:border-color .12s, box-shadow .12s; }
+#ro-gap input:focus { outline:none; border-color:var(--navy); box-shadow:0 0 0 3px rgba(15,34,74,.15); }
+#ro-gap input[aria-invalid=true] { border-color:var(--bad); }
+#ro-gap fieldset { border:0; padding:0; margin:0 0 14px; }
+#ro-gap .seg { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+#ro-gap .seg input { position:absolute; opacity:0; pointer-events:none; }
+#ro-gap .seg label { margin:0; text-align:center; font-weight:700; font-size:15px; color:var(--navy); border:1.5px solid var(--line); border-radius:10px; padding:11px 4px; cursor:pointer; transition:all .12s; }
+#ro-gap .seg input:checked + label { background:var(--navy); border-color:var(--navy); color:#fff; }
+#ro-gap .seg input:focus-visible + label { box-shadow:0 0 0 3px rgba(15,34,74,.25); }
+#ro-gap .form-card .btn { width:100%; margin-top:6px; }
+#ro-gap .form-card .micro, #ro-gap .hero .form-card .micro { color:var(--muted); text-align:center; margin-top:12px; }
+#ro-gap .fine { font-size:12.5px; color:var(--muted); text-align:center; margin:8px 0 0; }
+#ro-gap .fine a { color:var(--muted); }
+#ro-gap .hp { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+#ro-gap .err { color:var(--bad); font-size:14px; margin:8px 0 0; min-height:0; }
+#ro-gap .done { text-align:center; padding:24px 6px; }
+#ro-gap .done .tick { width:56px; height:56px; border-radius:50%; background:var(--gold-soft); display:grid; place-items:center; margin:0 auto 14px; }
+#ro-gap .done h3 { font-size:24px; margin-bottom:8px; }
+
+/* PROBLEM */
+#ro-gap .problem-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+#ro-gap .pull { font-size:21px; font-weight:700; color:var(--ink); border-left:4px solid var(--gold); padding-left:18px; margin-top:26px; }
+#ro-gap .radius { background:var(--wash); border:1px solid var(--line); border-radius:var(--radius); padding:24px; }
+#ro-gap .radius { padding:12px; }
+#ro-gap .radius img { width:100%; height:auto; display:block; border-radius:8px; }
+#ro-gap .radius figcaption { font-size:14px; color:var(--muted); margin-top:10px; text-align:center; }
+
+/* MEASURES */
+#ro-gap .alt { background:var(--wash); }
+#ro-gap .measures { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:40px; padding:0; list-style:none; }
+#ro-gap .measures li { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px; box-shadow:var(--shadow); }
+#ro-gap .measures .n { display:inline-grid; place-items:center; width:32px; height:32px; border-radius:8px; background:var(--navy); color:var(--gold); font-weight:800; font-size:15px; margin-bottom:12px; }
+#ro-gap .measures h3 { font-size:18px; margin-bottom:6px; }
+#ro-gap .measures p { font-size:15px; margin:0; }
+
+/* HEADLINE NUMBER */
+#ro-gap .report-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:center; }
+#ro-gap .report { background:#fff; border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); overflow:hidden; }
+#ro-gap .report-top { background:var(--navy); color:#fff; padding:14px 22px; display:flex; justify-content:space-between; align-items:center; font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; }
+#ro-gap .report-top em { font-style:normal; background:var(--gold); color:var(--navy-900); padding:3px 9px; border-radius:6px; letter-spacing:.04em; }
+#ro-gap .report-body { padding:26px 22px 22px; }
+#ro-gap .report-line { font-size:clamp(22px, 2.6vw, 28px); font-weight:800; color:var(--ink); line-height:1.25; margin-bottom:8px; }
+#ro-gap .report-line mark { background:linear-gradient(transparent 58%, var(--gold) 58%); color:inherit; padding:0 2px; }
+#ro-gap .report-ahead { font-size:15px; color:var(--muted); margin-bottom:20px; }
+#ro-gap .bars { list-style:none; padding:0; margin:0; }
+#ro-gap .bars li { display:grid; grid-template-columns:24px 1fr 44px; align-items:center; gap:10px; padding:8px 0; font-size:15px; }
+#ro-gap .bars .rk { font-weight:800; color:var(--muted); }
+#ro-gap .bars .nm { font-weight:600; color:var(--ink); }
+#ro-gap .bars .track { grid-column:2 / 3; height:8px; border-radius:4px; background:var(--wash); overflow:hidden; margin-top:6px; }
+#ro-gap .bars .track i { display:block; height:100%; background:#9AA4BD; border-radius:4px; }
+#ro-gap .bars .you .nm { color:var(--navy); }
+#ro-gap .bars .you .track i { background:var(--gold); }
+#ro-gap .bars .pct { text-align:right; font-variant-numeric:tabular-nums; font-weight:700; color:var(--ink); }
+#ro-gap .sample-note { font-size:13px; color:var(--muted); margin:14px 0 0; font-style:italic; }
+
+/* CAPACITY */
+#ro-gap .capacity { background:var(--navy); color:var(--on-navy-muted); }
+#ro-gap .capacity h2 { color:#fff; }
+#ro-gap .cap-grid { display:grid; grid-template-columns:auto 1fr; gap:56px; align-items:center; }
+#ro-gap .big10 { font-size:clamp(110px, 16vw, 190px); font-weight:900; line-height:.85; color:var(--gold); letter-spacing:-.05em; }
+#ro-gap .big10 small { display:block; font-size:18px; letter-spacing:.14em; text-transform:uppercase; color:#fff; font-weight:700; margin-top:12px; }
+#ro-gap .capacity .kicker { color:var(--gold); }
+#ro-gap .capacity p { max-width:56ch; }
+#ro-gap .capacity strong { color:#fff; }
+
+/* STEPS */
+#ro-gap .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:40px; padding:0; list-style:none; counter-reset:s; }
+#ro-gap .steps li { padding:0 28px 0 0; position:relative; }
+#ro-gap .steps li::before { counter-increment:s; content:counter(s); display:grid; place-items:center; width:44px; height:44px; border-radius:50%; background:var(--gold); color:var(--navy-900); font-weight:900; font-size:18px; margin-bottom:18px; position:relative; z-index:1; }
+#ro-gap .steps li:not(:last-child)::after { content:""; position:absolute; top:22px; left:44px; right:0; height:2px; background:var(--line); }
+#ro-gap .steps h3 { font-size:20px; margin-bottom:8px; }
+#ro-gap .steps p { font-size:16px; margin:0; }
+
+/* FIT */
+#ro-gap .fit { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:36px; }
+#ro-gap .fit > div { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); }
+#ro-gap .fit h3 { font-size:20px; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+#ro-gap .fit ul { margin:0; padding:0; list-style:none; }
+#ro-gap .fit li { padding:9px 0 9px 30px; position:relative; border-top:1px solid var(--wash); }
+#ro-gap .fit li:first-child { border-top:0; }
+#ro-gap .fit li::before { position:absolute; left:0; top:9px; font-weight:900; }
+#ro-gap .fit .yes li::before { content:"\2713"; color:var(--good); }
+#ro-gap .fit .no li::before { content:"\2715"; color:var(--bad); }
+
+/* PROOF placeholder */
+#ro-gap .proof-card { background:#fff; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); }
+#ro-gap .proof-stats { list-style:none; padding:0; margin:20px 0 0; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+#ro-gap .proof-stats li { background:var(--navy); border-radius:12px; padding:16px 14px; }
+#ro-gap .proof-stats b { display:block; color:var(--gold); font-size:26px; line-height:1.1; font-weight:900; }
+#ro-gap .proof-stats span { color:var(--on-navy-muted); font-size:13px; }
+#ro-gap .proof-card .who { font-weight:800; color:var(--ink); margin-bottom:6px; }
+
+/* FAQ */
+#ro-gap .faq { max-width:820px; margin-top:32px; }
+#ro-gap details { border-bottom:1px solid var(--line); }
+#ro-gap summary { list-style:none; cursor:pointer; padding:20px 40px 20px 0; font-weight:700; font-size:18px; color:var(--ink); position:relative; }
+#ro-gap summary::-webkit-details-marker { display:none; }
+#ro-gap summary::after { content:"+"; position:absolute; right:4px; top:14px; font-size:26px; font-weight:400; color:var(--navy); transition:transform .15s; }
+#ro-gap details[open] summary::after { transform:rotate(45deg); }
+#ro-gap details p { margin:0 0 20px; max-width:66ch; }
+
+/* CLOSE */
+#ro-gap .close { background:var(--navy); color:var(--on-navy-muted); padding:96px 0 72px;
+  background-image: radial-gradient(800px 400px at 10% 90%, rgba(247,198,0,.10), transparent 60%); }
+#ro-gap .close-grid { display:grid; grid-template-columns:1fr 440px; gap:56px; align-items:center; }
+#ro-gap .close h2 { color:#fff; font-size:clamp(34px, 4.4vw, 52px); }
+#ro-gap .close .lede { color:var(--on-navy-muted); }
+#ro-gap .close .lede strong { color:#fff; }
+#ro-gap .legal { text-align:center; font-size:13px; color:var(--on-navy-muted); margin-top:56px; }
+#ro-gap .legal a { color:var(--on-navy-muted); }
+
+/* Responsive */
+@media (max-width: 980px) {
+  #ro-gap section { padding:64px 0; }
+  #ro-gap .hero { padding:92px 0 64px; }
+  #ro-gap .hero-grid, #ro-gap .problem-grid, #ro-gap .report-grid, #ro-gap .close-grid, #ro-gap .cap-grid { grid-template-columns:1fr; gap:36px; }
+  #ro-gap .hero .sub { max-width:none; }
+  #ro-gap .hero-cta { display:none; } /* form sits directly below on mobile */
+  #ro-gap .measures { grid-template-columns:repeat(2,1fr); }
+  #ro-gap .steps { grid-template-columns:1fr; gap:28px; }
+  #ro-gap .steps li { padding:0 0 0 64px; }
+  #ro-gap .steps li::before { position:absolute; left:0; top:0; margin:0; }
+  #ro-gap .steps li:not(:last-child)::after { top:44px; bottom:-28px; left:21px; right:auto; width:2px; height:auto; }
+}
+@media (max-width: 640px) {
+  #ro-gap { font-size:16px; }
+  #ro-gap .wrap { padding:0 16px; }
+  #ro-gap .measures, #ro-gap .fit, #ro-gap .row2 { grid-template-columns:1fr; }
+  #ro-gap .form-card { padding:26px 18px 22px; }
+  #ro-gap .form-card::before { left:18px; right:18px; }
+  #ro-gap .chips { display:none; }
+  #ro-gap .big10 { font-size:120px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } #ro-gap .btn { transition:none; } }
+</style>
+</head>
+<body>
+<main id="ro-gap">
+
+  <!-- Template for both forms: cloned into #form-hero and #form-bottom on load -->
+  <template id="gap-form-tpl">
+    <div class="form-card">
+      <form class="gap-form" novalidate>
+        <h2>Where should we look first?</h2>
+        <p class="form-intro">Thirty seconds. Public data only. Please don't include any patient information.</p>
+
+        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label><label>Leave this empty too<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="form_location">
+        <input type="hidden" name="page_url">
+        <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="fbclid">
+
+        <div class="row2">
+          <div class="field"><label data-for="name">Name</label><input type="text" data-id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label data-for="practice">Practice name</label><input type="text" data-id="practice" name="practice_name" autocomplete="organization" required></div>
+        </div>
+
+        <fieldset>
+          <legend class="legend">How many locations?</legend>
+          <div class="seg">
+            <input type="radio" name="locations" value="1" data-id="l1" required><label data-for="l1">1</label>
+            <input type="radio" name="locations" value="2-3" data-id="l2"><label data-for="l2">2&ndash;3</label>
+            <input type="radio" name="locations" value="4-9" data-id="l3"><label data-for="l3">4&ndash;9</label>
+            <input type="radio" name="locations" value="10+" data-id="l4"><label data-for="l4">10+</label>
+          </div>
+        </fieldset>
+
+        <div class="field"><label data-for="city">Which location do you worry about most? <span style="font-weight:500;color:var(--muted)">(city)</span></label><input type="text" data-id="city" name="worry_city" autocomplete="address-level2" placeholder="e.g. Westfield, NJ" required></div>
+
+        <div class="row2">
+          <div class="field"><label data-for="email">Email</label><input type="email" data-id="email" name="email" autocomplete="email" required></div>
+          <div class="field"><label data-for="phone">Phone</label><input type="tel" data-id="phone" name="phone" autocomplete="tel" required></div>
+        </div>
+
+        <button type="submit" class="btn">Send my Gap Report &rarr;</button>
+        <p class="err" role="alert" aria-live="assertive"></p>
+        <p class="micro">Emailed within 48 hours. One email, no sequence, no call unless you ask.</p>
+        <p class="fine">See our <a href="/privacy/">privacy policy</a>.</p>
+      </form>
+      <div class="done" hidden>
+        <div class="tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F224A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Got it. We're on it.</h3>
+        <p>Your Gap Report lands in your inbox within 48 hours. One email, and that's it unless you reply.</p>
+      </div>
+    </div>
+  </template>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="brand"><div class="wrap"><span>Ranking<b>Out</b></span></div></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">For multi-location physical therapy and chiropractic groups</span>
+        <h1>How do you actually compare to the three clinics closest to you?</h1>
+        <p class="sub">Most owners guess. We'll show you: <strong>one location, three named competitors, eight measures, side by side.</strong></p>
+        <div class="hero-cta">
+          <a href="#form-hero" class="btn js-cta" data-target="form-hero" data-cta="hero">Get my free Competitor Gap Report &rarr;</a>
+          <p class="micro">48 hours. No call required. No access to anything you own.</p>
+        </div>
+        <ul class="chips" aria-label="What the report covers">
+          <li><b>1</b> location</li><li><b>3</b> named competitors</li><li><b>8</b> measures</li><li><b>48</b> hours</li>
+        </ul>
+      </div>
+      <div id="form-hero"></div>
+    </div>
+  </header>
+
+  <!-- PROBLEM -->
+  <section>
+    <div class="wrap problem-grid">
+      <div>
+        <span class="kicker">The problem</span>
+        <h2>You check your ranking from your own desk</h2>
+        <p class="lede">That's the one place you're guaranteed to look good. Three miles away is the search your patients are actually running, and it returns something different.</p>
+        <p>Most multi-location groups have one clinic that's invisible a few miles from its own door. The group's totals look fine, so nobody catches it. The schedule stays soft and the therapist gets blamed.</p>
+        <p class="pull">Nobody measures this one location at a time. So nobody fixes it.</p>
+      </div>
+      <figure class="radius" style="margin:0">
+        <img src="rank-grid.jpg" width="1092" height="675" decoding="async" alt="Map grid of local search rankings around one clinic: rank 1 at the clinic's own address, falling to 4 a few blocks away and to 10 to 14 at the edges">
+        <figcaption>Same search, 121 points around one clinic. #1 at its own door, out of the 3-pack a few blocks away.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="alt">
+    <div class="wrap">
+      <span class="kicker">What you get</span>
+      <h2>One location. Three named competitors. Eight measures. Free.</h2>
+      <p class="lede">Not a report about you. A report about you against them: named practices, their numbers beside yours.</p>
+      <ol class="measures">
+        <li><span class="n">1</span><h3>Visibility across your service area</h3><p>A grid, not a single search. Five treatment searches that matter to your billing.</p></li>
+        <li><span class="n">2</span><h3>Who wins the areas you lose</h3><p>Named, square by square.</p></li>
+        <li><span class="n">3</span><h3>Review velocity</h3><p>Not who has more, who is gaining faster. Eleven a month against your two is a gap that's widening, and totals hide it.</p></li>
+        <li><span class="n">4</span><h3>Profile completeness</h3><p>Categories, services, photos, Q&amp;A, posts, scored against each of them.</p></li>
+        <li><span class="n">5</span><h3>Citation consistency</h3><p>Every place your name, address or phone disagrees with itself, and how many errors they have.</p></li>
+        <li><span class="n">6</span><h3>Website authority</h3><p>Referring domains, yours against theirs.</p></li>
+        <li><span class="n">7</span><h3>Keyword gap</h3><p>Treatment searches they rank for and you don't.</p></li>
+        <li><span class="n">8</span><h3>AI visibility</h3><p>What ChatGPT says when a patient asks it to recommend a clinic in your city.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- HEADLINE NUMBER -->
+  <section>
+    <div class="wrap report-grid">
+      <div>
+        <span class="kicker">The headline number</span>
+        <h2>The first line of your report</h2>
+        <p class="lede">Before the eight measures, one sentence tells you where you stand.</p>
+      </div>
+      <div class="report" aria-label="Sample report">
+        <div class="report-top"><span>Competitor Gap Report</span><em>Sample</em></div>
+        <div class="report-body">
+          <p class="report-line">You are <mark>3rd of 4</mark> on local visibility in Westfield.</p>
+          <p class="report-ahead">Ahead of you: Summit Sports Rehab, Orthocare Physical Therapy.</p>
+          <ol class="bars">
+            <li><span class="rk">1</span><span class="nm">Summit Sports Rehab</span><span class="pct">71%</span><span class="track"><i style="width:71%"></i></span></li>
+            <li><span class="rk">2</span><span class="nm">Orthocare Physical Therapy</span><span class="pct">58%</span><span class="track"><i style="width:58%"></i></span></li>
+            <li class="you"><span class="rk">3</span><span class="nm">Your clinic</span><span class="pct">34%</span><span class="track"><i style="width:34%"></i></span></li>
+            <li><span class="rk">4</span><span class="nm">Competitor three</span><span class="pct">22%</span><span class="track"><i style="width:22%"></i></span></li>
+          </ol>
+          <p class="sample-note">Sample. Yours names your city and your actual competitors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPACITY -->
+  <section class="capacity">
+    <div class="wrap cap-grid">
+      <div class="big10">10<small>a month</small></div>
+      <div>
+        <span class="kicker">Capacity</span>
+        <h2>Ten a month</h2>
+        <p>Each report takes about two hours to build by hand. The grids are run, the competitors are chosen by someone who looked at your market, the numbers are checked. <strong>Nothing is generated.</strong></p>
+        <p>Ten a month. When they're gone they're gone until the first.</p>
+        <a href="#form-bottom" class="btn js-cta" data-target="form-bottom" data-cta="capacity" style="margin-top:8px">Claim one of this month's ten &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="wrap">
+      <span class="kicker">How it works</span>
+      <h2>Three steps, and only the first one is yours</h2>
+      <ol class="steps">
+        <li><h3>Tell us where to look</h3><p>Thirty seconds. Practice name and the one location you're least sure about.</p></li>
+        <li><h3>We build it</h3><p>Public data only. We never touch your website or your Google account.</p></li>
+        <li><h3>You get it in 48 hours</h3><p>Five minutes to read. If it looks good, now you know. If it doesn't, you'll want to talk, and that's when we talk.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="alt">
+    <div class="wrap">
+      <span class="kicker">Who it's for</span>
+      <h2>Built for groups, not for everyone</h2>
+      <div class="fit">
+        <div class="yes"><h3>For you if</h3><ul>
+          <li>Two or more locations, or one clinic doing serious volume</li>
+          <li>You already spend on marketing and want to know if it works</li>
+          <li>There's a location you're quietly worried about</li>
+        </ul></div>
+        <div class="no"><h3>Not for you if</h3><ul>
+          <li>Single clinic just opening</li>
+          <li>You want someone to run your social media</li>
+          <li>You're shopping for the cheapest option</li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF: Evolve Physical Therapy. Keep the original scan on file; the page promises numbers on request. -->
+  <section>
+    <div class="wrap problem-grid">
+      <div>
+        <span class="kicker">Proof</span>
+        <h2>What it looks like fixed</h2>
+        <div class="proof-card">
+          <p class="who">Evolve Physical Therapy &middot; Brooklyn</p>
+          <p style="margin:0">Evolve was sitting in positions 10 to 15 for physical therapy searches. After six months of work, they rank in the top 3 for physical therapy across their Brooklyn service area. Green is top 3, and green is most of the map.</p>
+        </div>
+        <ul class="proof-stats">
+          <li><b>10&ndash;15</b><span>Where they started</span></li>
+          <li><b>Top 3</b><span>Where they are now</span></li>
+          <li><b>6 mo</b><span>How long it took</span></li>
+        </ul>
+      </div>
+      <figure class="radius" style="margin:0">
+        <img src="rank-grid-fixed.jpg" width="1024" height="633" decoding="async" alt="Map grid of local search rankings for Evolve Physical Therapy in Brooklyn after six months: most points rank 1 to 3, with 4s and 5s only along the eastern edge">
+        <figcaption>Evolve Physical Therapy, &ldquo;physical therapy&rdquo;, after six months.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt">
+    <div class="wrap">
+      <span class="kicker">FAQ</span>
+      <h2>Fair questions</h2>
+      <div class="faq">
+        <details><summary>Is it really free?</summary><p>Yes, for one location. Ten a month. About one owner in five doesn't like what they see and asks what it costs to fix. The other four get something useful and we never speak again.</p></details>
+        <details><summary>Do you need access to my website or Google account?</summary><p>No. Every number is public data. We measure it properly, which almost nobody does.</p></details>
+        <details><summary>Who picks the competitors?</summary><p>We do, and we tell you why. Real practices near you, comparable size. Think we picked wrong? Say so and we rerun it.</p></details>
+        <details><summary>Will I be added to a list?</summary><p>The report, then one email asking what you thought. That's it.</p></details>
+        <details><summary>We already work with a marketing company.</summary><p>Then this is a free second opinion on whether it's working.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING + BOTTOM FORM -->
+  <section class="close">
+    <div class="wrap close-grid">
+      <div>
+        <span class="kicker" style="color:var(--gold)">Closing</span>
+        <h2>You'll know in 48 hours</h2>
+        <p class="lede"><strong>One location. Three competitors. Eight measures.</strong> One line at the top telling you where you stand.</p>
+        <p class="micro" style="color:var(--on-navy-muted)">48 hours. No call required. No access to anything you own.</p>
+      </div>
+      <div id="form-bottom"></div>
+    </div>
+    <p class="legal">&copy; <span id="yr"></span> Ranking Out &middot; <a href="/privacy/">Privacy</a></p>
+  </section>
+</main>
+
+<script>
+(function(){
+  /* ============ CONFIG ============
+     Leads are emailed to info@rankingout.com via FormSubmit (formsubmit.co).
+     FIRST SUBMISSION ON THE LIVE SITE triggers an activation email to that
+     inbox; click "Activate Form" once or nothing is delivered.
+     After activating, FormSubmit emails you a random alias string. Replace
+     the email in the URL below with that alias so the address isn't in
+     the page source:  https://formsubmit.co/ajax/<alias>
+     Set FORM_ENDPOINT to '' to run in preview mode (nothing sent). */
+  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/info@rankingout.com';
+
+  function track(name, params){
+    try { if (window.gtag) gtag('event', name, params || {}); } catch(e){}
+  }
+  function fb(name, params){
+    try { if (window.fbq) fbq('track', name, params || {}); } catch(e){}
+  }
+
+  // Build both forms from one template
+  var tpl = document.getElementById('gap-form-tpl');
+  var qs = new URLSearchParams(location.search);
+  ['form-hero','form-bottom'].forEach(function(slot){
+    var host = document.getElementById(slot);
+    host.appendChild(tpl.content.cloneNode(true));
+    var prefix = slot.replace('form-','') + '-';
+    host.querySelectorAll('[data-id]').forEach(function(el){ el.id = prefix + el.dataset.id; });
+    host.querySelectorAll('[data-for]').forEach(function(el){ el.htmlFor = prefix + el.dataset.for; });
+    var form = host.querySelector('form');
+    form.form_location.value = slot === 'form-hero' ? 'hero' : 'bottom';
+    ['utm_source','utm_medium','utm_campaign','utm_content','fbclid'].forEach(function(k){
+      if (qs.get(k)) form[k].value = qs.get(k);
+    });
+    wire(form, host);
+  });
+
+  /* ---------- Email quality ----------
+     Rejects throwaway inboxes, obvious fakes and common domain typos.
+     Gmail/Yahoo/Outlook etc. are allowed on purpose. */
+  var DISPOSABLE = ('mailinator.com guerrillamail.com guerrillamail.net sharklasers.com grr.la 10minutemail.com '+
+    '10minutemail.net tempmail.com temp-mail.org temp-mail.io tempmail.net tempmailo.com tempr.email throwawaymail.com '+
+    'yopmail.com yopmail.net yopmail.fr trashmail.com trashmail.de getnada.com nada.email dispostable.com maildrop.cc '+
+    'mailnesia.com mintemail.com mohmal.com emailondeck.com fakeinbox.com fakemail.net spamgourmet.com spambox.us '+
+    'mailcatch.com moakt.com burnermail.io inboxkitten.com mail.tm mailsac.com tmail.ws tmpmail.org tmpmail.net '+
+    'discard.email discardmail.com spam4.me byom.de emailfake.com fake-mail.net 33mail.com anonaddy.me '+
+    'mytemp.email tempinbox.com jetable.org owlymail.com mail7.io luxusmail.org minuteinbox.com dropmail.me '+
+    'harakirimail.com mvrht.net example.com example.org example.net test.com').split(' ');
+  var TYPOS = {
+    'gmial.com':'gmail.com','gmai.com':'gmail.com','gamil.com':'gmail.com','gnail.com':'gmail.com','gmail.co':'gmail.com',
+    'gmail.con':'gmail.com','gmail.cm':'gmail.com','gmaill.com':'gmail.com','gmal.com':'gmail.com','gmail.om':'gmail.com',
+    'yaho.com':'yahoo.com','yahooo.com':'yahoo.com','yahoo.co':'yahoo.com','yahoo.con':'yahoo.com',
+    'hotmial.com':'hotmail.com','hotmal.com':'hotmail.com','hotmail.co':'hotmail.com','hotmail.con':'hotmail.com',
+    'outlok.com':'outlook.com','outloo.com':'outlook.com','outlook.co':'outlook.com','outlook.con':'outlook.com',
+    'iclod.com':'icloud.com','icloud.co':'icloud.com','icoud.com':'icloud.com','aol.co':'aol.com'
+  };
+  var FAKE_LOCAL = /^(test|testing|asdf|asd|qwerty|abc|abcd|xxx|xyz|aaa+|fake|none|no|na|n\/a|null|spam|junk|noreply|no-reply|donotreply|nobody|sample|example|foo|bar|1234\d*)$/i;
+
+  function emailProblem(v){
+    v = v.trim().toLowerCase();
+    var m = /^([a-z0-9!#$%&'*+\/=?^_`{|}~.-]+)@([a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,})$/.exec(v);
+    if (!m || /\.\./.test(v) || /^\.|\.@/.test(v)) return 'Please enter a valid email address.';
+    var local = m[1], domain = m[2];
+    if (TYPOS[domain]) return 'Did you mean ' + local + '@' + TYPOS[domain] + '?';
+    if (DISPOSABLE.some(function(d){ return domain === d || domain.slice(-(d.length+1)) === '.' + d; }))
+      return 'Please use a real inbox. We send the report there, so temporary addresses won’t work.';
+    if (FAKE_LOCAL.test(local) || /^(.)\1{3,}$/.test(local)) return 'Please use the email you actually read.';
+    return '';
+  }
+  function phoneProblem(v){
+    var d = v.replace(/\D/g,'');
+    if (d.length === 11 && d[0] === '1') d = d.slice(1);
+    if (d.length !== 10) return 'Please enter a 10-digit phone number.';
+    if (/^(\d)\1{9}$/.test(d) || d === '1234567890' || d === '0123456789') return 'Please enter a real phone number.';
+    if (/^[01]/.test(d) || /^\d{3}[01]/.test(d) || d.slice(3,6) === '555') return 'Please enter a real phone number.';
+    return '';
+  }
+
+  function wire(form, host){
+    var err = form.querySelector('.err');
+    var btn = form.querySelector('button[type=submit]');
+    var started = false;
+    var loadedAt = Date.now();
+    var sent = false;
+    form.addEventListener('focusin', function(){
+      if (!started){ started = true; track('form_start', { form_location: form.form_location.value }); }
+    });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      err.textContent = '';
+      form.querySelectorAll('[aria-invalid]').forEach(function(el){ el.removeAttribute('aria-invalid'); });
+      // Bot traps: filled hidden fields, or submitted faster than a human can type
+      var tooFast = Date.now() - loadedAt < 4000;
+      if (form.company_website.value || form._honey.value || tooFast || sent) {
+        if (!sent) { form.hidden = true; host.querySelector('.done').hidden = false; }
+        track('form_spam_blocked', { reason: tooFast ? 'too_fast' : 'honeypot' });
+        return;
+      }
+
+      var missing = [];
+      ['name','practice_name','worry_city','email','phone'].forEach(function(n){
+        var el = form[n];
+        if (!el.value.trim()) { el.setAttribute('aria-invalid','true'); missing.push(el); }
+      });
+      if (!form.querySelector('input[name=locations]:checked')) missing.push(form.querySelector('input[name=locations]'));
+      var email = form.email, problem = '';
+      if (email.value && (problem = emailProblem(email.value))) { email.setAttribute('aria-invalid','true'); missing.unshift(email); }
+      if (!problem && form.phone.value && (problem = phoneProblem(form.phone.value))) { form.phone.setAttribute('aria-invalid','true'); missing.unshift(form.phone); }
+      if (problem){
+        err.textContent = problem;
+        missing[0].focus();
+        track('form_validation_block', { field: missing[0].name });
+        return;
+      }
+      if (missing.length){
+        err.textContent = 'Please fill in every field so we know where to look.';
+        missing[0].focus();
+        return;
+      }
+
+      // Junk content: links or spam words in name/practice/city
+      var junk = /https?:|www\.|<a|\[url|seo services|crypto|bitcoin|casino|loan|viagra/i;
+      if (['name','practice_name','worry_city'].some(function(n){ return junk.test(form[n].value); })) {
+        form.hidden = true; host.querySelector('.done').hidden = false;
+        track('form_spam_blocked', { reason: 'content' });
+        return;
+      }
+
+      form.page_url.value = location.href;
+      var data = {};
+      new FormData(form).forEach(function(v,k){ if (k !== 'company_website' && k !== '_honey') data[k] = String(v).trim(); });
+
+      sent = true;
+      btn.disabled = true; btn.textContent = 'Sending...';
+      var done = function(){
+        form.hidden = true;
+        host.querySelector('.done').hidden = false;
+        if (FORM_ENDPOINT){
+          track('generate_lead', { form_location: data.form_location, locations: data.locations });
+          fb('Lead', { content_name: 'Competitor Gap Report' });
+        }
+      };
+      if (!FORM_ENDPOINT){ console.info('[gap-form] preview mode, not sent:', data); return done(); }
+
+      // FormSubmit options: email subject, table layout, no captcha page, reply goes to the lead
+      var payload = Object.assign({
+        _subject: 'New Gap Report request: ' + data.practice_name + ' (' + data.worry_city + ')',
+        _template: 'table',
+        _captcha: 'false',
+        _honey: '',
+        _blacklist: 'http, www., seo services, crypto, bitcoin, casino, viagra, backlinks',
+        _replyto: data.email
+      }, data);
+
+      fetch(FORM_ENDPOINT, { method:'POST', headers:{ 'Content-Type':'application/json', 'Accept':'application/json' }, body: JSON.stringify(payload) })
+        .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json().catch(function(){ return {}; }); })
+        .then(function(j){
+          if (j && String(j.success) === 'false') console.warn('[gap-form] FormSubmit:', j.message);
+          done();
+        })
+        .catch(function(){
+          sent = false;
+          btn.disabled = false; btn.innerHTML = 'Send my Gap Report &rarr;';
+          err.innerHTML = 'That didn’t go through. Please try again, or email <a href="mailto:info@rankingout.com">info@rankingout.com</a>.';
+          track('form_error', { form_location: data.form_location });
+        });
+    });
+  }
+
+  // CTA buttons scroll to a form and focus its first field
+  document.querySelectorAll('.js-cta').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var host = document.getElementById(a.dataset.target);
+      track('cta_click', { cta: a.dataset.cta });
+      host.scrollIntoView({ behavior:'smooth', block:'center' });
+      setTimeout(function(){ var f = host.querySelector('input[type=text]'); if (f) f.focus({ preventScroll:true }); }, 450);
+    });
+  });
+
+  // Scroll depth
+  var marks = [25,50,75,90], hit = {};
+  addEventListener('scroll', function(){
+    var p = (scrollY + innerHeight) / document.documentElement.scrollHeight * 100;
+    marks.forEach(function(m){ if (p >= m && !hit[m]){ hit[m] = 1; track('scroll_depth', { percent:m }); } });
+  }, { passive:true });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
