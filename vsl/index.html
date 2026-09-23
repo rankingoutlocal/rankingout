@@ -72,7 +72,6 @@
           <div class="hp" aria-hidden="true"><label for="website_url">Leave this empty<input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off"></label></div>
           <input type="hidden" name="email_address_check" value="">
           <input type="hidden" name="locale" value="en">
-          <input type="hidden" name="html_type" value="simple">
           <div class="field">
             <label for="firstname">First name</label>
             <input type="text" id="firstname" name="FIRSTNAME" autocomplete="given-name" required>
@@ -102,7 +101,7 @@
      (looks like https://sibforms.com/serve/XXXXXXXX) and paste it below.
      Left empty, the page runs in preview mode: it validates and goes straight
      to the watch page without storing anything. */
-  var BREVO_ACTION = '';
+  var BREVO_ACTION = 'https://941cfd57.sibforms.com/serve/MUIFAPDPLfft8GesYbLe9Ln3X2mizb2IJj0c7ZmDWncSKI_nfxhVzN2D6N_0ZicsmTBlTlc6H8QYOpaeKrHeurEyQuSEGpD-U300mndi8v00-4-iVKSqAyOL0poRgfsRbcCZk9qDit2bY6m1e2WCqZbjemgq2GD7hX8nV3iy5P_XOS5qJVOnMYzQPq8bC3LI0r-xTDpijGPGQTnzmQ==';
 
   var form=document.getElementById('optin'), btn=document.getElementById('optin-btn'),
       err=form.querySelector('.err'), loadedAt=Date.now(), started=false;
