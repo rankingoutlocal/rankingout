@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're booked | Ranking Out</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="/vsl/funnel.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LGS7VMSNGR"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+  gtag('js',new Date());gtag('config','G-LGS7VMSNGR');
+</script>
+<script>
+  (function(){var P='946704693191227';if(!/^\d{10,20}$/.test(P))return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+  s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init',P);fbq('track','PageView');
+  /* step 2 of the funnel — the macro conversion */
+  fbq('track','Schedule',{content_name:'VSL call booked'});})();
+</script>
+<style>
+#ro-vsl .done{padding:44px 0 90px;min-height:70vh}
+#ro-vsl .tick{width:64px;height:64px;border-radius:50%;background:var(--gold);display:grid;place-items:center;margin-bottom:24px}
+#ro-vsl h1{font-size:clamp(34px,4.4vw,52px);margin-bottom:16px}
+#ro-vsl .lede{font-size:19px;color:var(--on-navy-muted);max-width:60ch;margin-bottom:38px}
+#ro-vsl .panel{background:rgba(255,255,255,.04);border:1px solid var(--navy-line);border-radius:14px;padding:28px 26px;max-width:760px}
+#ro-vsl .panel h2{font-size:24px;margin-bottom:18px}
+@media(max-width:640px){#ro-vsl{font-size:16px}#ro-vsl .wrap{padding:0 16px}#ro-vsl .panel{padding:22px 18px}}
+</style>
+</head>
+<body>
+<main id="ro-vsl">
+<section class="dark done">
+  <div class="wrap">
+    <div class="brand"><span class="logo" role="img" aria-label="Ranking Out">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 64" width="29" height="28" aria-hidden="true"><g fill="#BFC5D8"><rect x="0" y="44" width="12" height="20"/><rect x="18" y="30" width="12" height="34"/><rect x="36" y="16" width="12" height="48"/></g><rect x="54" y="0" width="12" height="64" fill="#F7C600"/></svg>
+      <span class="wordmark">Ranking<span> Out</span></span></span></div>
+
+    <div class="tick"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0A1733" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <h1>You're booked.</h1>
+    <p class="lede">The invite is in your inbox with the calendar link. I'll call you at the time we picked.</p>
+
+    <div class="panel">
+      <h2>Two things before we talk</h2>
+      <ol class="steps">
+        <li>
+          <h3>Get four numbers from your own system</h3>
+          <p>Enquiries last month across every channel. How many were contacted the same day. Your average visits planned against visits actually attended. And what one visit is worth. With those, the call runs on your practice instead of generalities.</p>
+        </li>
+        <li>
+          <h3>Tell me which location worries you most</h3>
+          <p>Reply to the calendar invite with the city. I'll build your Competitor Gap Report on that one before we speak — three named competitors, eight measures, side by side. You keep it either way.</p>
+        </li>
+      </ol>
+    </div>
+
+    <p style="margin-top:34px;font-size:16px">Need to move it? Use the reschedule link in the invite. If something's come up, just reply to the email.</p>
+  </div>
+  <p class="legal">&copy; <span class="yr"></span> Ranking Out &middot; <a href="/privacy/">Privacy</a></p>
+</section>
+</main>
+<script>
+(function(){
+  try{if(window.gtag)gtag('event','booked_confirmation',{funnel:'vsl_leak'})}catch(e){}
+  document.querySelectorAll('.yr').forEach(function(el){el.textContent=new Date().getFullYear()});
+})();
+</script>
+</body>
+</html>
