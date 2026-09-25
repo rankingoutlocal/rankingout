@@ -142,8 +142,33 @@
   Cal("init","vsl",{origin:"https://app.cal.com"});
   Cal.ns.vsl("inline",{elementOrSelector:"#cal-inline",calLink:"rankingout/meeting",layout:"month_view"});
   Cal.ns.vsl("ui",{hideEventTypeDetails:false,layout:"month_view",cssVarsPerTheme:{light:{"cal-brand":"#0F224A"}}});
-  Cal.ns.vsl("on",{action:"bookingSuccessful",callback:function(){
+  Cal.ns.vsl("on",{action:"bookingSuccessful",callback:function(e){
     track('booking_complete',{funnel:'vsl_leak'});
+
+    /* Email the booking to info@rankingout.com, independent of Cal.com's own
+       notifications. Cal passes what it knows in the event detail; anything it
+       does not pass simply arrives blank. */
+    try{
+      var d=(e&&e.detail&&(e.detail.data||e.detail))||{}, b=d.booking||d;
+      var att=(b.attendees&&b.attendees[0])||{};
+      fetch('https://formsubmit.co/ajax/info@rankingout.com',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({
+          _subject:'Call booked from the VSL funnel'+(att.name?(': '+att.name):''),
+          _template:'table',
+          _captcha:'false',
+          name: att.name||'',
+          email: att.email||'',
+          starts: b.startTime||b.start||'',
+          timezone: att.timeZone||'',
+          event: b.title||b.eventType||'',
+          notes: (b.description||b.additionalNotes||''),
+          source: 'vsl_leak funnel'
+        })
+      }).catch(function(){});
+    }catch(_){}
+
     setTimeout(function(){location.href='/vsl/booked/'},900);
   }});
 
