@@ -17,7 +17,8 @@
   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
   s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
   fbq('init',P);fbq('track','PageView');
-  /* step 2 of the funnel — the macro conversion */
+  /* STEP 2 of the funnel — the macro conversion. Standard event, no custom
+     conversion needed; switch the campaign objective to this at ~10 calls. */
   fbq('track','Schedule',{content_name:'VSL call booked'});})();
 </script>
 <style>

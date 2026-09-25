@@ -18,8 +18,10 @@
   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
   s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
   fbq('init',P);fbq('track','PageView');
-  /* step 1 of the funnel: the opt-in is complete the moment this page loads */
-  fbq('track','ViewContent',{content_name:'VSL — The Leak'});})();
+  /* STEP 1 of the funnel — the opt-in is complete the moment this page loads.
+     Standard event 'Lead' needs no custom conversion: it appears in the
+     campaign's conversion-event list by name. */
+  fbq('track','Lead',{content_name:'VSL opt-in — The Leak'});})();
 </script>
 <style>
 #ro-vsl .top{padding:34px 0 70px}
@@ -142,7 +144,6 @@
   Cal.ns.vsl("ui",{hideEventTypeDetails:false,layout:"month_view",cssVarsPerTheme:{light:{"cal-brand":"#0F224A"}}});
   Cal.ns.vsl("on",{action:"bookingSuccessful",callback:function(){
     track('booking_complete',{funnel:'vsl_leak'});
-    try{if(window.fbq)fbq('track','Lead',{content_name:'VSL call booked'})}catch(e){}
     setTimeout(function(){location.href='/vsl/booked/'},900);
   }});
 
